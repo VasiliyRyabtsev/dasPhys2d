@@ -1,0 +1,35 @@
+
+IF ((NOT DAS_BOX2D_INCLUDED) AND ((NOT ${DAS_BOX2D_DISABLED}) OR (NOT DEFINED DAS_BOX2D_DISABLED)))
+    SET(DAS_BOX2D_INCLUDED TRUE)
+    MESSAGE(STATUS "dasBox2d module included.")
+
+	SET(DAS_BOX2D_DIR ${PROJECT_SOURCE_DIR}/modules/dasBox2d)
+
+  LIST(APPEND CMAKE_MODULE_PATH ${DAS_BOX2D_DIR})
+
+  set(BOX2D_SOURCE_DIR ${DAS_BOX2D_DIR}/box2d)
+
+  #message("BOX2D_SOURCE_DIR = '${BOX2D_SOURCE_DIR}'")
+  # add_subdirectory(BOX2D_SOURCE_DIR) # doesn't work ???
+  add_subdirectory(${DAS_BOX2D_DIR}/box2d)
+
+	# libDasModuleBox2d
+	SET(DAS_BOX2D_MODULE_SRC
+		${DAS_BOX2D_DIR}/src/dasBox2d.h
+		${DAS_BOX2D_DIR}/src/dasBox2d.cpp
+	)
+
+	ADD_MODULE_LIB(libDasModuleBox2d)
+	ADD_MODULE_CPP(Box2d)
+	ADD_LIBRARY(libDasModuleBox2d ${DAS_BOX2D_MODULE_SRC} ${DAS_BOX2D_MODULE_PLATFORM_SRC})
+	TARGET_LINK_LIBRARIES(libDasModuleBox2d
+    #${BOX2D_LIBRARIES}
+    box2d
+  )
+	ADD_DEPENDENCIES(libDasModuleBox2d box2d)
+	TARGET_INCLUDE_DIRECTORIES(libDasModuleBox2d PUBLIC
+    ${BOX2D_SOURCE_DIR}/include
+  )
+	SETUP_CPP11(libDasModuleBox2d)
+
+ENDIF()
