@@ -11,8 +11,8 @@ class Box2dGen : CppGenBind
         bind_root = "{get_das_root()}/modules/dasBox2d/src"
         bind_module = "box2d"
         bind_das_module = "box2d"
-        let pfn = "box2d.h"
-        let pfp = "{get_das_root()}/modules/dasBox2d/box2d/include/box2d/"
+        let pfn = "box2d/box2d.h"
+        let pfp = "{get_das_root()}/modules/dasBox2d/box2d/include/"
 /*
         let args <- [{string
             "-xc++-header";
@@ -50,6 +50,11 @@ class Box2dGen : CppGenBind
         return ! fname |> ends_with(PARSE_FILE_NAME)
 
 
+    def override skip_struct ( name : string )
+        if (name=="b2Vec2" || name=="b2Vec3" || name=="b2Mat22" || name=="b2Mat33")
+            return true
+        return false
+
     def override skip_function ( var c : CXCursor )
         if AnyGenBind`skip_function(self, c)
             return true
@@ -57,7 +62,11 @@ class Box2dGen : CppGenBind
         if function_name |> starts_with("operator")
             return true
         return false
-        
+
+    def override generateModuleHPrefix    
+        module_h_file |> fwrite("#include \"b2TypeAlias.h\"\n")
+        CppGenBind`generateModuleHPrefix(self)
+
 
 [export]
 def main

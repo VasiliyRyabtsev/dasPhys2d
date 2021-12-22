@@ -19,28 +19,28 @@ IF ((NOT DAS_BOX2D_INCLUDED) AND ((NOT ${DAS_BOX2D_DISABLED}) OR (NOT DEFINED DA
   add_subdirectory(${DAS_BOX2D_DIR}/box2d)
 
 	# libDasModuleBox2d
-	SET(DAS_BOX2D_MODULE_SRC
-		${DAS_BOX2D_DIR}/src/need_box2d.h
-		${DAS_BOX2D_DIR}/src/box2d.h
-		${DAS_BOX2D_DIR}/src/box2d.cpp
-	# user include
-		# ${DAS_BOX2D_DIR}/src/box2d.main.cpp
-	# generated binding includes
-		${DAS_BOX2D_DIR}/src/box2d.alias.add.inc
-		${DAS_BOX2D_DIR}/src/box2d.dummy.add.inc
-		${DAS_BOX2D_DIR}/src/box2d.enum.add.inc
-		${DAS_BOX2D_DIR}/src/box2d.enum.class.inc
-		${DAS_BOX2D_DIR}/src/box2d.enum.decl.inc
-		${DAS_BOX2D_DIR}/src/box2d.struct.add.inc
-		${DAS_BOX2D_DIR}/src/box2d.struct.postadd.inc
-		${DAS_BOX2D_DIR}/src/box2d.struct.class.inc
-		${DAS_BOX2D_DIR}/src/box2d.struct.decl.inc
-		${DAS_BOX2D_DIR}/src/box2d.struct.impl.inc
-		${DAS_BOX2D_DIR}/src/box2d.struct.cast.inc
-	# generated functions
-		${DAS_BOX2D_DIR}/src/box2d.func_1.cpp
-		${DAS_BOX2D_DIR}/src/box2d.func_2.cpp
-	)
+
+  SET(DAS_BOX2D_MODULE_SRC
+    ${DAS_BOX2D_DIR}/src/need_box2d.h
+    ${DAS_BOX2D_DIR}/src/box2d.h
+    ${DAS_BOX2D_DIR}/src/box2d.cpp
+  # user include
+    ${DAS_BOX2D_DIR}/src/box2d.main.cpp
+  # generated binding includes
+    ${DAS_BOX2D_DIR}/src/box2d.alias.add.inc
+    ${DAS_BOX2D_DIR}/src/box2d.dummy.add.inc
+    ${DAS_BOX2D_DIR}/src/box2d.enum.add.inc
+    ${DAS_BOX2D_DIR}/src/box2d.enum.class.inc
+    ${DAS_BOX2D_DIR}/src/box2d.enum.decl.inc
+    ${DAS_BOX2D_DIR}/src/box2d.struct.add.inc
+    ${DAS_BOX2D_DIR}/src/box2d.struct.postadd.inc
+    ${DAS_BOX2D_DIR}/src/box2d.struct.class.inc
+    ${DAS_BOX2D_DIR}/src/box2d.struct.decl.inc
+    ${DAS_BOX2D_DIR}/src/box2d.struct.impl.inc
+    ${DAS_BOX2D_DIR}/src/box2d.struct.cast.inc
+  # generated functions
+    ${DAS_BOX2D_DIR}/src/box2d.func_1.cpp
+  )
 
 	ADD_MODULE_LIB(libDasModuleBox2d)
 	ADD_MODULE_CPP(box2d)

@@ -26,7 +26,7 @@ bool Module_box2d::initDependencies() {
 	#include "box2d.struct.postadd.inc"
 	#include "box2d.alias.add.inc"
 	#include "box2d.func.reg.inc"
-	//initMain();
+	initMain();
 	return true;
 }
 }

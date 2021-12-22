@@ -2,7 +2,7 @@
 // all user modifications will be lost after this file is re-generated
 
 #pragma once
-#include <box2d.h>
+#include <box2d/box2d.h>
 #include "box2d.enum.decl.inc"
 #include "box2d.struct.decl.inc"
 namespace das {
