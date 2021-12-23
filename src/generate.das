@@ -41,6 +41,7 @@ class Box2dGen : CppGenBind
       //"b2_mouse_joint.h"; "b2_prismatic_joint.h"; "b2_pulley_joint.h"; "b2_revolute_joint.h"; "b2_weld_joint.h"; "b2_wheel_joint.h"
     ]]
 
+
     def override skip_file ( fname:string ) : bool
         //if fname |> find("/b2_") >= 0
         //    return false
@@ -65,6 +66,18 @@ class Box2dGen : CppGenBind
             return true
         let function_name = string(clang_getCursorSpelling(c))
         if function_name |> starts_with("operator")
+            return true
+        return false
+
+
+    b2_local_types = [[auto
+        "b2Vec2"; "b2Vec3"; "b2Mat22"; "b2Mat33";
+        "b2Transform"; "b2Sweep"
+    ]]
+
+
+    def override isLocalType ( name,cppname:string )
+        if b2_local_types |> find_index(name)>=0
             return true
         return false
 

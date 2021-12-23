@@ -2,6 +2,8 @@
 // all user modifications will be lost after this file is re-generated
 
 struct b2Vec2_GeneratedAnnotation : ManagedStructureAnnotation<b2Vec2> {
+	virtual bool isLocal() const override { return true; }
+	virtual bool canBePlacedInContainer() const override { return true; }
 	b2Vec2_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Vec2", ml) {
 	}
 	void init () {
@@ -11,6 +13,8 @@ struct b2Vec2_GeneratedAnnotation : ManagedStructureAnnotation<b2Vec2> {
 };
 
 struct b2Vec3_GeneratedAnnotation : ManagedStructureAnnotation<b2Vec3> {
+	virtual bool isLocal() const override { return true; }
+	virtual bool canBePlacedInContainer() const override { return true; }
 	b2Vec3_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Vec3", ml) {
 	}
 	void init () {
@@ -21,6 +25,8 @@ struct b2Vec3_GeneratedAnnotation : ManagedStructureAnnotation<b2Vec3> {
 };
 
 struct b2Mat22_GeneratedAnnotation : ManagedStructureAnnotation<b2Mat22> {
+	virtual bool isLocal() const override { return true; }
+	virtual bool canBePlacedInContainer() const override { return true; }
 	b2Mat22_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Mat22", ml) {
 	}
 	void init () {
@@ -30,6 +36,8 @@ struct b2Mat22_GeneratedAnnotation : ManagedStructureAnnotation<b2Mat22> {
 };
 
 struct b2Mat33_GeneratedAnnotation : ManagedStructureAnnotation<b2Mat33> {
+	virtual bool isLocal() const override { return true; }
+	virtual bool canBePlacedInContainer() const override { return true; }
 	b2Mat33_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Mat33", ml) {
 	}
 	void init () {
@@ -49,6 +57,8 @@ struct b2Rot_GeneratedAnnotation : ManagedStructureAnnotation<b2Rot> {
 };
 
 struct b2Transform_GeneratedAnnotation : ManagedStructureAnnotation<b2Transform> {
+	virtual bool isLocal() const override { return true; }
+	virtual bool canBePlacedInContainer() const override { return true; }
 	b2Transform_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Transform", ml) {
 	}
 	void init () {
@@ -58,6 +68,8 @@ struct b2Transform_GeneratedAnnotation : ManagedStructureAnnotation<b2Transform>
 };
 
 struct b2Sweep_GeneratedAnnotation : ManagedStructureAnnotation<b2Sweep> {
+	virtual bool isLocal() const override { return true; }
+	virtual bool canBePlacedInContainer() const override { return true; }
 	b2Sweep_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Sweep", ml) {
 	}
 	void init () {
