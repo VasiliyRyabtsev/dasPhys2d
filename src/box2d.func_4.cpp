@@ -11,6 +11,20 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_4() {
+	addExtern<b2Vec2 (*)(const b2Mat33 &,const b2Vec2 &),b2Mul22,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul22",SideEffects::worstDefault,"b2Mul22")
+		->args({"A","v"});
+	addExtern<b2Rot (*)(const b2Rot &,const b2Rot &),b2Mul,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
+		->args({"q","r"});
+	addExtern<b2Rot (*)(const b2Rot &,const b2Rot &),b2MulT,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
+		->args({"q","r"});
+	addExtern<b2Vec2 (*)(const b2Rot &,const b2Vec2 &),b2Mul,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
+		->args({"q","v"});
+	addExtern<b2Vec2 (*)(const b2Rot &,const b2Vec2 &),b2MulT,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
+		->args({"q","v"});
+	addExtern<b2Vec2 (*)(const b2Transform &,const b2Vec2 &),b2Mul,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
+		->args({"T","v"});
+	addExtern<b2Vec2 (*)(const b2Transform &,const b2Vec2 &),b2MulT,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
+		->args({"T","v"});
 	addExtern<b2Transform (*)(const b2Transform &,const b2Transform &),b2Mul,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
 		->args({"A","B"});
 	addExtern<b2Transform (*)(const b2Transform &,const b2Transform &),b2MulT,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
@@ -29,39 +43,18 @@ void Module_box2d::initFunctions_4() {
 		->args({"x"});
 	addExtern<bool (*)(unsigned int),b2IsPowerOfTwo>(*this,lib,"b2IsPowerOfTwo",SideEffects::worstDefault,"b2IsPowerOfTwo")
 		->args({"x"});
-	using _method_40 = das::das_call_member< b2Shape::Type (b2Shape::*)() const,&b2Shape::GetType >;
-	addExtern<DAS_CALL_METHOD(_method_40)>(*this,lib,"GetType",SideEffects::worstDefault,"das_call_member< b2Shape::Type (b2Shape::*)() const,&b2Shape::GetType >::invoke")
+	using _method_40 = das::das_call_member< void (b2Color::*)(float,float,float,float),&b2Color::Set >;
+	addExtern<DAS_CALL_METHOD(_method_40)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2Color::*)(float,float,float,float),&b2Color::Set >::invoke")
+		->args({"self","rIn","gIn","bIn","aIn"});
+	using _method_41 = das::das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::SetFlags >;
+	addExtern<DAS_CALL_METHOD(_method_41)>(*this,lib,"SetFlags",SideEffects::worstDefault,"das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::SetFlags >::invoke")
+		->args({"self","flags"});
+	using _method_42 = das::das_call_member< unsigned int (b2Draw::*)() const,&b2Draw::GetFlags >;
+	addExtern<DAS_CALL_METHOD(_method_42)>(*this,lib,"GetFlags",SideEffects::worstDefault,"das_call_member< unsigned int (b2Draw::*)() const,&b2Draw::GetFlags >::invoke")
 		->args({"self"});
-	using _method_41 = das::das_call_member< void (b2ChainShape::*)(),&b2ChainShape::Clear >;
-	addExtern<DAS_CALL_METHOD(_method_41)>(*this,lib,"Clear",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(),&b2ChainShape::Clear >::invoke")
-		->args({"self"});
-	using _method_42 = das::das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int),&b2ChainShape::CreateLoop >;
-	addExtern<DAS_CALL_METHOD(_method_42)>(*this,lib,"CreateLoop",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int),&b2ChainShape::CreateLoop >::invoke")
-		->args({"self","vertices","count"});
-	using _method_43 = das::das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int,const b2Vec2 &,const b2Vec2 &),&b2ChainShape::CreateChain >;
-	addExtern<DAS_CALL_METHOD(_method_43)>(*this,lib,"CreateChain",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int,const b2Vec2 &,const b2Vec2 &),&b2ChainShape::CreateChain >::invoke")
-		->args({"self","vertices","count","prevVertex","nextVertex"});
-	using _method_44 = das::das_call_member< void (b2ChainShape::*)(b2EdgeShape *,int) const,&b2ChainShape::GetChildEdge >;
-	addExtern<DAS_CALL_METHOD(_method_44)>(*this,lib,"GetChildEdge",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(b2EdgeShape *,int) const,&b2ChainShape::GetChildEdge >::invoke")
-		->args({"self","edge","index"});
-	using _method_45 = das::das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &,const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetOneSided >;
-	addExtern<DAS_CALL_METHOD(_method_45)>(*this,lib,"SetOneSided",SideEffects::worstDefault,"das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &,const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetOneSided >::invoke")
-		->args({"self","v0","v1","v2","v3"});
-	using _method_46 = das::das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetTwoSided >;
-	addExtern<DAS_CALL_METHOD(_method_46)>(*this,lib,"SetTwoSided",SideEffects::worstDefault,"das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetTwoSided >::invoke")
-		->args({"self","v1","v2"});
-	using _method_47 = das::das_call_member< void (b2PolygonShape::*)(const b2Vec2 *,int),&b2PolygonShape::Set >;
-	addExtern<DAS_CALL_METHOD(_method_47)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2PolygonShape::*)(const b2Vec2 *,int),&b2PolygonShape::Set >::invoke")
-		->args({"self","points","count"});
-	using _method_48 = das::das_call_member< void (b2PolygonShape::*)(float,float),&b2PolygonShape::SetAsBox >;
-	addExtern<DAS_CALL_METHOD(_method_48)>(*this,lib,"SetAsBox",SideEffects::worstDefault,"das_call_member< void (b2PolygonShape::*)(float,float),&b2PolygonShape::SetAsBox >::invoke")
-		->args({"self","hx","hy"});
-	using _method_49 = das::das_call_member< void (b2PolygonShape::*)(float,float,const b2Vec2 &,float),&b2PolygonShape::SetAsBox >;
-	addExtern<DAS_CALL_METHOD(_method_49)>(*this,lib,"SetAsBox",SideEffects::worstDefault,"das_call_member< void (b2PolygonShape::*)(float,float,const b2Vec2 &,float),&b2PolygonShape::SetAsBox >::invoke")
-		->args({"self","hx","hy","center","angle"});
-	using _method_50 = das::das_call_member< bool (b2PolygonShape::*)() const,&b2PolygonShape::Validate >;
-	addExtern<DAS_CALL_METHOD(_method_50)>(*this,lib,"Validate",SideEffects::worstDefault,"das_call_member< bool (b2PolygonShape::*)() const,&b2PolygonShape::Validate >::invoke")
-		->args({"self"});
+	using _method_43 = das::das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::AppendFlags >;
+	addExtern<DAS_CALL_METHOD(_method_43)>(*this,lib,"AppendFlags",SideEffects::worstDefault,"das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::AppendFlags >::invoke")
+		->args({"self","flags"});
 }
 }
 

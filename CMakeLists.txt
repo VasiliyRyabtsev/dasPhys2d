@@ -18,7 +18,7 @@ IF ((NOT DAS_BOX2D_INCLUDED) AND ((NOT ${DAS_BOX2D_DISABLED}) OR (NOT DEFINED DA
   # add_subdirectory(BOX2D_SOURCE_DIR) # doesn't work ???
   add_subdirectory(${DAS_BOX2D_BIND_DIR}/box2d)
 
-	# libDasModuleBox2d
+  # libDasModuleBox2d
   SET(DAS_BOX2D_BIND_MODULE_SRC
 		${DAS_BOX2D_BIND_DIR}/src/need_box2d.h
 		${DAS_BOX2D_BIND_DIR}/src/box2d.h
@@ -44,8 +44,22 @@ IF ((NOT DAS_BOX2D_INCLUDED) AND ((NOT ${DAS_BOX2D_DISABLED}) OR (NOT DEFINED DA
 		${DAS_BOX2D_BIND_DIR}/src/box2d.func_4.cpp
 		${DAS_BOX2D_BIND_DIR}/src/box2d.func_5.cpp
 		${DAS_BOX2D_BIND_DIR}/src/box2d.func_6.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_7.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_8.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_9.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_10.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_11.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_12.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_13.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_14.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_15.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_16.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_17.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_18.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_19.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_20.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_21.cpp
 	)
-
 
 
 	ADD_MODULE_LIB(libDasModuleBox2d)

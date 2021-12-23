@@ -11,6 +11,19 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_1() {
+	addExtern<void * (*)(int),b2Alloc_Default>(*this,lib,"b2Alloc_Default",SideEffects::worstDefault,"b2Alloc_Default")
+		->args({"size"});
+	addExtern<void (*)(void *),b2Free_Default>(*this,lib,"b2Free_Default",SideEffects::worstDefault,"b2Free_Default")
+		->args({"mem"});
+	addExtern<void * (*)(int),b2Alloc>(*this,lib,"b2Alloc",SideEffects::worstDefault,"b2Alloc")
+		->args({"size"});
+	addExtern<void (*)(void *),b2Free>(*this,lib,"b2Free",SideEffects::worstDefault,"b2Free")
+		->args({"mem"});
+	addExtern<void (*)(const char *,char *),b2Log_Default>(*this,lib,"b2Log_Default",SideEffects::worstDefault,"b2Log_Default")
+		->args({"string","args"});
+	addExtern<void (*)(const char *),b2OpenDump>(*this,lib,"b2OpenDump",SideEffects::worstDefault,"b2OpenDump")
+		->args({"fileName"});
+	addExtern<void (*)(),b2CloseDump>(*this,lib,"b2CloseDump",SideEffects::worstDefault,"b2CloseDump");
 	addExtern<bool (*)(float),b2IsValid>(*this,lib,"b2IsValid",SideEffects::worstDefault,"b2IsValid")
 		->args({"x"});
 	using _method_1 = das::das_call_member< void (b2Vec2::*)(),&b2Vec2::SetZero >;
@@ -49,27 +62,6 @@ void Module_box2d::initFunctions_1() {
 	using _method_12 = das::das_call_member< bool (b2Vec2::*)() const,&b2Vec2::IsValid >;
 	addExtern<DAS_CALL_METHOD(_method_12)>(*this,lib,"IsValid",SideEffects::worstDefault,"das_call_member< bool (b2Vec2::*)() const,&b2Vec2::IsValid >::invoke")
 		->args({"self"});
-	using _method_13 = das::das_call_member< b2Vec2 (b2Vec2::*)() const,&b2Vec2::Skew >;
-	addExtern<DAS_CALL_METHOD(_method_13),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"Skew",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Vec2::*)() const,&b2Vec2::Skew >::invoke")
-		->args({"self"});
-	using _method_14 = das::das_call_member< void (b2Vec3::*)(),&b2Vec3::SetZero >;
-	addExtern<DAS_CALL_METHOD(_method_14)>(*this,lib,"SetZero",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(),&b2Vec3::SetZero >::invoke")
-		->args({"self"});
-	using _method_15 = das::das_call_member< void (b2Vec3::*)(float,float,float),&b2Vec3::Set >;
-	addExtern<DAS_CALL_METHOD(_method_15)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(float,float,float),&b2Vec3::Set >::invoke")
-		->args({"self","x_","y_","z_"});
-	using _method_16 = das::das_call_member< b2Vec3 (b2Vec3::*)() const,&b2Vec3::operator- >;
-	addExtern<DAS_CALL_METHOD(_method_16),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"-",SideEffects::worstDefault,"das_call_member< b2Vec3 (b2Vec3::*)() const,&b2Vec3::operator- >::invoke")
-		->args({"self"});
-	using _method_17 = das::das_call_member< void (b2Vec3::*)(const b2Vec3 &),&b2Vec3::operator+= >;
-	addExtern<DAS_CALL_METHOD(_method_17)>(*this,lib,"+=",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(const b2Vec3 &),&b2Vec3::operator+= >::invoke")
-		->args({"self","v"});
-	using _method_18 = das::das_call_member< void (b2Vec3::*)(const b2Vec3 &),&b2Vec3::operator-= >;
-	addExtern<DAS_CALL_METHOD(_method_18)>(*this,lib,"-=",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(const b2Vec3 &),&b2Vec3::operator-= >::invoke")
-		->args({"self","v"});
-	using _method_19 = das::das_call_member< void (b2Vec3::*)(float),&b2Vec3::operator*= >;
-	addExtern<DAS_CALL_METHOD(_method_19)>(*this,lib,"*=",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(float),&b2Vec3::operator*= >::invoke")
-		->args({"self","s"});
 }
 }
 

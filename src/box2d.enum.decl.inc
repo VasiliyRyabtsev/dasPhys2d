@@ -4,3 +4,9 @@
 DAS_BIND_ENUM_CAST(b2Shape::Type);
 DAS_BASE_BIND_ENUM_GEN(b2Shape::Type,Type);
 
+DAS_BIND_ENUM_CAST(b2BodyType);
+DAS_BASE_BIND_ENUM_GEN(b2BodyType,b2BodyType);
+
+DAS_BIND_ENUM_CAST(b2JointType);
+DAS_BASE_BIND_ENUM_GEN(b2JointType,b2JointType);
+

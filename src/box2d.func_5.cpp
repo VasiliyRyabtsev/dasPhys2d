@@ -11,66 +11,66 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_5() {
-	using _method_51 = das::das_call_member< void (b2World::*)(b2Draw *),&b2World::SetDebugDraw >;
-	addExtern<DAS_CALL_METHOD(_method_51)>(*this,lib,"SetDebugDraw",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2Draw *),&b2World::SetDebugDraw >::invoke")
-		->args({"self","debugDraw"});
-	using _method_52 = das::das_call_member< b2Body * (b2World::*)(const b2BodyDef *),&b2World::CreateBody >;
-	addExtern<DAS_CALL_METHOD(_method_52)>(*this,lib,"CreateBody",SideEffects::worstDefault,"das_call_member< b2Body * (b2World::*)(const b2BodyDef *),&b2World::CreateBody >::invoke")
-		->args({"self","def"});
-	using _method_53 = das::das_call_member< void (b2World::*)(b2Body *),&b2World::DestroyBody >;
-	addExtern<DAS_CALL_METHOD(_method_53)>(*this,lib,"DestroyBody",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2Body *),&b2World::DestroyBody >::invoke")
-		->args({"self","body"});
-	using _method_54 = das::das_call_member< b2Joint * (b2World::*)(const b2JointDef *),&b2World::CreateJoint >;
-	addExtern<DAS_CALL_METHOD(_method_54)>(*this,lib,"CreateJoint",SideEffects::worstDefault,"das_call_member< b2Joint * (b2World::*)(const b2JointDef *),&b2World::CreateJoint >::invoke")
-		->args({"self","def"});
-	using _method_55 = das::das_call_member< void (b2World::*)(b2Joint *),&b2World::DestroyJoint >;
-	addExtern<DAS_CALL_METHOD(_method_55)>(*this,lib,"DestroyJoint",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2Joint *),&b2World::DestroyJoint >::invoke")
-		->args({"self","joint"});
-	using _method_56 = das::das_call_member< void (b2World::*)(float,int,int),&b2World::Step >;
-	addExtern<DAS_CALL_METHOD(_method_56)>(*this,lib,"Step",SideEffects::worstDefault,"das_call_member< void (b2World::*)(float,int,int),&b2World::Step >::invoke")
-		->args({"self","timeStep","velocityIterations","positionIterations"});
-	using _method_57 = das::das_call_member< void (b2World::*)(),&b2World::ClearForces >;
-	addExtern<DAS_CALL_METHOD(_method_57)>(*this,lib,"ClearForces",SideEffects::worstDefault,"das_call_member< void (b2World::*)(),&b2World::ClearForces >::invoke")
+	using _method_44 = das::das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::ClearFlags >;
+	addExtern<DAS_CALL_METHOD(_method_44)>(*this,lib,"ClearFlags",SideEffects::worstDefault,"das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::ClearFlags >::invoke")
+		->args({"self","flags"});
+	using _method_45 = das::das_call_member< void (b2Timer::*)(),&b2Timer::Reset >;
+	addExtern<DAS_CALL_METHOD(_method_45)>(*this,lib,"Reset",SideEffects::worstDefault,"das_call_member< void (b2Timer::*)(),&b2Timer::Reset >::invoke")
 		->args({"self"});
-	using _method_58 = das::das_call_member< void (b2World::*)(),&b2World::DebugDraw >;
-	addExtern<DAS_CALL_METHOD(_method_58)>(*this,lib,"DebugDraw",SideEffects::worstDefault,"das_call_member< void (b2World::*)(),&b2World::DebugDraw >::invoke")
+	using _method_46 = das::das_call_member< float (b2Timer::*)() const,&b2Timer::GetMilliseconds >;
+	addExtern<DAS_CALL_METHOD(_method_46)>(*this,lib,"GetMilliseconds",SideEffects::worstDefault,"das_call_member< float (b2Timer::*)() const,&b2Timer::GetMilliseconds >::invoke")
 		->args({"self"});
-	//using _method_59 = das::das_call_member< void (b2World::*)(b2RayCastCallback *,const b2Vec2 &,const b2Vec2 &) const,&b2World::RayCast >;
-	//addExtern<DAS_CALL_METHOD(_method_59)>(*this,lib,"RayCast",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2RayCastCallback *,const b2Vec2 &,const b2Vec2 &) const,&b2World::RayCast >::invoke")
-	//	->args({"self","callback","point1","point2"});
-	using _method_60 = das::das_call_member< b2Body * (b2World::*)(),&b2World::GetBodyList >;
-	addExtern<DAS_CALL_METHOD(_method_60)>(*this,lib,"GetBodyList",SideEffects::worstDefault,"das_call_member< b2Body * (b2World::*)(),&b2World::GetBodyList >::invoke")
+	using _method_47 = das::das_call_member< b2Shape::Type (b2Shape::*)() const,&b2Shape::GetType >;
+	addExtern<DAS_CALL_METHOD(_method_47)>(*this,lib,"GetType",SideEffects::worstDefault,"das_call_member< b2Shape::Type (b2Shape::*)() const,&b2Shape::GetType >::invoke")
 		->args({"self"});
-	using _method_61 = das::das_call_member< const b2Body * (b2World::*)() const,&b2World::GetBodyList >;
-	addExtern<DAS_CALL_METHOD(_method_61)>(*this,lib,"GetBodyList",SideEffects::worstDefault,"das_call_member< const b2Body * (b2World::*)() const,&b2World::GetBodyList >::invoke")
+	using _method_48 = das::das_call_member< void (b2ChainShape::*)(),&b2ChainShape::Clear >;
+	addExtern<DAS_CALL_METHOD(_method_48)>(*this,lib,"Clear",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(),&b2ChainShape::Clear >::invoke")
 		->args({"self"});
-	using _method_62 = das::das_call_member< b2Joint * (b2World::*)(),&b2World::GetJointList >;
-	addExtern<DAS_CALL_METHOD(_method_62)>(*this,lib,"GetJointList",SideEffects::worstDefault,"das_call_member< b2Joint * (b2World::*)(),&b2World::GetJointList >::invoke")
+	using _method_49 = das::das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int),&b2ChainShape::CreateLoop >;
+	addExtern<DAS_CALL_METHOD(_method_49)>(*this,lib,"CreateLoop",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int),&b2ChainShape::CreateLoop >::invoke")
+		->args({"self","vertices","count"});
+	using _method_50 = das::das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int,const b2Vec2 &,const b2Vec2 &),&b2ChainShape::CreateChain >;
+	addExtern<DAS_CALL_METHOD(_method_50)>(*this,lib,"CreateChain",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int,const b2Vec2 &,const b2Vec2 &),&b2ChainShape::CreateChain >::invoke")
+		->args({"self","vertices","count","prevVertex","nextVertex"});
+	using _method_51 = das::das_call_member< void (b2ChainShape::*)(b2EdgeShape *,int) const,&b2ChainShape::GetChildEdge >;
+	addExtern<DAS_CALL_METHOD(_method_51)>(*this,lib,"GetChildEdge",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(b2EdgeShape *,int) const,&b2ChainShape::GetChildEdge >::invoke")
+		->args({"self","edge","index"});
+	using _method_52 = das::das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &,const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetOneSided >;
+	addExtern<DAS_CALL_METHOD(_method_52)>(*this,lib,"SetOneSided",SideEffects::worstDefault,"das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &,const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetOneSided >::invoke")
+		->args({"self","v0","v1","v2","v3"});
+	using _method_53 = das::das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetTwoSided >;
+	addExtern<DAS_CALL_METHOD(_method_53)>(*this,lib,"SetTwoSided",SideEffects::worstDefault,"das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetTwoSided >::invoke")
+		->args({"self","v1","v2"});
+	using _method_54 = das::das_call_member< void (b2PolygonShape::*)(const b2Vec2 *,int),&b2PolygonShape::Set >;
+	addExtern<DAS_CALL_METHOD(_method_54)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2PolygonShape::*)(const b2Vec2 *,int),&b2PolygonShape::Set >::invoke")
+		->args({"self","points","count"});
+	using _method_55 = das::das_call_member< void (b2PolygonShape::*)(float,float),&b2PolygonShape::SetAsBox >;
+	addExtern<DAS_CALL_METHOD(_method_55)>(*this,lib,"SetAsBox",SideEffects::worstDefault,"das_call_member< void (b2PolygonShape::*)(float,float),&b2PolygonShape::SetAsBox >::invoke")
+		->args({"self","hx","hy"});
+	using _method_56 = das::das_call_member< void (b2PolygonShape::*)(float,float,const b2Vec2 &,float),&b2PolygonShape::SetAsBox >;
+	addExtern<DAS_CALL_METHOD(_method_56)>(*this,lib,"SetAsBox",SideEffects::worstDefault,"das_call_member< void (b2PolygonShape::*)(float,float,const b2Vec2 &,float),&b2PolygonShape::SetAsBox >::invoke")
+		->args({"self","hx","hy","center","angle"});
+	using _method_57 = das::das_call_member< bool (b2PolygonShape::*)() const,&b2PolygonShape::Validate >;
+	addExtern<DAS_CALL_METHOD(_method_57)>(*this,lib,"Validate",SideEffects::worstDefault,"das_call_member< bool (b2PolygonShape::*)() const,&b2PolygonShape::Validate >::invoke")
 		->args({"self"});
-	using _method_63 = das::das_call_member< const b2Joint * (b2World::*)() const,&b2World::GetJointList >;
-	addExtern<DAS_CALL_METHOD(_method_63)>(*this,lib,"GetJointList",SideEffects::worstDefault,"das_call_member< const b2Joint * (b2World::*)() const,&b2World::GetJointList >::invoke")
-		->args({"self"});
-	//using _method_64 = das::das_call_member< const b2Contact * (b2World::*)() const,&b2World::GetContactList >;
-	//addExtern<DAS_CALL_METHOD(_method_64)>(*this,lib,"GetContactList",SideEffects::worstDefault,"das_call_member< const b2Contact * (b2World::*)() const,&b2World::GetContactList >::invoke")
+	//using _method_58 = das::das_call_member< void (*)(const type-parameter-0-0 &),&Push >;
+	//addExtern<DAS_CALL_METHOD(_method_58)>(*this,lib,"Push",SideEffects::worstDefault,"das_call_member< void (*)(const type-parameter-0-0 &),&Push >::invoke")
+	//	->args({"self","element"});
+	//using _method_59 = das::das_call_member< type-parameter-0-0 (*)(),&Pop >;
+	//addExtern<DAS_CALL_METHOD(_method_59)>(*this,lib,"Pop",SideEffects::worstDefault,"das_call_member< type-parameter-0-0 (*)(),&Pop >::invoke")
 	//	->args({"self"});
-	using _method_65 = das::das_call_member< void (b2World::*)(bool),&b2World::SetAllowSleeping >;
-	addExtern<DAS_CALL_METHOD(_method_65)>(*this,lib,"SetAllowSleeping",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool),&b2World::SetAllowSleeping >::invoke")
-		->args({"self","flag"});
-	using _method_66 = das::das_call_member< bool (b2World::*)() const,&b2World::GetAllowSleeping >;
-	addExtern<DAS_CALL_METHOD(_method_66)>(*this,lib,"GetAllowSleeping",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::GetAllowSleeping >::invoke")
+	//using _method_60 = das::das_call_member< int (*)(),&GetCount >;
+	//addExtern<DAS_CALL_METHOD(_method_60)>(*this,lib,"GetCount",SideEffects::worstDefault,"das_call_member< int (*)(),&GetCount >::invoke")
+	//	->args({"self"});
+	using _method_61 = das::das_call_member< bool (b2TreeNode::*)() const,&b2TreeNode::IsLeaf >;
+	addExtern<DAS_CALL_METHOD(_method_61)>(*this,lib,"IsLeaf",SideEffects::worstDefault,"das_call_member< bool (b2TreeNode::*)() const,&b2TreeNode::IsLeaf >::invoke")
 		->args({"self"});
-	using _method_67 = das::das_call_member< void (b2World::*)(bool),&b2World::SetWarmStarting >;
-	addExtern<DAS_CALL_METHOD(_method_67)>(*this,lib,"SetWarmStarting",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool),&b2World::SetWarmStarting >::invoke")
-		->args({"self","flag"});
-	using _method_68 = das::das_call_member< bool (b2World::*)() const,&b2World::GetWarmStarting >;
-	addExtern<DAS_CALL_METHOD(_method_68)>(*this,lib,"GetWarmStarting",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::GetWarmStarting >::invoke")
-		->args({"self"});
-	using _method_69 = das::das_call_member< void (b2World::*)(bool),&b2World::SetContinuousPhysics >;
-	addExtern<DAS_CALL_METHOD(_method_69)>(*this,lib,"SetContinuousPhysics",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool),&b2World::SetContinuousPhysics >::invoke")
-		->args({"self","flag"});
-	using _method_70 = das::das_call_member< bool (b2World::*)() const,&b2World::GetContinuousPhysics >;
-	addExtern<DAS_CALL_METHOD(_method_70)>(*this,lib,"GetContinuousPhysics",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::GetContinuousPhysics >::invoke")
-		->args({"self"});
+	using _method_62 = das::das_call_member< int (b2DynamicTree::*)(const b2AABB &,void *),&b2DynamicTree::CreateProxy >;
+	addExtern<DAS_CALL_METHOD(_method_62)>(*this,lib,"CreateProxy",SideEffects::worstDefault,"das_call_member< int (b2DynamicTree::*)(const b2AABB &,void *),&b2DynamicTree::CreateProxy >::invoke")
+		->args({"self","aabb","userData"});
+	using _method_63 = das::das_call_member< void (b2DynamicTree::*)(int),&b2DynamicTree::DestroyProxy >;
+	addExtern<DAS_CALL_METHOD(_method_63)>(*this,lib,"DestroyProxy",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)(int),&b2DynamicTree::DestroyProxy >::invoke")
+		->args({"self","proxyId"});
 }
 }
 

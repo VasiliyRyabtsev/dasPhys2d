@@ -11,6 +11,27 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_2() {
+	using _method_13 = das::das_call_member< b2Vec2 (b2Vec2::*)() const,&b2Vec2::Skew >;
+	addExtern<DAS_CALL_METHOD(_method_13),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"Skew",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Vec2::*)() const,&b2Vec2::Skew >::invoke")
+		->args({"self"});
+	using _method_14 = das::das_call_member< void (b2Vec3::*)(),&b2Vec3::SetZero >;
+	addExtern<DAS_CALL_METHOD(_method_14)>(*this,lib,"SetZero",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(),&b2Vec3::SetZero >::invoke")
+		->args({"self"});
+	using _method_15 = das::das_call_member< void (b2Vec3::*)(float,float,float),&b2Vec3::Set >;
+	addExtern<DAS_CALL_METHOD(_method_15)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(float,float,float),&b2Vec3::Set >::invoke")
+		->args({"self","x_","y_","z_"});
+	using _method_16 = das::das_call_member< b2Vec3 (b2Vec3::*)() const,&b2Vec3::operator- >;
+	addExtern<DAS_CALL_METHOD(_method_16),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"-",SideEffects::worstDefault,"das_call_member< b2Vec3 (b2Vec3::*)() const,&b2Vec3::operator- >::invoke")
+		->args({"self"});
+	using _method_17 = das::das_call_member< void (b2Vec3::*)(const b2Vec3 &),&b2Vec3::operator+= >;
+	addExtern<DAS_CALL_METHOD(_method_17)>(*this,lib,"+=",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(const b2Vec3 &),&b2Vec3::operator+= >::invoke")
+		->args({"self","v"});
+	using _method_18 = das::das_call_member< void (b2Vec3::*)(const b2Vec3 &),&b2Vec3::operator-= >;
+	addExtern<DAS_CALL_METHOD(_method_18)>(*this,lib,"-=",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(const b2Vec3 &),&b2Vec3::operator-= >::invoke")
+		->args({"self","v"});
+	using _method_19 = das::das_call_member< void (b2Vec3::*)(float),&b2Vec3::operator*= >;
+	addExtern<DAS_CALL_METHOD(_method_19)>(*this,lib,"*=",SideEffects::worstDefault,"das_call_member< void (b2Vec3::*)(float),&b2Vec3::operator*= >::invoke")
+		->args({"self","s"});
 	using _method_20 = das::das_call_member< void (b2Mat22::*)(const b2Vec2 &,const b2Vec2 &),&b2Mat22::Set >;
 	addExtern<DAS_CALL_METHOD(_method_20)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2Mat22::*)(const b2Vec2 &,const b2Vec2 &),&b2Mat22::Set >::invoke")
 		->args({"self","c1","c2"});
@@ -49,27 +70,6 @@ void Module_box2d::initFunctions_2() {
 		->args({"self"});
 	using _method_32 = das::das_call_member< float (b2Rot::*)() const,&b2Rot::GetAngle >;
 	addExtern<DAS_CALL_METHOD(_method_32)>(*this,lib,"GetAngle",SideEffects::worstDefault,"das_call_member< float (b2Rot::*)() const,&b2Rot::GetAngle >::invoke")
-		->args({"self"});
-	using _method_33 = das::das_call_member< b2Vec2 (b2Rot::*)() const,&b2Rot::GetXAxis >;
-	addExtern<DAS_CALL_METHOD(_method_33),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetXAxis",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Rot::*)() const,&b2Rot::GetXAxis >::invoke")
-		->args({"self"});
-	using _method_34 = das::das_call_member< b2Vec2 (b2Rot::*)() const,&b2Rot::GetYAxis >;
-	addExtern<DAS_CALL_METHOD(_method_34),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetYAxis",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Rot::*)() const,&b2Rot::GetYAxis >::invoke")
-		->args({"self"});
-	using _method_35 = das::das_call_member< void (b2Transform::*)(),&b2Transform::SetIdentity >;
-	addExtern<DAS_CALL_METHOD(_method_35)>(*this,lib,"SetIdentity",SideEffects::worstDefault,"das_call_member< void (b2Transform::*)(),&b2Transform::SetIdentity >::invoke")
-		->args({"self"});
-	using _method_36 = das::das_call_member< void (b2Transform::*)(const b2Vec2 &,float),&b2Transform::Set >;
-	addExtern<DAS_CALL_METHOD(_method_36)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2Transform::*)(const b2Vec2 &,float),&b2Transform::Set >::invoke")
-		->args({"self","position","angle"});
-	using _method_37 = das::das_call_member< void (b2Sweep::*)(b2Transform *,float) const,&b2Sweep::GetTransform >;
-	addExtern<DAS_CALL_METHOD(_method_37)>(*this,lib,"GetTransform",SideEffects::worstDefault,"das_call_member< void (b2Sweep::*)(b2Transform *,float) const,&b2Sweep::GetTransform >::invoke")
-		->args({"self","transform","beta"});
-	using _method_38 = das::das_call_member< void (b2Sweep::*)(float),&b2Sweep::Advance >;
-	addExtern<DAS_CALL_METHOD(_method_38)>(*this,lib,"Advance",SideEffects::worstDefault,"das_call_member< void (b2Sweep::*)(float),&b2Sweep::Advance >::invoke")
-		->args({"self","alpha"});
-	using _method_39 = das::das_call_member< void (b2Sweep::*)(),&b2Sweep::Normalize >;
-	addExtern<DAS_CALL_METHOD(_method_39)>(*this,lib,"Normalize",SideEffects::worstDefault,"das_call_member< void (b2Sweep::*)(),&b2Sweep::Normalize >::invoke")
 		->args({"self"});
 }
 }

@@ -2,3 +2,5 @@
 // all user modifications will be lost after this file is re-generated
 
 addEnumeration(make_smart<Enumeration_Type>());
+addEnumeration(make_smart<Enumeration_b2BodyType>());
+addEnumeration(make_smart<Enumeration_b2JointType>());
