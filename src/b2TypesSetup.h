@@ -3,7 +3,7 @@
 #include <daScript/daScript.h>
 #include <box2d/b2_math.h>
 
-
+/*
 namespace das
 {
   #define MAKE_TYPE_FACTORY_ALIAS(TYPE, DAS_DECL_TYPE, DAS_TYPE)\
@@ -72,3 +72,4 @@ namespace das
   template<> struct ToBasicType<b2Vec3>        { enum { type = Type::tFloat3 }; };
   template<> struct cast <b2Vec3>  : cast_fVec<b2Vec3> {};
 };
+*/

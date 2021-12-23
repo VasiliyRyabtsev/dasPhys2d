@@ -51,8 +51,13 @@ class Box2dGen : CppGenBind
 
 
     def override skip_struct ( name : string )
-        if (name=="b2Vec2" || name=="b2Vec3" || name=="b2Mat22" || name=="b2Mat33")
+        //if (name=="b2Vec2" || name=="b2Vec3" || name=="b2Mat22" || name=="b2Mat33")
+        //    return true
+        if (name=="b2DestructionListener" || name=="b2ContactFilter" || name=="b2ContactListener" 
+          || name=="b2QueryCallback" || name=="b2RayCastCallback " || name=="b2Contact"
+          || name=="b2ContactManager" || name=="b2Profile")
             return true
+
         return false
 
     def override skip_function ( var c : CXCursor )
@@ -64,7 +69,7 @@ class Box2dGen : CppGenBind
         return false
 
     def override generateModuleHPrefix    
-        module_h_file |> fwrite("#include \"b2TypeAlias.h\"\n")
+        module_h_file |> fwrite("#include \"b2TypesSetup.h\"\n")
         CppGenBind`generateModuleHPrefix(self)
 
 

@@ -2,7 +2,7 @@
 // all user modifications will be lost after this file is re-generated
 
 #pragma once
-#include "b2TypeAlias.h"
+#include "b2TypesSetup.h"
 namespace das {
 class Module_box2d : public Module {
 public:
