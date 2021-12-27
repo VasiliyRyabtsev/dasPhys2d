@@ -41,7 +41,7 @@ void Module_phys2d::initFunctions_5() {
 	addExtern<DAS_CALL_METHOD(_method_40)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2Color::*)(float,float,float,float) , &b2Color::Set >::invoke")
 		->args({"self","rIn","gIn","bIn","aIn"})
 		->arg_init(4,make_smart<ExprConstFloat>(1.00000000000000000));
-	addCtorAndUsing<b2Draw>(*this,lib,"b2Draw","b2Draw");
+	//addCtorAndUsing<b2Draw>(*this,lib,"b2Draw","b2Draw");
 	using _method_41 = das::das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::SetFlags >;
 	addExtern<DAS_CALL_METHOD(_method_41)>(*this,lib,"SetFlags",SideEffects::worstDefault,"das_call_member< void (b2Draw::*)(unsigned int) , &b2Draw::SetFlags >::invoke")
 		->args({"self","flags"});

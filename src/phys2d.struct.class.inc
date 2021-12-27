@@ -530,8 +530,6 @@ struct b2RayCastCallback_GeneratedAnnotation : ManagedStructureAnnotation<b2RayC
 };
 
 struct b2World_GeneratedAnnotation : ManagedStructureAnnotation<b2World> {
-	virtual bool isLocal() const override { return true; }
-	virtual bool canBePlacedInContainer() const override { return true; }
 	b2World_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2World", ml, "b2World") {
 	}
 	void init () {

@@ -56,8 +56,7 @@ class Phys2dGen : CppGenBind
 
     b2_local_types = [[auto
         "b2Vec2"; "b2Vec3"; "b2Mat22"; "b2Mat33";
-        "b2Transform"; "b2Sweep";
-        "b2World"
+        "b2Transform"; "b2Sweep"
     ]]
 
 
@@ -66,9 +65,20 @@ class Phys2dGen : CppGenBind
             return true
         return false
 
+
     def override generateModuleHPrefix    
         module_h_file |> fwrite("#include \"b2TypesSetup.h\"\n")
         CppGenBind`generateModuleHPrefix(self)
+
+
+    enumRemap <- {{
+        "b2ContactFeature::Type"  => "b2ContactFeatureType";
+        "b2Manifold::Type"  => "b2ManifoldType";
+        "b2Shape::Type" => "b2ShapeType"
+    }}
+
+    def override dasEnumName(enum_name,cpp_enum_name:string) : string
+        return enumRemap?[cpp_enum_name] ?? CppGenBind`dasEnumName(self,enum_name,cpp_enum_name)
 
 
 [export]

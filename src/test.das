@@ -1,4 +1,4 @@
-require box2d
+require phys2d
 
 [export]
 def main

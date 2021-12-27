@@ -3,7 +3,7 @@
 
 class Enumeration_b2ContactFeature_Type : public das::Enumeration {
 public:
-	Enumeration_b2ContactFeature_Type() : das::Enumeration("Type") {
+	Enumeration_b2ContactFeature_Type() : das::Enumeration("b2ContactFeatureType") {
 		external = true;
 		cppName = "b2ContactFeature::Type";
 		baseType = (das::Type) das::ToBasicType<int>::type;
@@ -14,7 +14,7 @@ public:
 
 class Enumeration_b2Manifold_Type : public das::Enumeration {
 public:
-	Enumeration_b2Manifold_Type() : das::Enumeration("Type") {
+	Enumeration_b2Manifold_Type() : das::Enumeration("b2ManifoldType") {
 		external = true;
 		cppName = "b2Manifold::Type";
 		baseType = (das::Type) das::ToBasicType<int>::type;
@@ -39,7 +39,7 @@ public:
 
 class Enumeration_b2Shape_Type : public das::Enumeration {
 public:
-	Enumeration_b2Shape_Type() : das::Enumeration("Type") {
+	Enumeration_b2Shape_Type() : das::Enumeration("b2ShapeType") {
 		external = true;
 		cppName = "b2Shape::Type";
 		baseType = (das::Type) das::ToBasicType<int>::type;
