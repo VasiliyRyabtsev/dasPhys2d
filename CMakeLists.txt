@@ -31,6 +31,7 @@ IF ((NOT DAS_BOX2D_INCLUDED) AND ((NOT ${DAS_BOX2D_DISABLED}) OR (NOT DEFINED DA
 		${DAS_BOX2D_BIND_DIR}/src/box2d.enum.add.inc
 		${DAS_BOX2D_BIND_DIR}/src/box2d.enum.class.inc
 		${DAS_BOX2D_BIND_DIR}/src/box2d.enum.decl.inc
+		${DAS_BOX2D_BIND_DIR}/src/box2d.enum.decl.cast.inc
 		${DAS_BOX2D_BIND_DIR}/src/box2d.struct.add.inc
 		${DAS_BOX2D_BIND_DIR}/src/box2d.struct.postadd.inc
 		${DAS_BOX2D_BIND_DIR}/src/box2d.struct.class.inc
@@ -59,6 +60,9 @@ IF ((NOT DAS_BOX2D_INCLUDED) AND ((NOT ${DAS_BOX2D_DISABLED}) OR (NOT DEFINED DA
 		${DAS_BOX2D_BIND_DIR}/src/box2d.func_19.cpp
 		${DAS_BOX2D_BIND_DIR}/src/box2d.func_20.cpp
 		${DAS_BOX2D_BIND_DIR}/src/box2d.func_21.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_22.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_23.cpp
+		${DAS_BOX2D_BIND_DIR}/src/box2d.func_24.cpp
 	)
 
 

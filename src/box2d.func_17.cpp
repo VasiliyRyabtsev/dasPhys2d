@@ -11,66 +11,62 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_17() {
-	using _method_279 = das::das_call_member< void (b2MotorJointDef::*)(b2Body *,b2Body *),&b2MotorJointDef::Initialize >;
-	addExtern<DAS_CALL_METHOD(_method_279)>(*this,lib,"Initialize",SideEffects::worstDefault,"das_call_member< void (b2MotorJointDef::*)(b2Body *,b2Body *),&b2MotorJointDef::Initialize >::invoke")
-		->args({"self","bodyA","bodyB"});
-	using _method_280 = das::das_call_member< void (b2MotorJoint::*)(const b2Vec2 &),&b2MotorJoint::SetLinearOffset >;
-	addExtern<DAS_CALL_METHOD(_method_280)>(*this,lib,"SetLinearOffset",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(const b2Vec2 &),&b2MotorJoint::SetLinearOffset >::invoke")
-		->args({"self","linearOffset"});
-	using _method_281 = das::das_call_member< const b2Vec2 & (b2MotorJoint::*)() const,&b2MotorJoint::GetLinearOffset >;
-	addExtern<DAS_CALL_METHOD(_method_281), SimNode_ExtFuncCallRef>(*this,lib,"GetLinearOffset",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2MotorJoint::*)() const,&b2MotorJoint::GetLinearOffset >::invoke")
+	using _method_240 = das::das_call_member< bool (b2World::*)() const,&b2World::GetSubStepping >;
+	addExtern<DAS_CALL_METHOD(_method_240)>(*this,lib,"GetSubStepping",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const , &b2World::GetSubStepping >::invoke")
 		->args({"self"});
-	using _method_282 = das::das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetAngularOffset >;
-	addExtern<DAS_CALL_METHOD(_method_282)>(*this,lib,"SetAngularOffset",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetAngularOffset >::invoke")
-		->args({"self","angularOffset"});
-	using _method_283 = das::das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetAngularOffset >;
-	addExtern<DAS_CALL_METHOD(_method_283)>(*this,lib,"GetAngularOffset",SideEffects::worstDefault,"das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetAngularOffset >::invoke")
+	using _method_241 = das::das_call_member< int (b2World::*)() const,&b2World::GetProxyCount >;
+	addExtern<DAS_CALL_METHOD(_method_241)>(*this,lib,"GetProxyCount",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const , &b2World::GetProxyCount >::invoke")
 		->args({"self"});
-	using _method_284 = das::das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetMaxForce >;
-	addExtern<DAS_CALL_METHOD(_method_284)>(*this,lib,"SetMaxForce",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetMaxForce >::invoke")
-		->args({"self","force"});
-	using _method_285 = das::das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetMaxForce >;
-	addExtern<DAS_CALL_METHOD(_method_285)>(*this,lib,"GetMaxForce",SideEffects::worstDefault,"das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetMaxForce >::invoke")
+	using _method_242 = das::das_call_member< int (b2World::*)() const,&b2World::GetBodyCount >;
+	addExtern<DAS_CALL_METHOD(_method_242)>(*this,lib,"GetBodyCount",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const , &b2World::GetBodyCount >::invoke")
 		->args({"self"});
-	using _method_286 = das::das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetMaxTorque >;
-	addExtern<DAS_CALL_METHOD(_method_286)>(*this,lib,"SetMaxTorque",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetMaxTorque >::invoke")
-		->args({"self","torque"});
-	using _method_287 = das::das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetMaxTorque >;
-	addExtern<DAS_CALL_METHOD(_method_287)>(*this,lib,"GetMaxTorque",SideEffects::worstDefault,"das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetMaxTorque >::invoke")
+	using _method_243 = das::das_call_member< int (b2World::*)() const,&b2World::GetJointCount >;
+	addExtern<DAS_CALL_METHOD(_method_243)>(*this,lib,"GetJointCount",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const , &b2World::GetJointCount >::invoke")
 		->args({"self"});
-	using _method_288 = das::das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetCorrectionFactor >;
-	addExtern<DAS_CALL_METHOD(_method_288)>(*this,lib,"SetCorrectionFactor",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetCorrectionFactor >::invoke")
-		->args({"self","factor"});
-	using _method_289 = das::das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetCorrectionFactor >;
-	addExtern<DAS_CALL_METHOD(_method_289)>(*this,lib,"GetCorrectionFactor",SideEffects::worstDefault,"das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetCorrectionFactor >::invoke")
+	using _method_244 = das::das_call_member< int (b2World::*)() const,&b2World::GetContactCount >;
+	addExtern<DAS_CALL_METHOD(_method_244)>(*this,lib,"GetContactCount",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const , &b2World::GetContactCount >::invoke")
 		->args({"self"});
-	using _method_290 = das::das_call_member< void (b2MouseJoint::*)(const b2Vec2 &),&b2MouseJoint::SetTarget >;
-	addExtern<DAS_CALL_METHOD(_method_290)>(*this,lib,"SetTarget",SideEffects::worstDefault,"das_call_member< void (b2MouseJoint::*)(const b2Vec2 &),&b2MouseJoint::SetTarget >::invoke")
-		->args({"self","target"});
-	using _method_291 = das::das_call_member< const b2Vec2 & (b2MouseJoint::*)() const,&b2MouseJoint::GetTarget >;
-	addExtern<DAS_CALL_METHOD(_method_291), SimNode_ExtFuncCallRef>(*this,lib,"GetTarget",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2MouseJoint::*)() const,&b2MouseJoint::GetTarget >::invoke")
+	using _method_245 = das::das_call_member< int (b2World::*)() const,&b2World::GetTreeHeight >;
+	addExtern<DAS_CALL_METHOD(_method_245)>(*this,lib,"GetTreeHeight",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const , &b2World::GetTreeHeight >::invoke")
 		->args({"self"});
-	using _method_292 = das::das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetMaxForce >;
-	addExtern<DAS_CALL_METHOD(_method_292)>(*this,lib,"SetMaxForce",SideEffects::worstDefault,"das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetMaxForce >::invoke")
-		->args({"self","force"});
-	using _method_293 = das::das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetMaxForce >;
-	addExtern<DAS_CALL_METHOD(_method_293)>(*this,lib,"GetMaxForce",SideEffects::worstDefault,"das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetMaxForce >::invoke")
+	using _method_246 = das::das_call_member< int (b2World::*)() const,&b2World::GetTreeBalance >;
+	addExtern<DAS_CALL_METHOD(_method_246)>(*this,lib,"GetTreeBalance",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const , &b2World::GetTreeBalance >::invoke")
 		->args({"self"});
-	using _method_294 = das::das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetStiffness >;
-	addExtern<DAS_CALL_METHOD(_method_294)>(*this,lib,"SetStiffness",SideEffects::worstDefault,"das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetStiffness >::invoke")
-		->args({"self","stiffness"});
-	using _method_295 = das::das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetStiffness >;
-	addExtern<DAS_CALL_METHOD(_method_295)>(*this,lib,"GetStiffness",SideEffects::worstDefault,"das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetStiffness >::invoke")
+	using _method_247 = das::das_call_member< float (b2World::*)() const,&b2World::GetTreeQuality >;
+	addExtern<DAS_CALL_METHOD(_method_247)>(*this,lib,"GetTreeQuality",SideEffects::worstDefault,"das_call_member< float (b2World::*)() const , &b2World::GetTreeQuality >::invoke")
 		->args({"self"});
-	using _method_296 = das::das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetDamping >;
-	addExtern<DAS_CALL_METHOD(_method_296)>(*this,lib,"SetDamping",SideEffects::worstDefault,"das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetDamping >::invoke")
-		->args({"self","damping"});
-	using _method_297 = das::das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetDamping >;
-	addExtern<DAS_CALL_METHOD(_method_297)>(*this,lib,"GetDamping",SideEffects::worstDefault,"das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetDamping >::invoke")
+	using _method_248 = das::das_call_member< void (b2World::*)(const b2Vec2 &),&b2World::SetGravity >;
+	addExtern<DAS_CALL_METHOD(_method_248)>(*this,lib,"SetGravity",SideEffects::worstDefault,"das_call_member< void (b2World::*)(const b2Vec2 &) , &b2World::SetGravity >::invoke")
+		->args({"self","gravity"});
+	using _method_249 = das::das_call_member< b2Vec2 (b2World::*)() const,&b2World::GetGravity >;
+	addExtern<DAS_CALL_METHOD(_method_249),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetGravity",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2World::*)() const , &b2World::GetGravity >::invoke")
 		->args({"self"});
-	using _method_298 = das::das_call_member< void (b2PrismaticJointDef::*)(b2Body *,b2Body *,const b2Vec2 &,const b2Vec2 &),&b2PrismaticJointDef::Initialize >;
-	addExtern<DAS_CALL_METHOD(_method_298)>(*this,lib,"Initialize",SideEffects::worstDefault,"das_call_member< void (b2PrismaticJointDef::*)(b2Body *,b2Body *,const b2Vec2 &,const b2Vec2 &),&b2PrismaticJointDef::Initialize >::invoke")
-		->args({"self","bodyA","bodyB","anchor","axis"});
+	using _method_250 = das::das_call_member< bool (b2World::*)() const,&b2World::IsLocked >;
+	addExtern<DAS_CALL_METHOD(_method_250)>(*this,lib,"IsLocked",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const , &b2World::IsLocked >::invoke")
+		->args({"self"});
+	using _method_251 = das::das_call_member< void (b2World::*)(bool),&b2World::SetAutoClearForces >;
+	addExtern<DAS_CALL_METHOD(_method_251)>(*this,lib,"SetAutoClearForces",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool) , &b2World::SetAutoClearForces >::invoke")
+		->args({"self","flag"});
+	using _method_252 = das::das_call_member< bool (b2World::*)() const,&b2World::GetAutoClearForces >;
+	addExtern<DAS_CALL_METHOD(_method_252)>(*this,lib,"GetAutoClearForces",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const , &b2World::GetAutoClearForces >::invoke")
+		->args({"self"});
+	using _method_253 = das::das_call_member< void (b2World::*)(const b2Vec2 &),&b2World::ShiftOrigin >;
+	addExtern<DAS_CALL_METHOD(_method_253)>(*this,lib,"ShiftOrigin",SideEffects::worstDefault,"das_call_member< void (b2World::*)(const b2Vec2 &) , &b2World::ShiftOrigin >::invoke")
+		->args({"self","newOrigin"});
+	using _method_254 = das::das_call_member< const b2ContactManager & (b2World::*)() const,&b2World::GetContactManager >;
+	addExtern<DAS_CALL_METHOD(_method_254), SimNode_ExtFuncCallRef>(*this,lib,"GetContactManager",SideEffects::worstDefault,"das_call_member< const b2ContactManager & (b2World::*)() const , &b2World::GetContactManager >::invoke")
+		->args({"self"});
+	using _method_255 = das::das_call_member< const b2Profile & (b2World::*)() const,&b2World::GetProfile >;
+	addExtern<DAS_CALL_METHOD(_method_255), SimNode_ExtFuncCallRef>(*this,lib,"GetProfile",SideEffects::worstDefault,"das_call_member< const b2Profile & (b2World::*)() const , &b2World::GetProfile >::invoke")
+		->args({"self"});
+	using _method_256 = das::das_call_member< void (b2World::*)(),&b2World::Dump >;
+	addExtern<DAS_CALL_METHOD(_method_256)>(*this,lib,"Dump",SideEffects::worstDefault,"das_call_member< void (b2World::*)() , &b2World::Dump >::invoke")
+		->args({"self"});
+	addCtorAndUsing<b2JointDef>(*this,lib,"b2JointDef","b2JointDef");
+	addExtern< void (*)(float &,float &,float,float,const b2Body *,const b2Body *) , b2LinearStiffness >(*this,lib,"b2LinearStiffness",SideEffects::worstDefault,"b2LinearStiffness")
+		->args({"stiffness","damping","frequencyHertz","dampingRatio","bodyA","bodyB"});
+	addExtern< void (*)(float &,float &,float,float,const b2Body *,const b2Body *) , b2AngularStiffness >(*this,lib,"b2AngularStiffness",SideEffects::worstDefault,"b2AngularStiffness")
+		->args({"stiffness","damping","frequencyHertz","dampingRatio","bodyA","bodyB"});
 }
 }
 

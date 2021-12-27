@@ -13,5 +13,3 @@ def main
     mat |> Set(v, v)
     //mat |> Set(float2(1.0, 2.0), float2(3.0, 4.0))
     print("mat = {mat}\n")
-
-//    let world <- new [[b2World()]]

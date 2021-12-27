@@ -11,66 +11,64 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_8() {
-	using _method_104 = das::das_call_member< void (b2Body::*)(const b2Vec2 &,bool),&b2Body::ApplyLinearImpulseToCenter >;
-	addExtern<DAS_CALL_METHOD(_method_104)>(*this,lib,"ApplyLinearImpulseToCenter",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(const b2Vec2 &,bool),&b2Body::ApplyLinearImpulseToCenter >::invoke")
-		->args({"self","impulse","wake"});
-	using _method_105 = das::das_call_member< void (b2Body::*)(float,bool),&b2Body::ApplyAngularImpulse >;
-	addExtern<DAS_CALL_METHOD(_method_105)>(*this,lib,"ApplyAngularImpulse",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(float,bool),&b2Body::ApplyAngularImpulse >::invoke")
-		->args({"self","impulse","wake"});
-	using _method_106 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetMass >;
-	addExtern<DAS_CALL_METHOD(_method_106)>(*this,lib,"GetMass",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const,&b2Body::GetMass >::invoke")
+	using _method_71 = das::das_call_member< void * (b2DynamicTree::*)(int) const,&b2DynamicTree::GetUserData >;
+	addExtern<DAS_CALL_METHOD(_method_71)>(*this,lib,"GetUserData",SideEffects::worstDefault,"das_call_member< void * (b2DynamicTree::*)(int) const , &b2DynamicTree::GetUserData >::invoke")
+		->args({"self","proxyId"});
+	using _method_72 = das::das_call_member< bool (b2DynamicTree::*)(int) const,&b2DynamicTree::WasMoved >;
+	addExtern<DAS_CALL_METHOD(_method_72)>(*this,lib,"WasMoved",SideEffects::worstDefault,"das_call_member< bool (b2DynamicTree::*)(int) const , &b2DynamicTree::WasMoved >::invoke")
+		->args({"self","proxyId"});
+	using _method_73 = das::das_call_member< void (b2DynamicTree::*)(int),&b2DynamicTree::ClearMoved >;
+	addExtern<DAS_CALL_METHOD(_method_73)>(*this,lib,"ClearMoved",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)(int) , &b2DynamicTree::ClearMoved >::invoke")
+		->args({"self","proxyId"});
+	using _method_74 = das::das_call_member< const b2AABB & (b2DynamicTree::*)(int) const,&b2DynamicTree::GetFatAABB >;
+	addExtern<DAS_CALL_METHOD(_method_74), SimNode_ExtFuncCallRef>(*this,lib,"GetFatAABB",SideEffects::worstDefault,"das_call_member< const b2AABB & (b2DynamicTree::*)(int) const , &b2DynamicTree::GetFatAABB >::invoke")
+		->args({"self","proxyId"});
+	using _method_75 = das::das_call_member< void (b2DynamicTree::*)() const,&b2DynamicTree::Validate >;
+	addExtern<DAS_CALL_METHOD(_method_75)>(*this,lib,"Validate",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)() const , &b2DynamicTree::Validate >::invoke")
 		->args({"self"});
-	using _method_107 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetInertia >;
-	addExtern<DAS_CALL_METHOD(_method_107)>(*this,lib,"GetInertia",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const,&b2Body::GetInertia >::invoke")
+	using _method_76 = das::das_call_member< int (b2DynamicTree::*)() const,&b2DynamicTree::GetHeight >;
+	addExtern<DAS_CALL_METHOD(_method_76)>(*this,lib,"GetHeight",SideEffects::worstDefault,"das_call_member< int (b2DynamicTree::*)() const , &b2DynamicTree::GetHeight >::invoke")
 		->args({"self"});
-	using _method_108 = das::das_call_member< void (b2Body::*)(b2MassData *) const,&b2Body::GetMassData >;
-	addExtern<DAS_CALL_METHOD(_method_108)>(*this,lib,"GetMassData",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(b2MassData *) const,&b2Body::GetMassData >::invoke")
-		->args({"self","data"});
-	using _method_109 = das::das_call_member< void (b2Body::*)(const b2MassData *),&b2Body::SetMassData >;
-	addExtern<DAS_CALL_METHOD(_method_109)>(*this,lib,"SetMassData",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(const b2MassData *),&b2Body::SetMassData >::invoke")
-		->args({"self","data"});
-	using _method_110 = das::das_call_member< void (b2Body::*)(),&b2Body::ResetMassData >;
-	addExtern<DAS_CALL_METHOD(_method_110)>(*this,lib,"ResetMassData",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(),&b2Body::ResetMassData >::invoke")
+	using _method_77 = das::das_call_member< int (b2DynamicTree::*)() const,&b2DynamicTree::GetMaxBalance >;
+	addExtern<DAS_CALL_METHOD(_method_77)>(*this,lib,"GetMaxBalance",SideEffects::worstDefault,"das_call_member< int (b2DynamicTree::*)() const , &b2DynamicTree::GetMaxBalance >::invoke")
 		->args({"self"});
-	using _method_111 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetWorldPoint >;
-	addExtern<DAS_CALL_METHOD(_method_111),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetWorldPoint",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetWorldPoint >::invoke")
-		->args({"self","localPoint"});
-	using _method_112 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetWorldVector >;
-	addExtern<DAS_CALL_METHOD(_method_112),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetWorldVector",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetWorldVector >::invoke")
-		->args({"self","localVector"});
-	using _method_113 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLocalPoint >;
-	addExtern<DAS_CALL_METHOD(_method_113),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetLocalPoint",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLocalPoint >::invoke")
-		->args({"self","worldPoint"});
-	using _method_114 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLocalVector >;
-	addExtern<DAS_CALL_METHOD(_method_114),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetLocalVector",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLocalVector >::invoke")
-		->args({"self","worldVector"});
-	using _method_115 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLinearVelocityFromWorldPoint >;
-	addExtern<DAS_CALL_METHOD(_method_115),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetLinearVelocityFromWorldPoint",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLinearVelocityFromWorldPoint >::invoke")
-		->args({"self","worldPoint"});
-	using _method_116 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLinearVelocityFromLocalPoint >;
-	addExtern<DAS_CALL_METHOD(_method_116),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetLinearVelocityFromLocalPoint",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLinearVelocityFromLocalPoint >::invoke")
-		->args({"self","localPoint"});
-	using _method_117 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetLinearDamping >;
-	addExtern<DAS_CALL_METHOD(_method_117)>(*this,lib,"GetLinearDamping",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const,&b2Body::GetLinearDamping >::invoke")
+	using _method_78 = das::das_call_member< float (b2DynamicTree::*)() const,&b2DynamicTree::GetAreaRatio >;
+	addExtern<DAS_CALL_METHOD(_method_78)>(*this,lib,"GetAreaRatio",SideEffects::worstDefault,"das_call_member< float (b2DynamicTree::*)() const , &b2DynamicTree::GetAreaRatio >::invoke")
 		->args({"self"});
-	using _method_118 = das::das_call_member< void (b2Body::*)(float),&b2Body::SetLinearDamping >;
-	addExtern<DAS_CALL_METHOD(_method_118)>(*this,lib,"SetLinearDamping",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(float),&b2Body::SetLinearDamping >::invoke")
-		->args({"self","linearDamping"});
-	using _method_119 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetAngularDamping >;
-	addExtern<DAS_CALL_METHOD(_method_119)>(*this,lib,"GetAngularDamping",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const,&b2Body::GetAngularDamping >::invoke")
+	using _method_79 = das::das_call_member< void (b2DynamicTree::*)(),&b2DynamicTree::RebuildBottomUp >;
+	addExtern<DAS_CALL_METHOD(_method_79)>(*this,lib,"RebuildBottomUp",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)() , &b2DynamicTree::RebuildBottomUp >::invoke")
 		->args({"self"});
-	using _method_120 = das::das_call_member< void (b2Body::*)(float),&b2Body::SetAngularDamping >;
-	addExtern<DAS_CALL_METHOD(_method_120)>(*this,lib,"SetAngularDamping",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(float),&b2Body::SetAngularDamping >::invoke")
-		->args({"self","angularDamping"});
-	using _method_121 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetGravityScale >;
-	addExtern<DAS_CALL_METHOD(_method_121)>(*this,lib,"GetGravityScale",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const,&b2Body::GetGravityScale >::invoke")
+	using _method_80 = das::das_call_member< void (b2DynamicTree::*)(const b2Vec2 &),&b2DynamicTree::ShiftOrigin >;
+	addExtern<DAS_CALL_METHOD(_method_80)>(*this,lib,"ShiftOrigin",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)(const b2Vec2 &) , &b2DynamicTree::ShiftOrigin >::invoke")
+		->args({"self","newOrigin"});
+	addCtorAndUsing<b2BroadPhase>(*this,lib,"b2BroadPhase","b2BroadPhase");
+	using _method_81 = das::das_call_member< int (b2BroadPhase::*)(const b2AABB &,void *),&b2BroadPhase::CreateProxy >;
+	addExtern<DAS_CALL_METHOD(_method_81)>(*this,lib,"CreateProxy",SideEffects::worstDefault,"das_call_member< int (b2BroadPhase::*)(const b2AABB &,void *) , &b2BroadPhase::CreateProxy >::invoke")
+		->args({"self","aabb","userData"});
+	using _method_82 = das::das_call_member< void (b2BroadPhase::*)(int),&b2BroadPhase::DestroyProxy >;
+	addExtern<DAS_CALL_METHOD(_method_82)>(*this,lib,"DestroyProxy",SideEffects::worstDefault,"das_call_member< void (b2BroadPhase::*)(int) , &b2BroadPhase::DestroyProxy >::invoke")
+		->args({"self","proxyId"});
+	using _method_83 = das::das_call_member< void (b2BroadPhase::*)(int,const b2AABB &,const b2Vec2 &),&b2BroadPhase::MoveProxy >;
+	addExtern<DAS_CALL_METHOD(_method_83)>(*this,lib,"MoveProxy",SideEffects::worstDefault,"das_call_member< void (b2BroadPhase::*)(int,const b2AABB &,const b2Vec2 &) , &b2BroadPhase::MoveProxy >::invoke")
+		->args({"self","proxyId","aabb","displacement"});
+	using _method_84 = das::das_call_member< void (b2BroadPhase::*)(int),&b2BroadPhase::TouchProxy >;
+	addExtern<DAS_CALL_METHOD(_method_84)>(*this,lib,"TouchProxy",SideEffects::worstDefault,"das_call_member< void (b2BroadPhase::*)(int) , &b2BroadPhase::TouchProxy >::invoke")
+		->args({"self","proxyId"});
+	using _method_85 = das::das_call_member< const b2AABB & (b2BroadPhase::*)(int) const,&b2BroadPhase::GetFatAABB >;
+	addExtern<DAS_CALL_METHOD(_method_85), SimNode_ExtFuncCallRef>(*this,lib,"GetFatAABB",SideEffects::worstDefault,"das_call_member< const b2AABB & (b2BroadPhase::*)(int) const , &b2BroadPhase::GetFatAABB >::invoke")
+		->args({"self","proxyId"});
+	using _method_86 = das::das_call_member< void * (b2BroadPhase::*)(int) const,&b2BroadPhase::GetUserData >;
+	addExtern<DAS_CALL_METHOD(_method_86)>(*this,lib,"GetUserData",SideEffects::worstDefault,"das_call_member< void * (b2BroadPhase::*)(int) const , &b2BroadPhase::GetUserData >::invoke")
+		->args({"self","proxyId"});
+	using _method_87 = das::das_call_member< bool (b2BroadPhase::*)(int,int) const,&b2BroadPhase::TestOverlap >;
+	addExtern<DAS_CALL_METHOD(_method_87)>(*this,lib,"TestOverlap",SideEffects::worstDefault,"das_call_member< bool (b2BroadPhase::*)(int,int) const , &b2BroadPhase::TestOverlap >::invoke")
+		->args({"self","proxyIdA","proxyIdB"});
+	using _method_88 = das::das_call_member< int (b2BroadPhase::*)() const,&b2BroadPhase::GetProxyCount >;
+	addExtern<DAS_CALL_METHOD(_method_88)>(*this,lib,"GetProxyCount",SideEffects::worstDefault,"das_call_member< int (b2BroadPhase::*)() const , &b2BroadPhase::GetProxyCount >::invoke")
 		->args({"self"});
-	using _method_122 = das::das_call_member< void (b2Body::*)(float),&b2Body::SetGravityScale >;
-	addExtern<DAS_CALL_METHOD(_method_122)>(*this,lib,"SetGravityScale",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(float),&b2Body::SetGravityScale >::invoke")
-		->args({"self","scale"});
-	using _method_123 = das::das_call_member< void (b2Body::*)(b2BodyType),&b2Body::SetType >;
-	addExtern<DAS_CALL_METHOD(_method_123)>(*this,lib,"SetType",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(b2BodyType),&b2Body::SetType >::invoke")
-		->args({"self","type"});
+	using _method_89 = das::das_call_member< int (b2BroadPhase::*)() const,&b2BroadPhase::GetTreeHeight >;
+	addExtern<DAS_CALL_METHOD(_method_89)>(*this,lib,"GetTreeHeight",SideEffects::worstDefault,"das_call_member< int (b2BroadPhase::*)() const , &b2BroadPhase::GetTreeHeight >::invoke")
+		->args({"self"});
 }
 }
 

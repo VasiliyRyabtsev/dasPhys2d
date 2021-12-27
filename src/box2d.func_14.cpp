@@ -11,66 +11,66 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_14() {
-	using _method_221 = das::das_call_member< const b2Contact * (b2World::*)() const,&b2World::GetContactList >;
-	addExtern<DAS_CALL_METHOD(_method_221)>(*this,lib,"GetContactList",SideEffects::worstDefault,"das_call_member< const b2Contact * (b2World::*)() const,&b2World::GetContactList >::invoke")
+	using _method_184 = das::das_call_member< bool (b2Contact::*)() const,&b2Contact::IsEnabled >;
+	addExtern<DAS_CALL_METHOD(_method_184)>(*this,lib,"IsEnabled",SideEffects::worstDefault,"das_call_member< bool (b2Contact::*)() const , &b2Contact::IsEnabled >::invoke")
 		->args({"self"});
-	using _method_222 = das::das_call_member< void (b2World::*)(bool),&b2World::SetAllowSleeping >;
-	addExtern<DAS_CALL_METHOD(_method_222)>(*this,lib,"SetAllowSleeping",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool),&b2World::SetAllowSleeping >::invoke")
-		->args({"self","flag"});
-	using _method_223 = das::das_call_member< bool (b2World::*)() const,&b2World::GetAllowSleeping >;
-	addExtern<DAS_CALL_METHOD(_method_223)>(*this,lib,"GetAllowSleeping",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::GetAllowSleeping >::invoke")
+	using _method_185 = das::das_call_member< b2Contact * (b2Contact::*)(),&b2Contact::GetNext >;
+	addExtern<DAS_CALL_METHOD(_method_185)>(*this,lib,"GetNext",SideEffects::worstDefault,"das_call_member< b2Contact * (b2Contact::*)() , &b2Contact::GetNext >::invoke")
 		->args({"self"});
-	using _method_224 = das::das_call_member< void (b2World::*)(bool),&b2World::SetWarmStarting >;
-	addExtern<DAS_CALL_METHOD(_method_224)>(*this,lib,"SetWarmStarting",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool),&b2World::SetWarmStarting >::invoke")
-		->args({"self","flag"});
-	using _method_225 = das::das_call_member< bool (b2World::*)() const,&b2World::GetWarmStarting >;
-	addExtern<DAS_CALL_METHOD(_method_225)>(*this,lib,"GetWarmStarting",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::GetWarmStarting >::invoke")
+	using _method_186 = das::das_call_member< const b2Contact * (b2Contact::*)() const,&b2Contact::GetNext >;
+	addExtern<DAS_CALL_METHOD(_method_186)>(*this,lib,"GetNext",SideEffects::worstDefault,"das_call_member< const b2Contact * (b2Contact::*)() const , &b2Contact::GetNext >::invoke")
 		->args({"self"});
-	using _method_226 = das::das_call_member< void (b2World::*)(bool),&b2World::SetContinuousPhysics >;
-	addExtern<DAS_CALL_METHOD(_method_226)>(*this,lib,"SetContinuousPhysics",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool),&b2World::SetContinuousPhysics >::invoke")
-		->args({"self","flag"});
-	using _method_227 = das::das_call_member< bool (b2World::*)() const,&b2World::GetContinuousPhysics >;
-	addExtern<DAS_CALL_METHOD(_method_227)>(*this,lib,"GetContinuousPhysics",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::GetContinuousPhysics >::invoke")
+	using _method_187 = das::das_call_member< b2Fixture * (b2Contact::*)(),&b2Contact::GetFixtureA >;
+	addExtern<DAS_CALL_METHOD(_method_187)>(*this,lib,"GetFixtureA",SideEffects::worstDefault,"das_call_member< b2Fixture * (b2Contact::*)() , &b2Contact::GetFixtureA >::invoke")
 		->args({"self"});
-	using _method_228 = das::das_call_member< void (b2World::*)(bool),&b2World::SetSubStepping >;
-	addExtern<DAS_CALL_METHOD(_method_228)>(*this,lib,"SetSubStepping",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool),&b2World::SetSubStepping >::invoke")
-		->args({"self","flag"});
-	using _method_229 = das::das_call_member< bool (b2World::*)() const,&b2World::GetSubStepping >;
-	addExtern<DAS_CALL_METHOD(_method_229)>(*this,lib,"GetSubStepping",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::GetSubStepping >::invoke")
+	using _method_188 = das::das_call_member< const b2Fixture * (b2Contact::*)() const,&b2Contact::GetFixtureA >;
+	addExtern<DAS_CALL_METHOD(_method_188)>(*this,lib,"GetFixtureA",SideEffects::worstDefault,"das_call_member< const b2Fixture * (b2Contact::*)() const , &b2Contact::GetFixtureA >::invoke")
 		->args({"self"});
-	using _method_230 = das::das_call_member< int (b2World::*)() const,&b2World::GetProxyCount >;
-	addExtern<DAS_CALL_METHOD(_method_230)>(*this,lib,"GetProxyCount",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const,&b2World::GetProxyCount >::invoke")
+	using _method_189 = das::das_call_member< int (b2Contact::*)() const,&b2Contact::GetChildIndexA >;
+	addExtern<DAS_CALL_METHOD(_method_189)>(*this,lib,"GetChildIndexA",SideEffects::worstDefault,"das_call_member< int (b2Contact::*)() const , &b2Contact::GetChildIndexA >::invoke")
 		->args({"self"});
-	using _method_231 = das::das_call_member< int (b2World::*)() const,&b2World::GetBodyCount >;
-	addExtern<DAS_CALL_METHOD(_method_231)>(*this,lib,"GetBodyCount",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const,&b2World::GetBodyCount >::invoke")
+	using _method_190 = das::das_call_member< b2Fixture * (b2Contact::*)(),&b2Contact::GetFixtureB >;
+	addExtern<DAS_CALL_METHOD(_method_190)>(*this,lib,"GetFixtureB",SideEffects::worstDefault,"das_call_member< b2Fixture * (b2Contact::*)() , &b2Contact::GetFixtureB >::invoke")
 		->args({"self"});
-	using _method_232 = das::das_call_member< int (b2World::*)() const,&b2World::GetJointCount >;
-	addExtern<DAS_CALL_METHOD(_method_232)>(*this,lib,"GetJointCount",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const,&b2World::GetJointCount >::invoke")
+	using _method_191 = das::das_call_member< const b2Fixture * (b2Contact::*)() const,&b2Contact::GetFixtureB >;
+	addExtern<DAS_CALL_METHOD(_method_191)>(*this,lib,"GetFixtureB",SideEffects::worstDefault,"das_call_member< const b2Fixture * (b2Contact::*)() const , &b2Contact::GetFixtureB >::invoke")
 		->args({"self"});
-	using _method_233 = das::das_call_member< int (b2World::*)() const,&b2World::GetContactCount >;
-	addExtern<DAS_CALL_METHOD(_method_233)>(*this,lib,"GetContactCount",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const,&b2World::GetContactCount >::invoke")
+	using _method_192 = das::das_call_member< int (b2Contact::*)() const,&b2Contact::GetChildIndexB >;
+	addExtern<DAS_CALL_METHOD(_method_192)>(*this,lib,"GetChildIndexB",SideEffects::worstDefault,"das_call_member< int (b2Contact::*)() const , &b2Contact::GetChildIndexB >::invoke")
 		->args({"self"});
-	using _method_234 = das::das_call_member< int (b2World::*)() const,&b2World::GetTreeHeight >;
-	addExtern<DAS_CALL_METHOD(_method_234)>(*this,lib,"GetTreeHeight",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const,&b2World::GetTreeHeight >::invoke")
+	using _method_193 = das::das_call_member< void (b2Contact::*)(float),&b2Contact::SetFriction >;
+	addExtern<DAS_CALL_METHOD(_method_193)>(*this,lib,"SetFriction",SideEffects::worstDefault,"das_call_member< void (b2Contact::*)(float) , &b2Contact::SetFriction >::invoke")
+		->args({"self","friction"});
+	using _method_194 = das::das_call_member< float (b2Contact::*)() const,&b2Contact::GetFriction >;
+	addExtern<DAS_CALL_METHOD(_method_194)>(*this,lib,"GetFriction",SideEffects::worstDefault,"das_call_member< float (b2Contact::*)() const , &b2Contact::GetFriction >::invoke")
 		->args({"self"});
-	using _method_235 = das::das_call_member< int (b2World::*)() const,&b2World::GetTreeBalance >;
-	addExtern<DAS_CALL_METHOD(_method_235)>(*this,lib,"GetTreeBalance",SideEffects::worstDefault,"das_call_member< int (b2World::*)() const,&b2World::GetTreeBalance >::invoke")
+	using _method_195 = das::das_call_member< void (b2Contact::*)(),&b2Contact::ResetFriction >;
+	addExtern<DAS_CALL_METHOD(_method_195)>(*this,lib,"ResetFriction",SideEffects::worstDefault,"das_call_member< void (b2Contact::*)() , &b2Contact::ResetFriction >::invoke")
 		->args({"self"});
-	using _method_236 = das::das_call_member< float (b2World::*)() const,&b2World::GetTreeQuality >;
-	addExtern<DAS_CALL_METHOD(_method_236)>(*this,lib,"GetTreeQuality",SideEffects::worstDefault,"das_call_member< float (b2World::*)() const,&b2World::GetTreeQuality >::invoke")
+	using _method_196 = das::das_call_member< void (b2Contact::*)(float),&b2Contact::SetRestitution >;
+	addExtern<DAS_CALL_METHOD(_method_196)>(*this,lib,"SetRestitution",SideEffects::worstDefault,"das_call_member< void (b2Contact::*)(float) , &b2Contact::SetRestitution >::invoke")
+		->args({"self","restitution"});
+	using _method_197 = das::das_call_member< float (b2Contact::*)() const,&b2Contact::GetRestitution >;
+	addExtern<DAS_CALL_METHOD(_method_197)>(*this,lib,"GetRestitution",SideEffects::worstDefault,"das_call_member< float (b2Contact::*)() const , &b2Contact::GetRestitution >::invoke")
 		->args({"self"});
-	using _method_237 = das::das_call_member< void (b2World::*)(const b2Vec2 &),&b2World::SetGravity >;
-	addExtern<DAS_CALL_METHOD(_method_237)>(*this,lib,"SetGravity",SideEffects::worstDefault,"das_call_member< void (b2World::*)(const b2Vec2 &),&b2World::SetGravity >::invoke")
-		->args({"self","gravity"});
-	using _method_238 = das::das_call_member< b2Vec2 (b2World::*)() const,&b2World::GetGravity >;
-	addExtern<DAS_CALL_METHOD(_method_238),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetGravity",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2World::*)() const,&b2World::GetGravity >::invoke")
+	using _method_198 = das::das_call_member< void (b2Contact::*)(),&b2Contact::ResetRestitution >;
+	addExtern<DAS_CALL_METHOD(_method_198)>(*this,lib,"ResetRestitution",SideEffects::worstDefault,"das_call_member< void (b2Contact::*)() , &b2Contact::ResetRestitution >::invoke")
 		->args({"self"});
-	using _method_239 = das::das_call_member< bool (b2World::*)() const,&b2World::IsLocked >;
-	addExtern<DAS_CALL_METHOD(_method_239)>(*this,lib,"IsLocked",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::IsLocked >::invoke")
+	using _method_199 = das::das_call_member< void (b2Contact::*)(float),&b2Contact::SetRestitutionThreshold >;
+	addExtern<DAS_CALL_METHOD(_method_199)>(*this,lib,"SetRestitutionThreshold",SideEffects::worstDefault,"das_call_member< void (b2Contact::*)(float) , &b2Contact::SetRestitutionThreshold >::invoke")
+		->args({"self","threshold"});
+	using _method_200 = das::das_call_member< float (b2Contact::*)() const,&b2Contact::GetRestitutionThreshold >;
+	addExtern<DAS_CALL_METHOD(_method_200)>(*this,lib,"GetRestitutionThreshold",SideEffects::worstDefault,"das_call_member< float (b2Contact::*)() const , &b2Contact::GetRestitutionThreshold >::invoke")
 		->args({"self"});
-	using _method_240 = das::das_call_member< void (b2World::*)(bool),&b2World::SetAutoClearForces >;
-	addExtern<DAS_CALL_METHOD(_method_240)>(*this,lib,"SetAutoClearForces",SideEffects::worstDefault,"das_call_member< void (b2World::*)(bool),&b2World::SetAutoClearForces >::invoke")
-		->args({"self","flag"});
+	using _method_201 = das::das_call_member< void (b2Contact::*)(),&b2Contact::ResetRestitutionThreshold >;
+	addExtern<DAS_CALL_METHOD(_method_201)>(*this,lib,"ResetRestitutionThreshold",SideEffects::worstDefault,"das_call_member< void (b2Contact::*)() , &b2Contact::ResetRestitutionThreshold >::invoke")
+		->args({"self"});
+	using _method_202 = das::das_call_member< void (b2Contact::*)(float),&b2Contact::SetTangentSpeed >;
+	addExtern<DAS_CALL_METHOD(_method_202)>(*this,lib,"SetTangentSpeed",SideEffects::worstDefault,"das_call_member< void (b2Contact::*)(float) , &b2Contact::SetTangentSpeed >::invoke")
+		->args({"self","speed"});
+	using _method_203 = das::das_call_member< float (b2Contact::*)() const,&b2Contact::GetTangentSpeed >;
+	addExtern<DAS_CALL_METHOD(_method_203)>(*this,lib,"GetTangentSpeed",SideEffects::worstDefault,"das_call_member< float (b2Contact::*)() const , &b2Contact::GetTangentSpeed >::invoke")
+		->args({"self"});
 }
 }
 

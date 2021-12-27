@@ -11,66 +11,66 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_10() {
-	using _method_144 = das::das_call_member< b2World * (b2Body::*)(),&b2Body::GetWorld >;
-	addExtern<DAS_CALL_METHOD(_method_144)>(*this,lib,"GetWorld",SideEffects::worstDefault,"das_call_member< b2World * (b2Body::*)(),&b2Body::GetWorld >::invoke")
+	using _method_109 = das::das_call_member< void (b2Body::*)(const b2Vec2 &,const b2Vec2 &,bool),&b2Body::ApplyLinearImpulse >;
+	addExtern<DAS_CALL_METHOD(_method_109)>(*this,lib,"ApplyLinearImpulse",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(const b2Vec2 &,const b2Vec2 &,bool) , &b2Body::ApplyLinearImpulse >::invoke")
+		->args({"self","impulse","point","wake"});
+	using _method_110 = das::das_call_member< void (b2Body::*)(const b2Vec2 &,bool),&b2Body::ApplyLinearImpulseToCenter >;
+	addExtern<DAS_CALL_METHOD(_method_110)>(*this,lib,"ApplyLinearImpulseToCenter",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(const b2Vec2 &,bool) , &b2Body::ApplyLinearImpulseToCenter >::invoke")
+		->args({"self","impulse","wake"});
+	using _method_111 = das::das_call_member< void (b2Body::*)(float,bool),&b2Body::ApplyAngularImpulse >;
+	addExtern<DAS_CALL_METHOD(_method_111)>(*this,lib,"ApplyAngularImpulse",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(float,bool) , &b2Body::ApplyAngularImpulse >::invoke")
+		->args({"self","impulse","wake"});
+	using _method_112 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetMass >;
+	addExtern<DAS_CALL_METHOD(_method_112)>(*this,lib,"GetMass",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const , &b2Body::GetMass >::invoke")
 		->args({"self"});
-	using _method_145 = das::das_call_member< const b2World * (b2Body::*)() const,&b2Body::GetWorld >;
-	addExtern<DAS_CALL_METHOD(_method_145)>(*this,lib,"GetWorld",SideEffects::worstDefault,"das_call_member< const b2World * (b2Body::*)() const,&b2Body::GetWorld >::invoke")
+	using _method_113 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetInertia >;
+	addExtern<DAS_CALL_METHOD(_method_113)>(*this,lib,"GetInertia",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const , &b2Body::GetInertia >::invoke")
 		->args({"self"});
-	using _method_146 = das::das_call_member< void (b2Body::*)(),&b2Body::Dump >;
-	addExtern<DAS_CALL_METHOD(_method_146)>(*this,lib,"Dump",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(),&b2Body::Dump >::invoke")
+	using _method_114 = das::das_call_member< void (b2Body::*)(b2MassData *) const,&b2Body::GetMassData >;
+	addExtern<DAS_CALL_METHOD(_method_114)>(*this,lib,"GetMassData",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(b2MassData *) const , &b2Body::GetMassData >::invoke")
+		->args({"self","data"});
+	using _method_115 = das::das_call_member< void (b2Body::*)(const b2MassData *),&b2Body::SetMassData >;
+	addExtern<DAS_CALL_METHOD(_method_115)>(*this,lib,"SetMassData",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(const b2MassData *) , &b2Body::SetMassData >::invoke")
+		->args({"self","data"});
+	using _method_116 = das::das_call_member< void (b2Body::*)(),&b2Body::ResetMassData >;
+	addExtern<DAS_CALL_METHOD(_method_116)>(*this,lib,"ResetMassData",SideEffects::worstDefault,"das_call_member< void (b2Body::*)() , &b2Body::ResetMassData >::invoke")
 		->args({"self"});
-	using _method_147 = das::das_call_member< b2Shape::Type (b2Fixture::*)() const,&b2Fixture::GetType >;
-	addExtern<DAS_CALL_METHOD(_method_147)>(*this,lib,"GetType",SideEffects::worstDefault,"das_call_member< b2Shape::Type (b2Fixture::*)() const,&b2Fixture::GetType >::invoke")
+	using _method_117 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetWorldPoint >;
+	addExtern<DAS_CALL_METHOD(_method_117),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetWorldPoint",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const , &b2Body::GetWorldPoint >::invoke")
+		->args({"self","localPoint"});
+	using _method_118 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetWorldVector >;
+	addExtern<DAS_CALL_METHOD(_method_118),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetWorldVector",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const , &b2Body::GetWorldVector >::invoke")
+		->args({"self","localVector"});
+	using _method_119 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLocalPoint >;
+	addExtern<DAS_CALL_METHOD(_method_119),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetLocalPoint",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const , &b2Body::GetLocalPoint >::invoke")
+		->args({"self","worldPoint"});
+	using _method_120 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLocalVector >;
+	addExtern<DAS_CALL_METHOD(_method_120),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetLocalVector",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const , &b2Body::GetLocalVector >::invoke")
+		->args({"self","worldVector"});
+	using _method_121 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLinearVelocityFromWorldPoint >;
+	addExtern<DAS_CALL_METHOD(_method_121),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetLinearVelocityFromWorldPoint",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const , &b2Body::GetLinearVelocityFromWorldPoint >::invoke")
+		->args({"self","worldPoint"});
+	using _method_122 = das::das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const,&b2Body::GetLinearVelocityFromLocalPoint >;
+	addExtern<DAS_CALL_METHOD(_method_122),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetLinearVelocityFromLocalPoint",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Body::*)(const b2Vec2 &) const , &b2Body::GetLinearVelocityFromLocalPoint >::invoke")
+		->args({"self","localPoint"});
+	using _method_123 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetLinearDamping >;
+	addExtern<DAS_CALL_METHOD(_method_123)>(*this,lib,"GetLinearDamping",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const , &b2Body::GetLinearDamping >::invoke")
 		->args({"self"});
-	using _method_148 = das::das_call_member< b2Shape * (b2Fixture::*)(),&b2Fixture::GetShape >;
-	addExtern<DAS_CALL_METHOD(_method_148)>(*this,lib,"GetShape",SideEffects::worstDefault,"das_call_member< b2Shape * (b2Fixture::*)(),&b2Fixture::GetShape >::invoke")
+	using _method_124 = das::das_call_member< void (b2Body::*)(float),&b2Body::SetLinearDamping >;
+	addExtern<DAS_CALL_METHOD(_method_124)>(*this,lib,"SetLinearDamping",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(float) , &b2Body::SetLinearDamping >::invoke")
+		->args({"self","linearDamping"});
+	using _method_125 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetAngularDamping >;
+	addExtern<DAS_CALL_METHOD(_method_125)>(*this,lib,"GetAngularDamping",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const , &b2Body::GetAngularDamping >::invoke")
 		->args({"self"});
-	using _method_149 = das::das_call_member< const b2Shape * (b2Fixture::*)() const,&b2Fixture::GetShape >;
-	addExtern<DAS_CALL_METHOD(_method_149)>(*this,lib,"GetShape",SideEffects::worstDefault,"das_call_member< const b2Shape * (b2Fixture::*)() const,&b2Fixture::GetShape >::invoke")
+	using _method_126 = das::das_call_member< void (b2Body::*)(float),&b2Body::SetAngularDamping >;
+	addExtern<DAS_CALL_METHOD(_method_126)>(*this,lib,"SetAngularDamping",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(float) , &b2Body::SetAngularDamping >::invoke")
+		->args({"self","angularDamping"});
+	using _method_127 = das::das_call_member< float (b2Body::*)() const,&b2Body::GetGravityScale >;
+	addExtern<DAS_CALL_METHOD(_method_127)>(*this,lib,"GetGravityScale",SideEffects::worstDefault,"das_call_member< float (b2Body::*)() const , &b2Body::GetGravityScale >::invoke")
 		->args({"self"});
-	using _method_150 = das::das_call_member< void (b2Fixture::*)(bool),&b2Fixture::SetSensor >;
-	addExtern<DAS_CALL_METHOD(_method_150)>(*this,lib,"SetSensor",SideEffects::worstDefault,"das_call_member< void (b2Fixture::*)(bool),&b2Fixture::SetSensor >::invoke")
-		->args({"self","sensor"});
-	using _method_151 = das::das_call_member< bool (b2Fixture::*)() const,&b2Fixture::IsSensor >;
-	addExtern<DAS_CALL_METHOD(_method_151)>(*this,lib,"IsSensor",SideEffects::worstDefault,"das_call_member< bool (b2Fixture::*)() const,&b2Fixture::IsSensor >::invoke")
-		->args({"self"});
-	using _method_152 = das::das_call_member< void (b2Fixture::*)(const b2Filter &),&b2Fixture::SetFilterData >;
-	addExtern<DAS_CALL_METHOD(_method_152)>(*this,lib,"SetFilterData",SideEffects::worstDefault,"das_call_member< void (b2Fixture::*)(const b2Filter &),&b2Fixture::SetFilterData >::invoke")
-		->args({"self","filter"});
-	using _method_153 = das::das_call_member< const b2Filter & (b2Fixture::*)() const,&b2Fixture::GetFilterData >;
-	addExtern<DAS_CALL_METHOD(_method_153), SimNode_ExtFuncCallRef>(*this,lib,"GetFilterData",SideEffects::worstDefault,"das_call_member< const b2Filter & (b2Fixture::*)() const,&b2Fixture::GetFilterData >::invoke")
-		->args({"self"});
-	using _method_154 = das::das_call_member< void (b2Fixture::*)(),&b2Fixture::Refilter >;
-	addExtern<DAS_CALL_METHOD(_method_154)>(*this,lib,"Refilter",SideEffects::worstDefault,"das_call_member< void (b2Fixture::*)(),&b2Fixture::Refilter >::invoke")
-		->args({"self"});
-	using _method_155 = das::das_call_member< b2Body * (b2Fixture::*)(),&b2Fixture::GetBody >;
-	addExtern<DAS_CALL_METHOD(_method_155)>(*this,lib,"GetBody",SideEffects::worstDefault,"das_call_member< b2Body * (b2Fixture::*)(),&b2Fixture::GetBody >::invoke")
-		->args({"self"});
-	using _method_156 = das::das_call_member< const b2Body * (b2Fixture::*)() const,&b2Fixture::GetBody >;
-	addExtern<DAS_CALL_METHOD(_method_156)>(*this,lib,"GetBody",SideEffects::worstDefault,"das_call_member< const b2Body * (b2Fixture::*)() const,&b2Fixture::GetBody >::invoke")
-		->args({"self"});
-	using _method_157 = das::das_call_member< b2Fixture * (b2Fixture::*)(),&b2Fixture::GetNext >;
-	addExtern<DAS_CALL_METHOD(_method_157)>(*this,lib,"GetNext",SideEffects::worstDefault,"das_call_member< b2Fixture * (b2Fixture::*)(),&b2Fixture::GetNext >::invoke")
-		->args({"self"});
-	using _method_158 = das::das_call_member< const b2Fixture * (b2Fixture::*)() const,&b2Fixture::GetNext >;
-	addExtern<DAS_CALL_METHOD(_method_158)>(*this,lib,"GetNext",SideEffects::worstDefault,"das_call_member< const b2Fixture * (b2Fixture::*)() const,&b2Fixture::GetNext >::invoke")
-		->args({"self"});
-	using _method_159 = das::das_call_member< b2FixtureUserData & (b2Fixture::*)(),&b2Fixture::GetUserData >;
-	addExtern<DAS_CALL_METHOD(_method_159), SimNode_ExtFuncCallRef>(*this,lib,"GetUserData",SideEffects::worstDefault,"das_call_member< b2FixtureUserData & (b2Fixture::*)(),&b2Fixture::GetUserData >::invoke")
-		->args({"self"});
-	using _method_160 = das::das_call_member< bool (b2Fixture::*)(const b2Vec2 &) const,&b2Fixture::TestPoint >;
-	addExtern<DAS_CALL_METHOD(_method_160)>(*this,lib,"TestPoint",SideEffects::worstDefault,"das_call_member< bool (b2Fixture::*)(const b2Vec2 &) const,&b2Fixture::TestPoint >::invoke")
-		->args({"self","p"});
-	//using _method_161 = das::das_call_member< bool (b2Fixture::*)(b2RayCastOutput *,const b2RayCastInput &,int) const,&b2Fixture::RayCast >;
-	//addExtern<DAS_CALL_METHOD(_method_161)>(*this,lib,"RayCast",SideEffects::worstDefault,"das_call_member< bool (b2Fixture::*)(b2RayCastOutput *,const b2RayCastInput &,int) const,&b2Fixture::RayCast >::invoke")
-	//	->args({"self","output","input","childIndex"});
-	using _method_162 = das::das_call_member< void (b2Fixture::*)(b2MassData *) const,&b2Fixture::GetMassData >;
-	addExtern<DAS_CALL_METHOD(_method_162)>(*this,lib,"GetMassData",SideEffects::worstDefault,"das_call_member< void (b2Fixture::*)(b2MassData *) const,&b2Fixture::GetMassData >::invoke")
-		->args({"self","massData"});
-	using _method_163 = das::das_call_member< void (b2Fixture::*)(float),&b2Fixture::SetDensity >;
-	addExtern<DAS_CALL_METHOD(_method_163)>(*this,lib,"SetDensity",SideEffects::worstDefault,"das_call_member< void (b2Fixture::*)(float),&b2Fixture::SetDensity >::invoke")
-		->args({"self","density"});
+	using _method_128 = das::das_call_member< void (b2Body::*)(float),&b2Body::SetGravityScale >;
+	addExtern<DAS_CALL_METHOD(_method_128)>(*this,lib,"SetGravityScale",SideEffects::worstDefault,"das_call_member< void (b2Body::*)(float) , &b2Body::SetGravityScale >::invoke")
+		->args({"self","scale"});
 }
 }
 

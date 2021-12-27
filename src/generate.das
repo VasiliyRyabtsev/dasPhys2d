@@ -29,17 +29,13 @@ class Box2dGen : CppGenBind
 
 
     def override skip_file ( fname:string ) : bool
-        if fname |> ends_with("b2_collision.h")
-            return true
         if fname |> find("/b2_") >= 0
             return false
         return ! fname |> ends_with(PARSE_FILE_NAME)
 
 
     structs_to_skip = [[auto
-        "b2TimeStep"; "b2Position"; "b2Velocity"; "b2GrowableStack"; //< internal structures
-        "b2DestructionListener"; "b2ContactFilter"; "b2ContactListener";
-        "b2QueryCallback"; "b2RayCastCallback"
+        "b2TimeStep"; "b2Position"; "b2Velocity"; "b2GrowableStack" //< internal structures
     ]]
 
     def override skip_struct ( name : string )
@@ -47,6 +43,7 @@ class Box2dGen : CppGenBind
             return true
 
         return false
+
 
     def override skip_function ( var c : CXCursor )
         if AnyGenBind`skip_function(self, c)
@@ -59,7 +56,8 @@ class Box2dGen : CppGenBind
 
     b2_local_types = [[auto
         "b2Vec2"; "b2Vec3"; "b2Mat22"; "b2Mat33";
-        "b2Transform"; "b2Sweep"
+        "b2Transform"; "b2Sweep";
+        "b2World"
     ]]
 
 

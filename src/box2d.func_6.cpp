@@ -11,66 +11,57 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_6() {
-	using _method_64 = das::das_call_member< bool (b2DynamicTree::*)(int,const b2AABB &,const b2Vec2 &),&b2DynamicTree::MoveProxy >;
-	addExtern<DAS_CALL_METHOD(_method_64)>(*this,lib,"MoveProxy",SideEffects::worstDefault,"das_call_member< bool (b2DynamicTree::*)(int,const b2AABB &,const b2Vec2 &),&b2DynamicTree::MoveProxy >::invoke")
-		->args({"self","proxyId","aabb1","displacement"});
-	using _method_65 = das::das_call_member< void * (b2DynamicTree::*)(int) const,&b2DynamicTree::GetUserData >;
-	addExtern<DAS_CALL_METHOD(_method_65)>(*this,lib,"GetUserData",SideEffects::worstDefault,"das_call_member< void * (b2DynamicTree::*)(int) const,&b2DynamicTree::GetUserData >::invoke")
-		->args({"self","proxyId"});
-	using _method_66 = das::das_call_member< bool (b2DynamicTree::*)(int) const,&b2DynamicTree::WasMoved >;
-	addExtern<DAS_CALL_METHOD(_method_66)>(*this,lib,"WasMoved",SideEffects::worstDefault,"das_call_member< bool (b2DynamicTree::*)(int) const,&b2DynamicTree::WasMoved >::invoke")
-		->args({"self","proxyId"});
-	using _method_67 = das::das_call_member< void (b2DynamicTree::*)(int),&b2DynamicTree::ClearMoved >;
-	addExtern<DAS_CALL_METHOD(_method_67)>(*this,lib,"ClearMoved",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)(int),&b2DynamicTree::ClearMoved >::invoke")
-		->args({"self","proxyId"});
-	using _method_68 = das::das_call_member< const b2AABB & (b2DynamicTree::*)(int) const,&b2DynamicTree::GetFatAABB >;
-	addExtern<DAS_CALL_METHOD(_method_68), SimNode_ExtFuncCallRef>(*this,lib,"GetFatAABB",SideEffects::worstDefault,"das_call_member< const b2AABB & (b2DynamicTree::*)(int) const,&b2DynamicTree::GetFatAABB >::invoke")
-		->args({"self","proxyId"});
-	using _method_69 = das::das_call_member< void (b2DynamicTree::*)() const,&b2DynamicTree::Validate >;
-	addExtern<DAS_CALL_METHOD(_method_69)>(*this,lib,"Validate",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)() const,&b2DynamicTree::Validate >::invoke")
+	using _method_45 = das::das_call_member< void (b2Timer::*)(),&b2Timer::Reset >;
+	addExtern<DAS_CALL_METHOD(_method_45)>(*this,lib,"Reset",SideEffects::worstDefault,"das_call_member< void (b2Timer::*)() , &b2Timer::Reset >::invoke")
 		->args({"self"});
-	using _method_70 = das::das_call_member< int (b2DynamicTree::*)() const,&b2DynamicTree::GetHeight >;
-	addExtern<DAS_CALL_METHOD(_method_70)>(*this,lib,"GetHeight",SideEffects::worstDefault,"das_call_member< int (b2DynamicTree::*)() const,&b2DynamicTree::GetHeight >::invoke")
+	using _method_46 = das::das_call_member< float (b2Timer::*)() const,&b2Timer::GetMilliseconds >;
+	addExtern<DAS_CALL_METHOD(_method_46)>(*this,lib,"GetMilliseconds",SideEffects::worstDefault,"das_call_member< float (b2Timer::*)() const , &b2Timer::GetMilliseconds >::invoke")
 		->args({"self"});
-	using _method_71 = das::das_call_member< int (b2DynamicTree::*)() const,&b2DynamicTree::GetMaxBalance >;
-	addExtern<DAS_CALL_METHOD(_method_71)>(*this,lib,"GetMaxBalance",SideEffects::worstDefault,"das_call_member< int (b2DynamicTree::*)() const,&b2DynamicTree::GetMaxBalance >::invoke")
+	using _method_47 = das::das_call_member< void (b2WorldManifold::*)(const b2Manifold *,const b2Transform &,float,const b2Transform &,float),&b2WorldManifold::Initialize >;
+	addExtern<DAS_CALL_METHOD(_method_47)>(*this,lib,"Initialize",SideEffects::worstDefault,"das_call_member< void (b2WorldManifold::*)(const b2Manifold *,const b2Transform &,float,const b2Transform &,float) , &b2WorldManifold::Initialize >::invoke")
+		->args({"self","manifold","xfA","radiusA","xfB","radiusB"});
+	addExtern< void (*)(b2PointState [2],b2PointState [2],const b2Manifold *,const b2Manifold *) , b2GetPointStates >(*this,lib,"b2GetPointStates",SideEffects::worstDefault,"b2GetPointStates")
+		->args({"state1","state2","manifold1","manifold2"});
+	using _method_48 = das::das_call_member< bool (b2AABB::*)() const,&b2AABB::IsValid >;
+	addExtern<DAS_CALL_METHOD(_method_48)>(*this,lib,"IsValid",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)() const , &b2AABB::IsValid >::invoke")
 		->args({"self"});
-	using _method_72 = das::das_call_member< float (b2DynamicTree::*)() const,&b2DynamicTree::GetAreaRatio >;
-	addExtern<DAS_CALL_METHOD(_method_72)>(*this,lib,"GetAreaRatio",SideEffects::worstDefault,"das_call_member< float (b2DynamicTree::*)() const,&b2DynamicTree::GetAreaRatio >::invoke")
+	using _method_49 = das::das_call_member< b2Vec2 (b2AABB::*)() const,&b2AABB::GetCenter >;
+	addExtern<DAS_CALL_METHOD(_method_49),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetCenter",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2AABB::*)() const , &b2AABB::GetCenter >::invoke")
 		->args({"self"});
-	using _method_73 = das::das_call_member< void (b2DynamicTree::*)(),&b2DynamicTree::RebuildBottomUp >;
-	addExtern<DAS_CALL_METHOD(_method_73)>(*this,lib,"RebuildBottomUp",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)(),&b2DynamicTree::RebuildBottomUp >::invoke")
+	using _method_50 = das::das_call_member< b2Vec2 (b2AABB::*)() const,&b2AABB::GetExtents >;
+	addExtern<DAS_CALL_METHOD(_method_50),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetExtents",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2AABB::*)() const , &b2AABB::GetExtents >::invoke")
 		->args({"self"});
-	using _method_74 = das::das_call_member< void (b2DynamicTree::*)(const b2Vec2 &),&b2DynamicTree::ShiftOrigin >;
-	addExtern<DAS_CALL_METHOD(_method_74)>(*this,lib,"ShiftOrigin",SideEffects::worstDefault,"das_call_member< void (b2DynamicTree::*)(const b2Vec2 &),&b2DynamicTree::ShiftOrigin >::invoke")
-		->args({"self","newOrigin"});
-	using _method_75 = das::das_call_member< int (b2BroadPhase::*)(const b2AABB &,void *),&b2BroadPhase::CreateProxy >;
-	addExtern<DAS_CALL_METHOD(_method_75)>(*this,lib,"CreateProxy",SideEffects::worstDefault,"das_call_member< int (b2BroadPhase::*)(const b2AABB &,void *),&b2BroadPhase::CreateProxy >::invoke")
-		->args({"self","aabb","userData"});
-	using _method_76 = das::das_call_member< void (b2BroadPhase::*)(int),&b2BroadPhase::DestroyProxy >;
-	addExtern<DAS_CALL_METHOD(_method_76)>(*this,lib,"DestroyProxy",SideEffects::worstDefault,"das_call_member< void (b2BroadPhase::*)(int),&b2BroadPhase::DestroyProxy >::invoke")
-		->args({"self","proxyId"});
-	using _method_77 = das::das_call_member< void (b2BroadPhase::*)(int,const b2AABB &,const b2Vec2 &),&b2BroadPhase::MoveProxy >;
-	addExtern<DAS_CALL_METHOD(_method_77)>(*this,lib,"MoveProxy",SideEffects::worstDefault,"das_call_member< void (b2BroadPhase::*)(int,const b2AABB &,const b2Vec2 &),&b2BroadPhase::MoveProxy >::invoke")
-		->args({"self","proxyId","aabb","displacement"});
-	using _method_78 = das::das_call_member< void (b2BroadPhase::*)(int),&b2BroadPhase::TouchProxy >;
-	addExtern<DAS_CALL_METHOD(_method_78)>(*this,lib,"TouchProxy",SideEffects::worstDefault,"das_call_member< void (b2BroadPhase::*)(int),&b2BroadPhase::TouchProxy >::invoke")
-		->args({"self","proxyId"});
-	using _method_79 = das::das_call_member< const b2AABB & (b2BroadPhase::*)(int) const,&b2BroadPhase::GetFatAABB >;
-	addExtern<DAS_CALL_METHOD(_method_79), SimNode_ExtFuncCallRef>(*this,lib,"GetFatAABB",SideEffects::worstDefault,"das_call_member< const b2AABB & (b2BroadPhase::*)(int) const,&b2BroadPhase::GetFatAABB >::invoke")
-		->args({"self","proxyId"});
-	using _method_80 = das::das_call_member< void * (b2BroadPhase::*)(int) const,&b2BroadPhase::GetUserData >;
-	addExtern<DAS_CALL_METHOD(_method_80)>(*this,lib,"GetUserData",SideEffects::worstDefault,"das_call_member< void * (b2BroadPhase::*)(int) const,&b2BroadPhase::GetUserData >::invoke")
-		->args({"self","proxyId"});
-	using _method_81 = das::das_call_member< bool (b2BroadPhase::*)(int,int) const,&b2BroadPhase::TestOverlap >;
-	addExtern<DAS_CALL_METHOD(_method_81)>(*this,lib,"TestOverlap",SideEffects::worstDefault,"das_call_member< bool (b2BroadPhase::*)(int,int) const,&b2BroadPhase::TestOverlap >::invoke")
-		->args({"self","proxyIdA","proxyIdB"});
-	using _method_82 = das::das_call_member< int (b2BroadPhase::*)() const,&b2BroadPhase::GetProxyCount >;
-	addExtern<DAS_CALL_METHOD(_method_82)>(*this,lib,"GetProxyCount",SideEffects::worstDefault,"das_call_member< int (b2BroadPhase::*)() const,&b2BroadPhase::GetProxyCount >::invoke")
+	using _method_51 = das::das_call_member< float (b2AABB::*)() const,&b2AABB::GetPerimeter >;
+	addExtern<DAS_CALL_METHOD(_method_51)>(*this,lib,"GetPerimeter",SideEffects::worstDefault,"das_call_member< float (b2AABB::*)() const , &b2AABB::GetPerimeter >::invoke")
 		->args({"self"});
-	using _method_83 = das::das_call_member< int (b2BroadPhase::*)() const,&b2BroadPhase::GetTreeHeight >;
-	addExtern<DAS_CALL_METHOD(_method_83)>(*this,lib,"GetTreeHeight",SideEffects::worstDefault,"das_call_member< int (b2BroadPhase::*)() const,&b2BroadPhase::GetTreeHeight >::invoke")
-		->args({"self"});
+	using _method_52 = das::das_call_member< void (b2AABB::*)(const b2AABB &),&b2AABB::Combine >;
+	addExtern<DAS_CALL_METHOD(_method_52)>(*this,lib,"Combine",SideEffects::worstDefault,"das_call_member< void (b2AABB::*)(const b2AABB &) , &b2AABB::Combine >::invoke")
+		->args({"self","aabb"});
+	using _method_53 = das::das_call_member< void (b2AABB::*)(const b2AABB &,const b2AABB &),&b2AABB::Combine >;
+	addExtern<DAS_CALL_METHOD(_method_53)>(*this,lib,"Combine",SideEffects::worstDefault,"das_call_member< void (b2AABB::*)(const b2AABB &,const b2AABB &) , &b2AABB::Combine >::invoke")
+		->args({"self","aabb1","aabb2"});
+	using _method_54 = das::das_call_member< bool (b2AABB::*)(const b2AABB &) const,&b2AABB::Contains >;
+	addExtern<DAS_CALL_METHOD(_method_54)>(*this,lib,"Contains",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)(const b2AABB &) const , &b2AABB::Contains >::invoke")
+		->args({"self","aabb"});
+	using _method_55 = das::das_call_member< bool (b2AABB::*)(b2RayCastOutput *,const b2RayCastInput &) const,&b2AABB::RayCast >;
+	addExtern<DAS_CALL_METHOD(_method_55)>(*this,lib,"RayCast",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)(b2RayCastOutput *,const b2RayCastInput &) const , &b2AABB::RayCast >::invoke")
+		->args({"self","output","input"});
+	addExtern< void (*)(b2Manifold *,const b2CircleShape *,const b2Transform &,const b2CircleShape *,const b2Transform &) , b2CollideCircles >(*this,lib,"b2CollideCircles",SideEffects::worstDefault,"b2CollideCircles")
+		->args({"manifold","circleA","xfA","circleB","xfB"});
+	addExtern< void (*)(b2Manifold *,const b2PolygonShape *,const b2Transform &,const b2CircleShape *,const b2Transform &) , b2CollidePolygonAndCircle >(*this,lib,"b2CollidePolygonAndCircle",SideEffects::worstDefault,"b2CollidePolygonAndCircle")
+		->args({"manifold","polygonA","xfA","circleB","xfB"});
+	addExtern< void (*)(b2Manifold *,const b2PolygonShape *,const b2Transform &,const b2PolygonShape *,const b2Transform &) , b2CollidePolygons >(*this,lib,"b2CollidePolygons",SideEffects::worstDefault,"b2CollidePolygons")
+		->args({"manifold","polygonA","xfA","polygonB","xfB"});
+	addExtern< void (*)(b2Manifold *,const b2EdgeShape *,const b2Transform &,const b2CircleShape *,const b2Transform &) , b2CollideEdgeAndCircle >(*this,lib,"b2CollideEdgeAndCircle",SideEffects::worstDefault,"b2CollideEdgeAndCircle")
+		->args({"manifold","polygonA","xfA","circleB","xfB"});
+	addExtern< void (*)(b2Manifold *,const b2EdgeShape *,const b2Transform &,const b2PolygonShape *,const b2Transform &) , b2CollideEdgeAndPolygon >(*this,lib,"b2CollideEdgeAndPolygon",SideEffects::worstDefault,"b2CollideEdgeAndPolygon")
+		->args({"manifold","edgeA","xfA","circleB","xfB"});
+	addExtern< int (*)(b2ClipVertex [2],b2ClipVertex const[2],const b2Vec2 &,float,int) , b2ClipSegmentToLine >(*this,lib,"b2ClipSegmentToLine",SideEffects::worstDefault,"b2ClipSegmentToLine")
+		->args({"vOut","vIn","normal","offset","vertexIndexA"});
+	addExtern< bool (*)(const b2Shape *,int,const b2Shape *,int,const b2Transform &,const b2Transform &) , b2TestOverlap >(*this,lib,"b2TestOverlap",SideEffects::worstDefault,"b2TestOverlap")
+		->args({"shapeA","indexA","shapeB","indexB","xfA","xfB"});
+	addExtern< bool (*)(const b2AABB &,const b2AABB &) , b2TestOverlap >(*this,lib,"b2TestOverlap",SideEffects::worstDefault,"b2TestOverlap")
+		->args({"a","b"});
 }
 }
 

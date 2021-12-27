@@ -11,64 +11,59 @@
 #include "need_box2d.h"
 namespace das {
 void Module_box2d::initFunctions_15() {
-	using _method_241 = das::das_call_member< bool (b2World::*)() const,&b2World::GetAutoClearForces >;
-	addExtern<DAS_CALL_METHOD(_method_241)>(*this,lib,"GetAutoClearForces",SideEffects::worstDefault,"das_call_member< bool (b2World::*)() const,&b2World::GetAutoClearForces >::invoke")
+	addCtorAndUsing<b2BlockAllocator>(*this,lib,"b2BlockAllocator","b2BlockAllocator");
+	using _method_204 = das::das_call_member< void * (b2BlockAllocator::*)(int),&b2BlockAllocator::Allocate >;
+	addExtern<DAS_CALL_METHOD(_method_204)>(*this,lib,"Allocate",SideEffects::worstDefault,"das_call_member< void * (b2BlockAllocator::*)(int) , &b2BlockAllocator::Allocate >::invoke")
+		->args({"self","size"});
+	using _method_205 = das::das_call_member< void (b2BlockAllocator::*)(void *,int),&b2BlockAllocator::Free >;
+	addExtern<DAS_CALL_METHOD(_method_205)>(*this,lib,"Free",SideEffects::worstDefault,"das_call_member< void (b2BlockAllocator::*)(void *,int) , &b2BlockAllocator::Free >::invoke")
+		->args({"self","p","size"});
+	using _method_206 = das::das_call_member< void (b2BlockAllocator::*)(),&b2BlockAllocator::Clear >;
+	addExtern<DAS_CALL_METHOD(_method_206)>(*this,lib,"Clear",SideEffects::worstDefault,"das_call_member< void (b2BlockAllocator::*)() , &b2BlockAllocator::Clear >::invoke")
 		->args({"self"});
-	using _method_242 = das::das_call_member< void (b2World::*)(const b2Vec2 &),&b2World::ShiftOrigin >;
-	addExtern<DAS_CALL_METHOD(_method_242)>(*this,lib,"ShiftOrigin",SideEffects::worstDefault,"das_call_member< void (b2World::*)(const b2Vec2 &),&b2World::ShiftOrigin >::invoke")
-		->args({"self","newOrigin"});
-	using _method_243 = das::das_call_member< const b2ContactManager & (b2World::*)() const,&b2World::GetContactManager >;
-	addExtern<DAS_CALL_METHOD(_method_243), SimNode_ExtFuncCallRef>(*this,lib,"GetContactManager",SideEffects::worstDefault,"das_call_member< const b2ContactManager & (b2World::*)() const,&b2World::GetContactManager >::invoke")
+	addCtorAndUsing<b2ContactManager>(*this,lib,"b2ContactManager","b2ContactManager");
+	using _method_207 = das::das_call_member< void (b2ContactManager::*)(void *,void *),&b2ContactManager::AddPair >;
+	addExtern<DAS_CALL_METHOD(_method_207)>(*this,lib,"AddPair",SideEffects::worstDefault,"das_call_member< void (b2ContactManager::*)(void *,void *) , &b2ContactManager::AddPair >::invoke")
+		->args({"self","proxyUserDataA","proxyUserDataB"});
+	using _method_208 = das::das_call_member< void (b2ContactManager::*)(),&b2ContactManager::FindNewContacts >;
+	addExtern<DAS_CALL_METHOD(_method_208)>(*this,lib,"FindNewContacts",SideEffects::worstDefault,"das_call_member< void (b2ContactManager::*)() , &b2ContactManager::FindNewContacts >::invoke")
 		->args({"self"});
-	using _method_244 = das::das_call_member< const b2Profile & (b2World::*)() const,&b2World::GetProfile >;
-	addExtern<DAS_CALL_METHOD(_method_244), SimNode_ExtFuncCallRef>(*this,lib,"GetProfile",SideEffects::worstDefault,"das_call_member< const b2Profile & (b2World::*)() const,&b2World::GetProfile >::invoke")
+	using _method_209 = das::das_call_member< void (b2ContactManager::*)(b2Contact *),&b2ContactManager::Destroy >;
+	addExtern<DAS_CALL_METHOD(_method_209)>(*this,lib,"Destroy",SideEffects::worstDefault,"das_call_member< void (b2ContactManager::*)(b2Contact *) , &b2ContactManager::Destroy >::invoke")
+		->args({"self","c"});
+	using _method_210 = das::das_call_member< void (b2ContactManager::*)(),&b2ContactManager::Collide >;
+	addExtern<DAS_CALL_METHOD(_method_210)>(*this,lib,"Collide",SideEffects::worstDefault,"das_call_member< void (b2ContactManager::*)() , &b2ContactManager::Collide >::invoke")
 		->args({"self"});
-	using _method_245 = das::das_call_member< void (b2World::*)(),&b2World::Dump >;
-	addExtern<DAS_CALL_METHOD(_method_245)>(*this,lib,"Dump",SideEffects::worstDefault,"das_call_member< void (b2World::*)(),&b2World::Dump >::invoke")
+	addCtorAndUsing<b2StackAllocator>(*this,lib,"b2StackAllocator","b2StackAllocator");
+	using _method_211 = das::das_call_member< void * (b2StackAllocator::*)(int),&b2StackAllocator::Allocate >;
+	addExtern<DAS_CALL_METHOD(_method_211)>(*this,lib,"Allocate",SideEffects::worstDefault,"das_call_member< void * (b2StackAllocator::*)(int) , &b2StackAllocator::Allocate >::invoke")
+		->args({"self","size"});
+	using _method_212 = das::das_call_member< void (b2StackAllocator::*)(void *),&b2StackAllocator::Free >;
+	addExtern<DAS_CALL_METHOD(_method_212)>(*this,lib,"Free",SideEffects::worstDefault,"das_call_member< void (b2StackAllocator::*)(void *) , &b2StackAllocator::Free >::invoke")
+		->args({"self","p"});
+	using _method_213 = das::das_call_member< int (b2StackAllocator::*)() const,&b2StackAllocator::GetMaxAllocation >;
+	addExtern<DAS_CALL_METHOD(_method_213)>(*this,lib,"GetMaxAllocation",SideEffects::worstDefault,"das_call_member< int (b2StackAllocator::*)() const , &b2StackAllocator::GetMaxAllocation >::invoke")
 		->args({"self"});
-	addExtern<void (*)(float &,float &,float,float,const b2Body *,const b2Body *),b2LinearStiffness>(*this,lib,"b2LinearStiffness",SideEffects::worstDefault,"b2LinearStiffness")
-		->args({"stiffness","damping","frequencyHertz","dampingRatio","bodyA","bodyB"});
-	addExtern<void (*)(float &,float &,float,float,const b2Body *,const b2Body *),b2AngularStiffness>(*this,lib,"b2AngularStiffness",SideEffects::worstDefault,"b2AngularStiffness")
-		->args({"stiffness","damping","frequencyHertz","dampingRatio","bodyA","bodyB"});
-	using _method_246 = das::das_call_member< b2JointType (b2Joint::*)() const,&b2Joint::GetType >;
-	addExtern<DAS_CALL_METHOD(_method_246)>(*this,lib,"GetType",SideEffects::worstDefault,"das_call_member< b2JointType (b2Joint::*)() const,&b2Joint::GetType >::invoke")
-		->args({"self"});
-	using _method_247 = das::das_call_member< b2Body * (b2Joint::*)(),&b2Joint::GetBodyA >;
-	addExtern<DAS_CALL_METHOD(_method_247)>(*this,lib,"GetBodyA",SideEffects::worstDefault,"das_call_member< b2Body * (b2Joint::*)(),&b2Joint::GetBodyA >::invoke")
-		->args({"self"});
-	using _method_248 = das::das_call_member< b2Body * (b2Joint::*)(),&b2Joint::GetBodyB >;
-	addExtern<DAS_CALL_METHOD(_method_248)>(*this,lib,"GetBodyB",SideEffects::worstDefault,"das_call_member< b2Body * (b2Joint::*)(),&b2Joint::GetBodyB >::invoke")
-		->args({"self"});
-	using _method_249 = das::das_call_member< b2Joint * (b2Joint::*)(),&b2Joint::GetNext >;
-	addExtern<DAS_CALL_METHOD(_method_249)>(*this,lib,"GetNext",SideEffects::worstDefault,"das_call_member< b2Joint * (b2Joint::*)(),&b2Joint::GetNext >::invoke")
-		->args({"self"});
-	using _method_250 = das::das_call_member< const b2Joint * (b2Joint::*)() const,&b2Joint::GetNext >;
-	addExtern<DAS_CALL_METHOD(_method_250)>(*this,lib,"GetNext",SideEffects::worstDefault,"das_call_member< const b2Joint * (b2Joint::*)() const,&b2Joint::GetNext >::invoke")
-		->args({"self"});
-	using _method_251 = das::das_call_member< b2JointUserData & (b2Joint::*)(),&b2Joint::GetUserData >;
-	addExtern<DAS_CALL_METHOD(_method_251), SimNode_ExtFuncCallRef>(*this,lib,"GetUserData",SideEffects::worstDefault,"das_call_member< b2JointUserData & (b2Joint::*)(),&b2Joint::GetUserData >::invoke")
-		->args({"self"});
-	using _method_252 = das::das_call_member< bool (b2Joint::*)() const,&b2Joint::IsEnabled >;
-	addExtern<DAS_CALL_METHOD(_method_252)>(*this,lib,"IsEnabled",SideEffects::worstDefault,"das_call_member< bool (b2Joint::*)() const,&b2Joint::IsEnabled >::invoke")
-		->args({"self"});
-	using _method_253 = das::das_call_member< bool (b2Joint::*)() const,&b2Joint::GetCollideConnected >;
-	addExtern<DAS_CALL_METHOD(_method_253)>(*this,lib,"GetCollideConnected",SideEffects::worstDefault,"das_call_member< bool (b2Joint::*)() const,&b2Joint::GetCollideConnected >::invoke")
-		->args({"self"});
-	using _method_254 = das::das_call_member< void (b2DistanceJointDef::*)(b2Body *,b2Body *,const b2Vec2 &,const b2Vec2 &),&b2DistanceJointDef::Initialize >;
-	addExtern<DAS_CALL_METHOD(_method_254)>(*this,lib,"Initialize",SideEffects::worstDefault,"das_call_member< void (b2DistanceJointDef::*)(b2Body *,b2Body *,const b2Vec2 &,const b2Vec2 &),&b2DistanceJointDef::Initialize >::invoke")
-		->args({"self","bodyA","bodyB","anchorA","anchorB"});
-	using _method_255 = das::das_call_member< const b2Vec2 & (b2DistanceJoint::*)() const,&b2DistanceJoint::GetLocalAnchorA >;
-	addExtern<DAS_CALL_METHOD(_method_255), SimNode_ExtFuncCallRef>(*this,lib,"GetLocalAnchorA",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2DistanceJoint::*)() const,&b2DistanceJoint::GetLocalAnchorA >::invoke")
-		->args({"self"});
-	using _method_256 = das::das_call_member< const b2Vec2 & (b2DistanceJoint::*)() const,&b2DistanceJoint::GetLocalAnchorB >;
-	addExtern<DAS_CALL_METHOD(_method_256), SimNode_ExtFuncCallRef>(*this,lib,"GetLocalAnchorB",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2DistanceJoint::*)() const,&b2DistanceJoint::GetLocalAnchorB >::invoke")
-		->args({"self"});
-	using _method_257 = das::das_call_member< float (b2DistanceJoint::*)() const,&b2DistanceJoint::GetLength >;
-	addExtern<DAS_CALL_METHOD(_method_257)>(*this,lib,"GetLength",SideEffects::worstDefault,"das_call_member< float (b2DistanceJoint::*)() const,&b2DistanceJoint::GetLength >::invoke")
-		->args({"self"});
-	using _method_258 = das::das_call_member< float (b2DistanceJoint::*)(float),&b2DistanceJoint::SetLength >;
-	addExtern<DAS_CALL_METHOD(_method_258)>(*this,lib,"SetLength",SideEffects::worstDefault,"das_call_member< float (b2DistanceJoint::*)(float),&b2DistanceJoint::SetLength >::invoke")
-		->args({"self","length"});
+	addCtorAndUsing<b2World,const b2Vec2 &>(*this,lib,"b2World","b2World")
+		->args({"gravity"});
+	using _method_214 = das::das_call_member< void (b2World::*)(b2DestructionListener *),&b2World::SetDestructionListener >;
+	addExtern<DAS_CALL_METHOD(_method_214)>(*this,lib,"SetDestructionListener",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2DestructionListener *) , &b2World::SetDestructionListener >::invoke")
+		->args({"self","listener"});
+	using _method_215 = das::das_call_member< void (b2World::*)(b2ContactFilter *),&b2World::SetContactFilter >;
+	addExtern<DAS_CALL_METHOD(_method_215)>(*this,lib,"SetContactFilter",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2ContactFilter *) , &b2World::SetContactFilter >::invoke")
+		->args({"self","filter"});
+	using _method_216 = das::das_call_member< void (b2World::*)(b2ContactListener *),&b2World::SetContactListener >;
+	addExtern<DAS_CALL_METHOD(_method_216)>(*this,lib,"SetContactListener",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2ContactListener *) , &b2World::SetContactListener >::invoke")
+		->args({"self","listener"});
+	using _method_217 = das::das_call_member< void (b2World::*)(b2Draw *),&b2World::SetDebugDraw >;
+	addExtern<DAS_CALL_METHOD(_method_217)>(*this,lib,"SetDebugDraw",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2Draw *) , &b2World::SetDebugDraw >::invoke")
+		->args({"self","debugDraw"});
+	using _method_218 = das::das_call_member< b2Body * (b2World::*)(const b2BodyDef *),&b2World::CreateBody >;
+	addExtern<DAS_CALL_METHOD(_method_218)>(*this,lib,"CreateBody",SideEffects::worstDefault,"das_call_member< b2Body * (b2World::*)(const b2BodyDef *) , &b2World::CreateBody >::invoke")
+		->args({"self","def"});
+	using _method_219 = das::das_call_member< void (b2World::*)(b2Body *),&b2World::DestroyBody >;
+	addExtern<DAS_CALL_METHOD(_method_219)>(*this,lib,"DestroyBody",SideEffects::worstDefault,"das_call_member< void (b2World::*)(b2Body *) , &b2World::DestroyBody >::invoke")
+		->args({"self","body"});
 }
 }
 

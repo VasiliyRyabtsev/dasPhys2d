@@ -14,12 +14,12 @@ namespace das {
 #include "box2d.enum.class.inc"
 #include "box2d.struct.class.inc"
 Module_box2d::Module_box2d() : Module("box2d") {
-	lib.addModule(this);
-	lib.addBuiltInModule();
 }
 bool Module_box2d::initDependencies() {
 	if ( initialized ) return true;
 	initialized = true;
+	lib.addModule(this);
+	lib.addBuiltInModule();
 	#include "box2d.enum.add.inc"
 	#include "box2d.dummy.add.inc"
 	#include "box2d.struct.add.inc"
