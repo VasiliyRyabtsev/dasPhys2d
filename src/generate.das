@@ -5,14 +5,14 @@ require daslib/defer
 require daslib/fio
 
 
-class Box2dGen : CppGenBind
+class Phys2dGen : CppGenBind
     override func_to_stdout = false
-    def Box2dGen
-        bind_root = "{get_das_root()}/modules/dasBox2d/src"
-        bind_module = "box2d"
-        bind_das_module = "box2d"
+    def Phys2dGen
+        bind_root = "{get_das_root()}/modules/dasPhys2d/src"
+        bind_module = "phys2d"
+        bind_das_module = "phys2d"
         let pfn = "box2d/box2d.h"
-        let pfp = "{get_das_root()}/modules/dasBox2d/box2d/include/"
+        let pfp = "{get_das_root()}/modules/dasPhys2d/box2d/include/"
 
         let args <- [{string
             "-xc++-header";
@@ -73,9 +73,9 @@ class Box2dGen : CppGenBind
 
 [export]
 def main
-    var cgb = new Box2dGen()
+    var cgb = new Phys2dGen()
     defer <|
         unsafe
             delete cgb
     cgb->generate()
-    cgb->genCMakeDecl("DAS_BOX2D_BIND")
+    cgb->genCMakeDecl("DAS_PHYS2D_BIND")
