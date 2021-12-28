@@ -20,6 +20,13 @@ class Phys2dGen : CppGenBind
             "-I{get_full_file_name(pfp)}"
         }]
 
+        aot_alias <- {{
+            "b2Vec2"  => true;
+            "b2Vec3"  => true
+            //"b2Mat22"  => true;
+            //"b2Mat33"  => true
+        }};
+
         func_per_chunk = 20
         init_args(pfn,pfp,args)
         setDefaultFiles()

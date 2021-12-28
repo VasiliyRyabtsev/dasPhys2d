@@ -10,49 +10,56 @@
 #include "phys2d.h"
 #include "need_phys2d.h"
 namespace das {
+#include "phys2d.func.aot.decl.inc"
 void Module_phys2d::initFunctions_4() {
-	using _method_38 = das::das_call_member< void (b2Sweep::*)(float),&b2Sweep::Advance >;
-	addExtern<DAS_CALL_METHOD(_method_38)>(*this,lib,"Advance",SideEffects::worstDefault,"das_call_member< void (b2Sweep::*)(float) , &b2Sweep::Advance >::invoke")
-		->args({"self","alpha"});
-	using _method_39 = das::das_call_member< void (b2Sweep::*)(),&b2Sweep::Normalize >;
-	addExtern<DAS_CALL_METHOD(_method_39)>(*this,lib,"Normalize",SideEffects::worstDefault,"das_call_member< void (b2Sweep::*)() , &b2Sweep::Normalize >::invoke")
+	addExtern< b2Transform (*)(const b2Transform &,const b2Transform &) , b2MulT ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
+		->args({"A","B"});
+	addExtern< b2Vec2 (*)(const b2Vec2 &) , b2Abs >(*this,lib,"b2Abs",SideEffects::worstDefault,"b2Abs")
+		->args({"a"});
+	addExtern< b2Mat22 (*)(const b2Mat22 &) , b2Abs ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Abs",SideEffects::worstDefault,"b2Abs")
+		->args({"A"});
+	addExtern< b2Vec2 (*)(const b2Vec2 &,const b2Vec2 &) , b2Min >(*this,lib,"b2Min",SideEffects::worstDefault,"b2Min")
+		->args({"a","b"});
+	addExtern< b2Vec2 (*)(const b2Vec2 &,const b2Vec2 &) , b2Max >(*this,lib,"b2Max",SideEffects::worstDefault,"b2Max")
+		->args({"a","b"});
+	addExtern< b2Vec2 (*)(const b2Vec2 &,const b2Vec2 &,const b2Vec2 &) , b2Clamp >(*this,lib,"b2Clamp",SideEffects::worstDefault,"b2Clamp")
+		->args({"a","low","high"});
+	addExtern< unsigned int (*)(unsigned int) , b2NextPowerOfTwo >(*this,lib,"b2NextPowerOfTwo",SideEffects::worstDefault,"b2NextPowerOfTwo")
+		->args({"x"});
+	addExtern< bool (*)(unsigned int) , b2IsPowerOfTwo >(*this,lib,"b2IsPowerOfTwo",SideEffects::worstDefault,"b2IsPowerOfTwo")
+		->args({"x"});
+	addCtorAndUsing<b2Color>(*this,lib,"b2Color","b2Color");
+	addCtorAndUsing<b2Color,float,float,float,float>(*this,lib,"b2Color","b2Color")
+		->args({"rIn","gIn","bIn","aIn"})
+		->arg_init(3,make_smart<ExprConstFloat>(1.00000000000000000));
+	using _method_21 = das::das_call_member< void (b2Color::*)(float,float,float,float),&b2Color::Set >;
+	addExtern<DAS_CALL_METHOD(_method_21)>(*this,lib,"Set",SideEffects::worstDefault,"das_call_member< void (b2Color::*)(float,float,float,float) , &b2Color::Set >::invoke")
+		->args({"self","rIn","gIn","bIn","aIn"})
+		->arg_init(4,make_smart<ExprConstFloat>(1.00000000000000000));
+	using _method_22 = das::das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::SetFlags >;
+	addExtern<DAS_CALL_METHOD(_method_22)>(*this,lib,"SetFlags",SideEffects::worstDefault,"das_call_member< void (b2Draw::*)(unsigned int) , &b2Draw::SetFlags >::invoke")
+		->args({"self","flags"});
+	using _method_23 = das::das_call_member< unsigned int (b2Draw::*)() const,&b2Draw::GetFlags >;
+	addExtern<DAS_CALL_METHOD(_method_23)>(*this,lib,"GetFlags",SideEffects::worstDefault,"das_call_member< unsigned int (b2Draw::*)() const , &b2Draw::GetFlags >::invoke")
 		->args({"self"});
-	addExtern< float (*)(const b2Vec2 &,const b2Vec2 &) , b2Dot >(*this,lib,"b2Dot",SideEffects::worstDefault,"b2Dot")
-		->args({"a","b"});
-	addExtern< float (*)(const b2Vec2 &,const b2Vec2 &) , b2Cross >(*this,lib,"b2Cross",SideEffects::worstDefault,"b2Cross")
-		->args({"a","b"});
-	addExtern< b2Vec2 (*)(const b2Vec2 &,float) , b2Cross ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Cross",SideEffects::worstDefault,"b2Cross")
-		->args({"a","s"});
-	addExtern< b2Vec2 (*)(float,const b2Vec2 &) , b2Cross ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Cross",SideEffects::worstDefault,"b2Cross")
-		->args({"s","a"});
-	addExtern< b2Vec2 (*)(const b2Mat22 &,const b2Vec2 &) , b2Mul ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
-		->args({"A","v"});
-	addExtern< b2Vec2 (*)(const b2Mat22 &,const b2Vec2 &) , b2MulT ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
-		->args({"A","v"});
-	addExtern< float (*)(const b2Vec2 &,const b2Vec2 &) , b2Distance >(*this,lib,"b2Distance",SideEffects::worstDefault,"b2Distance")
-		->args({"a","b"});
-	addExtern< float (*)(const b2Vec2 &,const b2Vec2 &) , b2DistanceSquared >(*this,lib,"b2DistanceSquared",SideEffects::worstDefault,"b2DistanceSquared")
-		->args({"a","b"});
-	addExtern< float (*)(const b2Vec3 &,const b2Vec3 &) , b2Dot >(*this,lib,"b2Dot",SideEffects::worstDefault,"b2Dot")
-		->args({"a","b"});
-	addExtern< b2Vec3 (*)(const b2Vec3 &,const b2Vec3 &) , b2Cross ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Cross",SideEffects::worstDefault,"b2Cross")
-		->args({"a","b"});
-	addExtern< b2Mat22 (*)(const b2Mat22 &,const b2Mat22 &) , b2Mul ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
-		->args({"A","B"});
-	addExtern< b2Mat22 (*)(const b2Mat22 &,const b2Mat22 &) , b2MulT ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
-		->args({"A","B"});
-	addExtern< b2Vec3 (*)(const b2Mat33 &,const b2Vec3 &) , b2Mul ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
-		->args({"A","v"});
-	addExtern< b2Vec2 (*)(const b2Mat33 &,const b2Vec2 &) , b2Mul22 ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul22",SideEffects::worstDefault,"b2Mul22")
-		->args({"A","v"});
-	addExtern< b2Rot (*)(const b2Rot &,const b2Rot &) , b2Mul ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
-		->args({"q","r"});
-	addExtern< b2Rot (*)(const b2Rot &,const b2Rot &) , b2MulT ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
-		->args({"q","r"});
-	addExtern< b2Vec2 (*)(const b2Rot &,const b2Vec2 &) , b2Mul ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
-		->args({"q","v"});
-	addExtern< b2Vec2 (*)(const b2Rot &,const b2Vec2 &) , b2MulT ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
-		->args({"q","v"});
+	using _method_24 = das::das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::AppendFlags >;
+	addExtern<DAS_CALL_METHOD(_method_24)>(*this,lib,"AppendFlags",SideEffects::worstDefault,"das_call_member< void (b2Draw::*)(unsigned int) , &b2Draw::AppendFlags >::invoke")
+		->args({"self","flags"});
+	using _method_25 = das::das_call_member< void (b2Draw::*)(unsigned int),&b2Draw::ClearFlags >;
+	addExtern<DAS_CALL_METHOD(_method_25)>(*this,lib,"ClearFlags",SideEffects::worstDefault,"das_call_member< void (b2Draw::*)(unsigned int) , &b2Draw::ClearFlags >::invoke")
+		->args({"self","flags"});
+	addCtorAndUsing<b2Timer>(*this,lib,"b2Timer","b2Timer");
+	using _method_26 = das::das_call_member< void (b2Timer::*)(),&b2Timer::Reset >;
+	addExtern<DAS_CALL_METHOD(_method_26)>(*this,lib,"Reset",SideEffects::worstDefault,"das_call_member< void (b2Timer::*)() , &b2Timer::Reset >::invoke")
+		->args({"self"});
+	using _method_27 = das::das_call_member< float (b2Timer::*)() const,&b2Timer::GetMilliseconds >;
+	addExtern<DAS_CALL_METHOD(_method_27)>(*this,lib,"GetMilliseconds",SideEffects::worstDefault,"das_call_member< float (b2Timer::*)() const , &b2Timer::GetMilliseconds >::invoke")
+		->args({"self"});
+	using _method_28 = das::das_call_member< void (b2WorldManifold::*)(const b2Manifold *,const b2Transform &,float,const b2Transform &,float),&b2WorldManifold::Initialize >;
+	addExtern<DAS_CALL_METHOD(_method_28)>(*this,lib,"Initialize",SideEffects::worstDefault,"das_call_member< void (b2WorldManifold::*)(const b2Manifold *,const b2Transform &,float,const b2Transform &,float) , &b2WorldManifold::Initialize >::invoke")
+		->args({"self","manifold","xfA","radiusA","xfB","radiusB"});
+	addExtern< void (*)(b2PointState [2],b2PointState [2],const b2Manifold *,const b2Manifold *) , b2GetPointStates >(*this,lib,"b2GetPointStates",SideEffects::worstDefault,"b2GetPointStates")
+		->args({"state1","state2","manifold1","manifold2"});
 }
 }
 

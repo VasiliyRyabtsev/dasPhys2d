@@ -35,29 +35,6 @@ struct b2Version_GeneratedAnnotation : ManagedStructureAnnotation<b2Version> {
 	}
 };
 
-struct b2Vec2_GeneratedAnnotation : ManagedStructureAnnotation<b2Vec2> {
-	virtual bool isLocal() const override { return true; }
-	virtual bool canBePlacedInContainer() const override { return true; }
-	b2Vec2_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Vec2", ml, "b2Vec2") {
-	}
-	void init () {
-		addField<DAS_BIND_MANAGED_FIELD(x)>("x","x");
-		addField<DAS_BIND_MANAGED_FIELD(y)>("y","y");
-	}
-};
-
-struct b2Vec3_GeneratedAnnotation : ManagedStructureAnnotation<b2Vec3> {
-	virtual bool isLocal() const override { return true; }
-	virtual bool canBePlacedInContainer() const override { return true; }
-	b2Vec3_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Vec3", ml, "b2Vec3") {
-	}
-	void init () {
-		addField<DAS_BIND_MANAGED_FIELD(x)>("x","x");
-		addField<DAS_BIND_MANAGED_FIELD(y)>("y","y");
-		addField<DAS_BIND_MANAGED_FIELD(z)>("z","z");
-	}
-};
-
 struct b2Mat22_GeneratedAnnotation : ManagedStructureAnnotation<b2Mat22> {
 	virtual bool isLocal() const override { return true; }
 	virtual bool canBePlacedInContainer() const override { return true; }

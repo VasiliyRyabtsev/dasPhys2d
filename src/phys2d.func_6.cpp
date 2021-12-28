@@ -10,58 +10,50 @@
 #include "phys2d.h"
 #include "need_phys2d.h"
 namespace das {
+#include "phys2d.func.aot.decl.inc"
 void Module_phys2d::initFunctions_6() {
-	using _method_45 = das::das_call_member< void (b2Timer::*)(),&b2Timer::Reset >;
-	addExtern<DAS_CALL_METHOD(_method_45)>(*this,lib,"Reset",SideEffects::worstDefault,"das_call_member< void (b2Timer::*)() , &b2Timer::Reset >::invoke")
+	using _method_40 = das::das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int,const b2Vec2 &,const b2Vec2 &),&b2ChainShape::CreateChain >;
+	addExtern<DAS_CALL_METHOD(_method_40)>(*this,lib,"CreateChain",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int,const b2Vec2 &,const b2Vec2 &) , &b2ChainShape::CreateChain >::invoke")
+		->args({"self","vertices","count","prevVertex","nextVertex"});
+	addExtern< b2Shape * (*)(const b2ChainShape &,b2BlockAllocator *) , _phys2d_virtual_0_Clone >(*this,lib,"Clone",SideEffects::worstDefault,"_phys2d_virtual_0_Clone")
+		->args({"self","allocator"});
+	addExtern< int (*)(const b2ChainShape &) , _phys2d_virtual_1_GetChildCount >(*this,lib,"GetChildCount",SideEffects::worstDefault,"_phys2d_virtual_1_GetChildCount")
 		->args({"self"});
-	using _method_46 = das::das_call_member< float (b2Timer::*)() const,&b2Timer::GetMilliseconds >;
-	addExtern<DAS_CALL_METHOD(_method_46)>(*this,lib,"GetMilliseconds",SideEffects::worstDefault,"das_call_member< float (b2Timer::*)() const , &b2Timer::GetMilliseconds >::invoke")
+	using _method_43 = das::das_call_member< void (b2ChainShape::*)(b2EdgeShape *,int) const,&b2ChainShape::GetChildEdge >;
+	addExtern<DAS_CALL_METHOD(_method_43)>(*this,lib,"GetChildEdge",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(b2EdgeShape *,int) const , &b2ChainShape::GetChildEdge >::invoke")
+		->args({"self","edge","index"});
+	addExtern< bool (*)(const b2ChainShape &,const b2Transform &,const b2Vec2 &) , _phys2d_virtual_2_TestPoint >(*this,lib,"TestPoint",SideEffects::worstDefault,"_phys2d_virtual_2_TestPoint")
+		->args({"self","transform","p"});
+	addExtern< bool (*)(const b2ChainShape &,b2RayCastOutput *,const b2RayCastInput &,const b2Transform &,int) , _phys2d_virtual_3_RayCast >(*this,lib,"RayCast",SideEffects::worstDefault,"_phys2d_virtual_3_RayCast")
+		->args({"self","output","input","transform","childIndex"});
+	addExtern< void (*)(const b2ChainShape &,b2AABB *,const b2Transform &,int) , _phys2d_virtual_4_ComputeAABB >(*this,lib,"ComputeAABB",SideEffects::worstDefault,"_phys2d_virtual_4_ComputeAABB")
+		->args({"self","aabb","transform","childIndex"});
+	addExtern< void (*)(const b2ChainShape &,b2MassData *,float) , _phys2d_virtual_5_ComputeMass >(*this,lib,"ComputeMass",SideEffects::worstDefault,"_phys2d_virtual_5_ComputeMass")
+		->args({"self","massData","density"});
+	addCtorAndUsing<b2CircleShape>(*this,lib,"b2CircleShape","b2CircleShape");
+	addExtern< b2Shape * (*)(const b2CircleShape &,b2BlockAllocator *) , _phys2d_virtual_6_Clone >(*this,lib,"Clone",SideEffects::worstDefault,"_phys2d_virtual_6_Clone")
+		->args({"self","allocator"});
+	addExtern< int (*)(const b2CircleShape &) , _phys2d_virtual_7_GetChildCount >(*this,lib,"GetChildCount",SideEffects::worstDefault,"_phys2d_virtual_7_GetChildCount")
 		->args({"self"});
-	using _method_47 = das::das_call_member< void (b2WorldManifold::*)(const b2Manifold *,const b2Transform &,float,const b2Transform &,float),&b2WorldManifold::Initialize >;
-	addExtern<DAS_CALL_METHOD(_method_47)>(*this,lib,"Initialize",SideEffects::worstDefault,"das_call_member< void (b2WorldManifold::*)(const b2Manifold *,const b2Transform &,float,const b2Transform &,float) , &b2WorldManifold::Initialize >::invoke")
-		->args({"self","manifold","xfA","radiusA","xfB","radiusB"});
-	addExtern< void (*)(b2PointState [2],b2PointState [2],const b2Manifold *,const b2Manifold *) , b2GetPointStates >(*this,lib,"b2GetPointStates",SideEffects::worstDefault,"b2GetPointStates")
-		->args({"state1","state2","manifold1","manifold2"});
-	using _method_48 = das::das_call_member< bool (b2AABB::*)() const,&b2AABB::IsValid >;
-	addExtern<DAS_CALL_METHOD(_method_48)>(*this,lib,"IsValid",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)() const , &b2AABB::IsValid >::invoke")
+	addExtern< bool (*)(const b2CircleShape &,const b2Transform &,const b2Vec2 &) , _phys2d_virtual_8_TestPoint >(*this,lib,"TestPoint",SideEffects::worstDefault,"_phys2d_virtual_8_TestPoint")
+		->args({"self","transform","p"});
+	addExtern< bool (*)(const b2CircleShape &,b2RayCastOutput *,const b2RayCastInput &,const b2Transform &,int) , _phys2d_virtual_9_RayCast >(*this,lib,"RayCast",SideEffects::worstDefault,"_phys2d_virtual_9_RayCast")
+		->args({"self","output","input","transform","childIndex"});
+	addExtern< void (*)(const b2CircleShape &,b2AABB *,const b2Transform &,int) , _phys2d_virtual_10_ComputeAABB >(*this,lib,"ComputeAABB",SideEffects::worstDefault,"_phys2d_virtual_10_ComputeAABB")
+		->args({"self","aabb","transform","childIndex"});
+	addExtern< void (*)(const b2CircleShape &,b2MassData *,float) , _phys2d_virtual_11_ComputeMass >(*this,lib,"ComputeMass",SideEffects::worstDefault,"_phys2d_virtual_11_ComputeMass")
+		->args({"self","massData","density"});
+	addCtorAndUsing<b2EdgeShape>(*this,lib,"b2EdgeShape","b2EdgeShape");
+	using _method_54 = das::das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &,const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetOneSided >;
+	addExtern<DAS_CALL_METHOD(_method_54)>(*this,lib,"SetOneSided",SideEffects::worstDefault,"das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &,const b2Vec2 &,const b2Vec2 &) , &b2EdgeShape::SetOneSided >::invoke")
+		->args({"self","v0","v1","v2","v3"});
+	using _method_55 = das::das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &),&b2EdgeShape::SetTwoSided >;
+	addExtern<DAS_CALL_METHOD(_method_55)>(*this,lib,"SetTwoSided",SideEffects::worstDefault,"das_call_member< void (b2EdgeShape::*)(const b2Vec2 &,const b2Vec2 &) , &b2EdgeShape::SetTwoSided >::invoke")
+		->args({"self","v1","v2"});
+	addExtern< b2Shape * (*)(const b2EdgeShape &,b2BlockAllocator *) , _phys2d_virtual_12_Clone >(*this,lib,"Clone",SideEffects::worstDefault,"_phys2d_virtual_12_Clone")
+		->args({"self","allocator"});
+	addExtern< int (*)(const b2EdgeShape &) , _phys2d_virtual_13_GetChildCount >(*this,lib,"GetChildCount",SideEffects::worstDefault,"_phys2d_virtual_13_GetChildCount")
 		->args({"self"});
-	using _method_49 = das::das_call_member< b2Vec2 (b2AABB::*)() const,&b2AABB::GetCenter >;
-	addExtern<DAS_CALL_METHOD(_method_49),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetCenter",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2AABB::*)() const , &b2AABB::GetCenter >::invoke")
-		->args({"self"});
-	using _method_50 = das::das_call_member< b2Vec2 (b2AABB::*)() const,&b2AABB::GetExtents >;
-	addExtern<DAS_CALL_METHOD(_method_50),SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"GetExtents",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2AABB::*)() const , &b2AABB::GetExtents >::invoke")
-		->args({"self"});
-	using _method_51 = das::das_call_member< float (b2AABB::*)() const,&b2AABB::GetPerimeter >;
-	addExtern<DAS_CALL_METHOD(_method_51)>(*this,lib,"GetPerimeter",SideEffects::worstDefault,"das_call_member< float (b2AABB::*)() const , &b2AABB::GetPerimeter >::invoke")
-		->args({"self"});
-	using _method_52 = das::das_call_member< void (b2AABB::*)(const b2AABB &),&b2AABB::Combine >;
-	addExtern<DAS_CALL_METHOD(_method_52)>(*this,lib,"Combine",SideEffects::worstDefault,"das_call_member< void (b2AABB::*)(const b2AABB &) , &b2AABB::Combine >::invoke")
-		->args({"self","aabb"});
-	using _method_53 = das::das_call_member< void (b2AABB::*)(const b2AABB &,const b2AABB &),&b2AABB::Combine >;
-	addExtern<DAS_CALL_METHOD(_method_53)>(*this,lib,"Combine",SideEffects::worstDefault,"das_call_member< void (b2AABB::*)(const b2AABB &,const b2AABB &) , &b2AABB::Combine >::invoke")
-		->args({"self","aabb1","aabb2"});
-	using _method_54 = das::das_call_member< bool (b2AABB::*)(const b2AABB &) const,&b2AABB::Contains >;
-	addExtern<DAS_CALL_METHOD(_method_54)>(*this,lib,"Contains",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)(const b2AABB &) const , &b2AABB::Contains >::invoke")
-		->args({"self","aabb"});
-	using _method_55 = das::das_call_member< bool (b2AABB::*)(b2RayCastOutput *,const b2RayCastInput &) const,&b2AABB::RayCast >;
-	addExtern<DAS_CALL_METHOD(_method_55)>(*this,lib,"RayCast",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)(b2RayCastOutput *,const b2RayCastInput &) const , &b2AABB::RayCast >::invoke")
-		->args({"self","output","input"});
-	addExtern< void (*)(b2Manifold *,const b2CircleShape *,const b2Transform &,const b2CircleShape *,const b2Transform &) , b2CollideCircles >(*this,lib,"b2CollideCircles",SideEffects::worstDefault,"b2CollideCircles")
-		->args({"manifold","circleA","xfA","circleB","xfB"});
-	addExtern< void (*)(b2Manifold *,const b2PolygonShape *,const b2Transform &,const b2CircleShape *,const b2Transform &) , b2CollidePolygonAndCircle >(*this,lib,"b2CollidePolygonAndCircle",SideEffects::worstDefault,"b2CollidePolygonAndCircle")
-		->args({"manifold","polygonA","xfA","circleB","xfB"});
-	addExtern< void (*)(b2Manifold *,const b2PolygonShape *,const b2Transform &,const b2PolygonShape *,const b2Transform &) , b2CollidePolygons >(*this,lib,"b2CollidePolygons",SideEffects::worstDefault,"b2CollidePolygons")
-		->args({"manifold","polygonA","xfA","polygonB","xfB"});
-	addExtern< void (*)(b2Manifold *,const b2EdgeShape *,const b2Transform &,const b2CircleShape *,const b2Transform &) , b2CollideEdgeAndCircle >(*this,lib,"b2CollideEdgeAndCircle",SideEffects::worstDefault,"b2CollideEdgeAndCircle")
-		->args({"manifold","polygonA","xfA","circleB","xfB"});
-	addExtern< void (*)(b2Manifold *,const b2EdgeShape *,const b2Transform &,const b2PolygonShape *,const b2Transform &) , b2CollideEdgeAndPolygon >(*this,lib,"b2CollideEdgeAndPolygon",SideEffects::worstDefault,"b2CollideEdgeAndPolygon")
-		->args({"manifold","edgeA","xfA","circleB","xfB"});
-	addExtern< int (*)(b2ClipVertex [2],b2ClipVertex const[2],const b2Vec2 &,float,int) , b2ClipSegmentToLine >(*this,lib,"b2ClipSegmentToLine",SideEffects::worstDefault,"b2ClipSegmentToLine")
-		->args({"vOut","vIn","normal","offset","vertexIndexA"});
-	addExtern< bool (*)(const b2Shape *,int,const b2Shape *,int,const b2Transform &,const b2Transform &) , b2TestOverlap >(*this,lib,"b2TestOverlap",SideEffects::worstDefault,"b2TestOverlap")
-		->args({"shapeA","indexA","shapeB","indexB","xfA","xfB"});
-	addExtern< bool (*)(const b2AABB &,const b2AABB &) , b2TestOverlap >(*this,lib,"b2TestOverlap",SideEffects::worstDefault,"b2TestOverlap")
-		->args({"a","b"});
 }
 }
 

@@ -10,62 +10,56 @@
 #include "phys2d.h"
 #include "need_phys2d.h"
 namespace das {
+#include "phys2d.func.aot.decl.inc"
 void Module_phys2d::initFunctions_20() {
-	using _method_293 = das::das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetAngularOffset >;
-	addExtern<DAS_CALL_METHOD(_method_293)>(*this,lib,"SetAngularOffset",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(float) , &b2MotorJoint::SetAngularOffset >::invoke")
-		->args({"self","angularOffset"});
-	using _method_294 = das::das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetAngularOffset >;
-	addExtern<DAS_CALL_METHOD(_method_294)>(*this,lib,"GetAngularOffset",SideEffects::worstDefault,"das_call_member< float (b2MotorJoint::*)() const , &b2MotorJoint::GetAngularOffset >::invoke")
+	addExtern< b2Vec2 (*)(const b2FrictionJoint &) , _phys2d_virtual_39_GetAnchorB >(*this,lib,"GetAnchorB",SideEffects::worstDefault,"_phys2d_virtual_39_GetAnchorB")
 		->args({"self"});
-	using _method_295 = das::das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetMaxForce >;
-	addExtern<DAS_CALL_METHOD(_method_295)>(*this,lib,"SetMaxForce",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(float) , &b2MotorJoint::SetMaxForce >::invoke")
+	addExtern< b2Vec2 (*)(const b2FrictionJoint &,float) , _phys2d_virtual_40_GetReactionForce >(*this,lib,"GetReactionForce",SideEffects::worstDefault,"_phys2d_virtual_40_GetReactionForce")
+		->args({"self","inv_dt"});
+	addExtern< float (*)(const b2FrictionJoint &,float) , _phys2d_virtual_41_GetReactionTorque >(*this,lib,"GetReactionTorque",SideEffects::worstDefault,"_phys2d_virtual_41_GetReactionTorque")
+		->args({"self","inv_dt"});
+	using _method_303 = das::das_call_member< const b2Vec2 & (b2FrictionJoint::*)() const,&b2FrictionJoint::GetLocalAnchorA >;
+	addExtern<DAS_CALL_METHOD(_method_303), SimNode_ExtFuncCallRef>(*this,lib,"GetLocalAnchorA",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2FrictionJoint::*)() const , &b2FrictionJoint::GetLocalAnchorA >::invoke")
+		->args({"self"});
+	using _method_304 = das::das_call_member< const b2Vec2 & (b2FrictionJoint::*)() const,&b2FrictionJoint::GetLocalAnchorB >;
+	addExtern<DAS_CALL_METHOD(_method_304), SimNode_ExtFuncCallRef>(*this,lib,"GetLocalAnchorB",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2FrictionJoint::*)() const , &b2FrictionJoint::GetLocalAnchorB >::invoke")
+		->args({"self"});
+	using _method_305 = das::das_call_member< void (b2FrictionJoint::*)(float),&b2FrictionJoint::SetMaxForce >;
+	addExtern<DAS_CALL_METHOD(_method_305)>(*this,lib,"SetMaxForce",SideEffects::worstDefault,"das_call_member< void (b2FrictionJoint::*)(float) , &b2FrictionJoint::SetMaxForce >::invoke")
 		->args({"self","force"});
-	using _method_296 = das::das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetMaxForce >;
-	addExtern<DAS_CALL_METHOD(_method_296)>(*this,lib,"GetMaxForce",SideEffects::worstDefault,"das_call_member< float (b2MotorJoint::*)() const , &b2MotorJoint::GetMaxForce >::invoke")
+	using _method_306 = das::das_call_member< float (b2FrictionJoint::*)() const,&b2FrictionJoint::GetMaxForce >;
+	addExtern<DAS_CALL_METHOD(_method_306)>(*this,lib,"GetMaxForce",SideEffects::worstDefault,"das_call_member< float (b2FrictionJoint::*)() const , &b2FrictionJoint::GetMaxForce >::invoke")
 		->args({"self"});
-	using _method_297 = das::das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetMaxTorque >;
-	addExtern<DAS_CALL_METHOD(_method_297)>(*this,lib,"SetMaxTorque",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(float) , &b2MotorJoint::SetMaxTorque >::invoke")
+	using _method_307 = das::das_call_member< void (b2FrictionJoint::*)(float),&b2FrictionJoint::SetMaxTorque >;
+	addExtern<DAS_CALL_METHOD(_method_307)>(*this,lib,"SetMaxTorque",SideEffects::worstDefault,"das_call_member< void (b2FrictionJoint::*)(float) , &b2FrictionJoint::SetMaxTorque >::invoke")
 		->args({"self","torque"});
-	using _method_298 = das::das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetMaxTorque >;
-	addExtern<DAS_CALL_METHOD(_method_298)>(*this,lib,"GetMaxTorque",SideEffects::worstDefault,"das_call_member< float (b2MotorJoint::*)() const , &b2MotorJoint::GetMaxTorque >::invoke")
+	using _method_308 = das::das_call_member< float (b2FrictionJoint::*)() const,&b2FrictionJoint::GetMaxTorque >;
+	addExtern<DAS_CALL_METHOD(_method_308)>(*this,lib,"GetMaxTorque",SideEffects::worstDefault,"das_call_member< float (b2FrictionJoint::*)() const , &b2FrictionJoint::GetMaxTorque >::invoke")
 		->args({"self"});
-	using _method_299 = das::das_call_member< void (b2MotorJoint::*)(float),&b2MotorJoint::SetCorrectionFactor >;
-	addExtern<DAS_CALL_METHOD(_method_299)>(*this,lib,"SetCorrectionFactor",SideEffects::worstDefault,"das_call_member< void (b2MotorJoint::*)(float) , &b2MotorJoint::SetCorrectionFactor >::invoke")
-		->args({"self","factor"});
-	using _method_300 = das::das_call_member< float (b2MotorJoint::*)() const,&b2MotorJoint::GetCorrectionFactor >;
-	addExtern<DAS_CALL_METHOD(_method_300)>(*this,lib,"GetCorrectionFactor",SideEffects::worstDefault,"das_call_member< float (b2MotorJoint::*)() const , &b2MotorJoint::GetCorrectionFactor >::invoke")
+	addExtern< void (*)(b2FrictionJoint &) , _phys2d_virtual_42_Dump >(*this,lib,"Dump",SideEffects::worstDefault,"_phys2d_virtual_42_Dump")
 		->args({"self"});
-	addCtorAndUsing<b2MouseJointDef>(*this,lib,"b2MouseJointDef","b2MouseJointDef");
-	using _method_301 = das::das_call_member< void (b2MouseJoint::*)(const b2Vec2 &),&b2MouseJoint::SetTarget >;
-	addExtern<DAS_CALL_METHOD(_method_301)>(*this,lib,"SetTarget",SideEffects::worstDefault,"das_call_member< void (b2MouseJoint::*)(const b2Vec2 &) , &b2MouseJoint::SetTarget >::invoke")
-		->args({"self","target"});
-	using _method_302 = das::das_call_member< const b2Vec2 & (b2MouseJoint::*)() const,&b2MouseJoint::GetTarget >;
-	addExtern<DAS_CALL_METHOD(_method_302), SimNode_ExtFuncCallRef>(*this,lib,"GetTarget",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2MouseJoint::*)() const , &b2MouseJoint::GetTarget >::invoke")
+	addCtorAndUsing<b2GearJointDef>(*this,lib,"b2GearJointDef","b2GearJointDef");
+	addExtern< b2Vec2 (*)(const b2GearJoint &) , _phys2d_virtual_43_GetAnchorA >(*this,lib,"GetAnchorA",SideEffects::worstDefault,"_phys2d_virtual_43_GetAnchorA")
 		->args({"self"});
-	using _method_303 = das::das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetMaxForce >;
-	addExtern<DAS_CALL_METHOD(_method_303)>(*this,lib,"SetMaxForce",SideEffects::worstDefault,"das_call_member< void (b2MouseJoint::*)(float) , &b2MouseJoint::SetMaxForce >::invoke")
-		->args({"self","force"});
-	using _method_304 = das::das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetMaxForce >;
-	addExtern<DAS_CALL_METHOD(_method_304)>(*this,lib,"GetMaxForce",SideEffects::worstDefault,"das_call_member< float (b2MouseJoint::*)() const , &b2MouseJoint::GetMaxForce >::invoke")
+	addExtern< b2Vec2 (*)(const b2GearJoint &) , _phys2d_virtual_44_GetAnchorB >(*this,lib,"GetAnchorB",SideEffects::worstDefault,"_phys2d_virtual_44_GetAnchorB")
 		->args({"self"});
-	using _method_305 = das::das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetStiffness >;
-	addExtern<DAS_CALL_METHOD(_method_305)>(*this,lib,"SetStiffness",SideEffects::worstDefault,"das_call_member< void (b2MouseJoint::*)(float) , &b2MouseJoint::SetStiffness >::invoke")
-		->args({"self","stiffness"});
-	using _method_306 = das::das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetStiffness >;
-	addExtern<DAS_CALL_METHOD(_method_306)>(*this,lib,"GetStiffness",SideEffects::worstDefault,"das_call_member< float (b2MouseJoint::*)() const , &b2MouseJoint::GetStiffness >::invoke")
+	addExtern< b2Vec2 (*)(const b2GearJoint &,float) , _phys2d_virtual_45_GetReactionForce >(*this,lib,"GetReactionForce",SideEffects::worstDefault,"_phys2d_virtual_45_GetReactionForce")
+		->args({"self","inv_dt"});
+	addExtern< float (*)(const b2GearJoint &,float) , _phys2d_virtual_46_GetReactionTorque >(*this,lib,"GetReactionTorque",SideEffects::worstDefault,"_phys2d_virtual_46_GetReactionTorque")
+		->args({"self","inv_dt"});
+	using _method_314 = das::das_call_member< b2Joint * (b2GearJoint::*)(),&b2GearJoint::GetJoint1 >;
+	addExtern<DAS_CALL_METHOD(_method_314)>(*this,lib,"GetJoint1",SideEffects::worstDefault,"das_call_member< b2Joint * (b2GearJoint::*)() , &b2GearJoint::GetJoint1 >::invoke")
 		->args({"self"});
-	using _method_307 = das::das_call_member< void (b2MouseJoint::*)(float),&b2MouseJoint::SetDamping >;
-	addExtern<DAS_CALL_METHOD(_method_307)>(*this,lib,"SetDamping",SideEffects::worstDefault,"das_call_member< void (b2MouseJoint::*)(float) , &b2MouseJoint::SetDamping >::invoke")
-		->args({"self","damping"});
-	using _method_308 = das::das_call_member< float (b2MouseJoint::*)() const,&b2MouseJoint::GetDamping >;
-	addExtern<DAS_CALL_METHOD(_method_308)>(*this,lib,"GetDamping",SideEffects::worstDefault,"das_call_member< float (b2MouseJoint::*)() const , &b2MouseJoint::GetDamping >::invoke")
+	using _method_315 = das::das_call_member< b2Joint * (b2GearJoint::*)(),&b2GearJoint::GetJoint2 >;
+	addExtern<DAS_CALL_METHOD(_method_315)>(*this,lib,"GetJoint2",SideEffects::worstDefault,"das_call_member< b2Joint * (b2GearJoint::*)() , &b2GearJoint::GetJoint2 >::invoke")
 		->args({"self"});
-	addCtorAndUsing<b2PrismaticJointDef>(*this,lib,"b2PrismaticJointDef","b2PrismaticJointDef");
-	using _method_309 = das::das_call_member< void (b2PrismaticJointDef::*)(b2Body *,b2Body *,const b2Vec2 &,const b2Vec2 &),&b2PrismaticJointDef::Initialize >;
-	addExtern<DAS_CALL_METHOD(_method_309)>(*this,lib,"Initialize",SideEffects::worstDefault,"das_call_member< void (b2PrismaticJointDef::*)(b2Body *,b2Body *,const b2Vec2 &,const b2Vec2 &) , &b2PrismaticJointDef::Initialize >::invoke")
-		->args({"self","bodyA","bodyB","anchor","axis"});
-	using _method_310 = das::das_call_member< const b2Vec2 & (b2PrismaticJoint::*)() const,&b2PrismaticJoint::GetLocalAnchorA >;
-	addExtern<DAS_CALL_METHOD(_method_310), SimNode_ExtFuncCallRef>(*this,lib,"GetLocalAnchorA",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2PrismaticJoint::*)() const , &b2PrismaticJoint::GetLocalAnchorA >::invoke")
+	using _method_316 = das::das_call_member< void (b2GearJoint::*)(float),&b2GearJoint::SetRatio >;
+	addExtern<DAS_CALL_METHOD(_method_316)>(*this,lib,"SetRatio",SideEffects::worstDefault,"das_call_member< void (b2GearJoint::*)(float) , &b2GearJoint::SetRatio >::invoke")
+		->args({"self","ratio"});
+	using _method_317 = das::das_call_member< float (b2GearJoint::*)() const,&b2GearJoint::GetRatio >;
+	addExtern<DAS_CALL_METHOD(_method_317)>(*this,lib,"GetRatio",SideEffects::worstDefault,"das_call_member< float (b2GearJoint::*)() const , &b2GearJoint::GetRatio >::invoke")
+		->args({"self"});
+	addExtern< void (*)(b2GearJoint &) , _phys2d_virtual_47_Dump >(*this,lib,"Dump",SideEffects::worstDefault,"_phys2d_virtual_47_Dump")
 		->args({"self"});
 }
 }

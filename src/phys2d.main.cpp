@@ -7,8 +7,6 @@
 #include "phys2d.h"
 
 
-//MAKE_EXTERNAL_TYPE_FACTORY(float2x2, das::float2x2)
-
 namespace das {
 
 void Module_phys2d::initMain() {
@@ -16,6 +14,13 @@ void Module_phys2d::initMain() {
 
 ModuleAotType Module_phys2d::aotRequire(TextWriter& /*tw*/) const {
 	return ModuleAotType::no_aot;
+}
+
+void Module_phys2d::initAotAlias() {
+	addAlias(typeFactory<b2Vec2>::make(lib));
+	addAlias(typeFactory<b2Vec3>::make(lib));
+	// addAlias(typeFactory<b2Mat22>::make(lib));
+	// addAlias(typeFactory<b2Mat33>::make(lib));
 }
 
 }

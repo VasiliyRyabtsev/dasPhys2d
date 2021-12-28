@@ -13,6 +13,7 @@
 namespace das {
 #include "phys2d.enum.class.inc"
 #include "phys2d.struct.class.inc"
+#include "phys2d.func.aot.inc"
 Module_phys2d::Module_phys2d() : Module("phys2d") {
 }
 bool Module_phys2d::initDependencies() {
@@ -20,6 +21,7 @@ bool Module_phys2d::initDependencies() {
 	initialized = true;
 	lib.addModule(this);
 	lib.addBuiltInModule();
+	initAotAlias();
 	#include "phys2d.enum.add.inc"
 	#include "phys2d.dummy.add.inc"
 	#include "phys2d.struct.add.inc"

@@ -5,8 +5,6 @@ initRecAnnotation(ann_b2BodyUserData,lib);
 initRecAnnotation(ann_b2FixtureUserData,lib);
 initRecAnnotation(ann_b2JointUserData,lib);
 initRecAnnotation(ann_b2Version,lib);
-initRecAnnotation(ann_b2Vec2,lib);
-initRecAnnotation(ann_b2Vec3,lib);
 initRecAnnotation(ann_b2Mat22,lib);
 initRecAnnotation(ann_b2Mat33,lib);
 initRecAnnotation(ann_b2Rot,lib);

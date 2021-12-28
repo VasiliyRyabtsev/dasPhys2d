@@ -10,63 +10,57 @@
 #include "phys2d.h"
 #include "need_phys2d.h"
 namespace das {
+#include "phys2d.func.aot.decl.inc"
 void Module_phys2d::initFunctions_24() {
-	using _method_367 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetJointLinearSpeed >;
-	addExtern<DAS_CALL_METHOD(_method_367)>(*this,lib,"GetJointLinearSpeed",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetJointLinearSpeed >::invoke")
+	addExtern< b2Vec2 (*)(const b2PulleyJoint &) , _phys2d_virtual_65_GetAnchorA >(*this,lib,"GetAnchorA",SideEffects::worstDefault,"_phys2d_virtual_65_GetAnchorA")
 		->args({"self"});
-	using _method_368 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetJointAngle >;
-	addExtern<DAS_CALL_METHOD(_method_368)>(*this,lib,"GetJointAngle",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetJointAngle >::invoke")
+	addExtern< b2Vec2 (*)(const b2PulleyJoint &) , _phys2d_virtual_66_GetAnchorB >(*this,lib,"GetAnchorB",SideEffects::worstDefault,"_phys2d_virtual_66_GetAnchorB")
 		->args({"self"});
-	using _method_369 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetJointAngularSpeed >;
-	addExtern<DAS_CALL_METHOD(_method_369)>(*this,lib,"GetJointAngularSpeed",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetJointAngularSpeed >::invoke")
-		->args({"self"});
-	using _method_370 = das::das_call_member< bool (b2WheelJoint::*)() const,&b2WheelJoint::IsLimitEnabled >;
-	addExtern<DAS_CALL_METHOD(_method_370)>(*this,lib,"IsLimitEnabled",SideEffects::worstDefault,"das_call_member< bool (b2WheelJoint::*)() const , &b2WheelJoint::IsLimitEnabled >::invoke")
-		->args({"self"});
-	using _method_371 = das::das_call_member< void (b2WheelJoint::*)(bool),&b2WheelJoint::EnableLimit >;
-	addExtern<DAS_CALL_METHOD(_method_371)>(*this,lib,"EnableLimit",SideEffects::worstDefault,"das_call_member< void (b2WheelJoint::*)(bool) , &b2WheelJoint::EnableLimit >::invoke")
-		->args({"self","flag"});
-	using _method_372 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetLowerLimit >;
-	addExtern<DAS_CALL_METHOD(_method_372)>(*this,lib,"GetLowerLimit",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetLowerLimit >::invoke")
-		->args({"self"});
-	using _method_373 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetUpperLimit >;
-	addExtern<DAS_CALL_METHOD(_method_373)>(*this,lib,"GetUpperLimit",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetUpperLimit >::invoke")
-		->args({"self"});
-	using _method_374 = das::das_call_member< void (b2WheelJoint::*)(float,float),&b2WheelJoint::SetLimits >;
-	addExtern<DAS_CALL_METHOD(_method_374)>(*this,lib,"SetLimits",SideEffects::worstDefault,"das_call_member< void (b2WheelJoint::*)(float,float) , &b2WheelJoint::SetLimits >::invoke")
-		->args({"self","lower","upper"});
-	using _method_375 = das::das_call_member< bool (b2WheelJoint::*)() const,&b2WheelJoint::IsMotorEnabled >;
-	addExtern<DAS_CALL_METHOD(_method_375)>(*this,lib,"IsMotorEnabled",SideEffects::worstDefault,"das_call_member< bool (b2WheelJoint::*)() const , &b2WheelJoint::IsMotorEnabled >::invoke")
-		->args({"self"});
-	using _method_376 = das::das_call_member< void (b2WheelJoint::*)(bool),&b2WheelJoint::EnableMotor >;
-	addExtern<DAS_CALL_METHOD(_method_376)>(*this,lib,"EnableMotor",SideEffects::worstDefault,"das_call_member< void (b2WheelJoint::*)(bool) , &b2WheelJoint::EnableMotor >::invoke")
-		->args({"self","flag"});
-	using _method_377 = das::das_call_member< void (b2WheelJoint::*)(float),&b2WheelJoint::SetMotorSpeed >;
-	addExtern<DAS_CALL_METHOD(_method_377)>(*this,lib,"SetMotorSpeed",SideEffects::worstDefault,"das_call_member< void (b2WheelJoint::*)(float) , &b2WheelJoint::SetMotorSpeed >::invoke")
-		->args({"self","speed"});
-	using _method_378 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetMotorSpeed >;
-	addExtern<DAS_CALL_METHOD(_method_378)>(*this,lib,"GetMotorSpeed",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetMotorSpeed >::invoke")
-		->args({"self"});
-	using _method_379 = das::das_call_member< void (b2WheelJoint::*)(float),&b2WheelJoint::SetMaxMotorTorque >;
-	addExtern<DAS_CALL_METHOD(_method_379)>(*this,lib,"SetMaxMotorTorque",SideEffects::worstDefault,"das_call_member< void (b2WheelJoint::*)(float) , &b2WheelJoint::SetMaxMotorTorque >::invoke")
-		->args({"self","torque"});
-	using _method_380 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetMaxMotorTorque >;
-	addExtern<DAS_CALL_METHOD(_method_380)>(*this,lib,"GetMaxMotorTorque",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetMaxMotorTorque >::invoke")
-		->args({"self"});
-	using _method_381 = das::das_call_member< float (b2WheelJoint::*)(float) const,&b2WheelJoint::GetMotorTorque >;
-	addExtern<DAS_CALL_METHOD(_method_381)>(*this,lib,"GetMotorTorque",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)(float) const , &b2WheelJoint::GetMotorTorque >::invoke")
+	addExtern< b2Vec2 (*)(const b2PulleyJoint &,float) , _phys2d_virtual_67_GetReactionForce >(*this,lib,"GetReactionForce",SideEffects::worstDefault,"_phys2d_virtual_67_GetReactionForce")
 		->args({"self","inv_dt"});
-	using _method_382 = das::das_call_member< void (b2WheelJoint::*)(float),&b2WheelJoint::SetStiffness >;
-	addExtern<DAS_CALL_METHOD(_method_382)>(*this,lib,"SetStiffness",SideEffects::worstDefault,"das_call_member< void (b2WheelJoint::*)(float) , &b2WheelJoint::SetStiffness >::invoke")
-		->args({"self","stiffness"});
-	using _method_383 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetStiffness >;
-	addExtern<DAS_CALL_METHOD(_method_383)>(*this,lib,"GetStiffness",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetStiffness >::invoke")
+	addExtern< float (*)(const b2PulleyJoint &,float) , _phys2d_virtual_68_GetReactionTorque >(*this,lib,"GetReactionTorque",SideEffects::worstDefault,"_phys2d_virtual_68_GetReactionTorque")
+		->args({"self","inv_dt"});
+	using _method_379 = das::das_call_member< b2Vec2 (b2PulleyJoint::*)() const,&b2PulleyJoint::GetGroundAnchorA >;
+	addExtern<DAS_CALL_METHOD(_method_379)>(*this,lib,"GetGroundAnchorA",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2PulleyJoint::*)() const , &b2PulleyJoint::GetGroundAnchorA >::invoke")
 		->args({"self"});
-	using _method_384 = das::das_call_member< void (b2WheelJoint::*)(float),&b2WheelJoint::SetDamping >;
-	addExtern<DAS_CALL_METHOD(_method_384)>(*this,lib,"SetDamping",SideEffects::worstDefault,"das_call_member< void (b2WheelJoint::*)(float) , &b2WheelJoint::SetDamping >::invoke")
-		->args({"self","damping"});
-	using _method_385 = das::das_call_member< float (b2WheelJoint::*)() const,&b2WheelJoint::GetDamping >;
-	addExtern<DAS_CALL_METHOD(_method_385)>(*this,lib,"GetDamping",SideEffects::worstDefault,"das_call_member< float (b2WheelJoint::*)() const , &b2WheelJoint::GetDamping >::invoke")
+	using _method_380 = das::das_call_member< b2Vec2 (b2PulleyJoint::*)() const,&b2PulleyJoint::GetGroundAnchorB >;
+	addExtern<DAS_CALL_METHOD(_method_380)>(*this,lib,"GetGroundAnchorB",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2PulleyJoint::*)() const , &b2PulleyJoint::GetGroundAnchorB >::invoke")
+		->args({"self"});
+	using _method_381 = das::das_call_member< float (b2PulleyJoint::*)() const,&b2PulleyJoint::GetLengthA >;
+	addExtern<DAS_CALL_METHOD(_method_381)>(*this,lib,"GetLengthA",SideEffects::worstDefault,"das_call_member< float (b2PulleyJoint::*)() const , &b2PulleyJoint::GetLengthA >::invoke")
+		->args({"self"});
+	using _method_382 = das::das_call_member< float (b2PulleyJoint::*)() const,&b2PulleyJoint::GetLengthB >;
+	addExtern<DAS_CALL_METHOD(_method_382)>(*this,lib,"GetLengthB",SideEffects::worstDefault,"das_call_member< float (b2PulleyJoint::*)() const , &b2PulleyJoint::GetLengthB >::invoke")
+		->args({"self"});
+	using _method_383 = das::das_call_member< float (b2PulleyJoint::*)() const,&b2PulleyJoint::GetRatio >;
+	addExtern<DAS_CALL_METHOD(_method_383)>(*this,lib,"GetRatio",SideEffects::worstDefault,"das_call_member< float (b2PulleyJoint::*)() const , &b2PulleyJoint::GetRatio >::invoke")
+		->args({"self"});
+	using _method_384 = das::das_call_member< float (b2PulleyJoint::*)() const,&b2PulleyJoint::GetCurrentLengthA >;
+	addExtern<DAS_CALL_METHOD(_method_384)>(*this,lib,"GetCurrentLengthA",SideEffects::worstDefault,"das_call_member< float (b2PulleyJoint::*)() const , &b2PulleyJoint::GetCurrentLengthA >::invoke")
+		->args({"self"});
+	using _method_385 = das::das_call_member< float (b2PulleyJoint::*)() const,&b2PulleyJoint::GetCurrentLengthB >;
+	addExtern<DAS_CALL_METHOD(_method_385)>(*this,lib,"GetCurrentLengthB",SideEffects::worstDefault,"das_call_member< float (b2PulleyJoint::*)() const , &b2PulleyJoint::GetCurrentLengthB >::invoke")
+		->args({"self"});
+	addExtern< void (*)(b2PulleyJoint &) , _phys2d_virtual_69_Dump >(*this,lib,"Dump",SideEffects::worstDefault,"_phys2d_virtual_69_Dump")
+		->args({"self"});
+	addExtern< void (*)(b2PulleyJoint &,const b2Vec2 &) , _phys2d_virtual_70_ShiftOrigin >(*this,lib,"ShiftOrigin",SideEffects::worstDefault,"_phys2d_virtual_70_ShiftOrigin")
+		->args({"self","newOrigin"});
+	addCtorAndUsing<b2RevoluteJointDef>(*this,lib,"b2RevoluteJointDef","b2RevoluteJointDef");
+	using _method_388 = das::das_call_member< void (b2RevoluteJointDef::*)(b2Body *,b2Body *,const b2Vec2 &),&b2RevoluteJointDef::Initialize >;
+	addExtern<DAS_CALL_METHOD(_method_388)>(*this,lib,"Initialize",SideEffects::worstDefault,"das_call_member< void (b2RevoluteJointDef::*)(b2Body *,b2Body *,const b2Vec2 &) , &b2RevoluteJointDef::Initialize >::invoke")
+		->args({"self","bodyA","bodyB","anchor"});
+	addExtern< b2Vec2 (*)(const b2RevoluteJoint &) , _phys2d_virtual_71_GetAnchorA >(*this,lib,"GetAnchorA",SideEffects::worstDefault,"_phys2d_virtual_71_GetAnchorA")
+		->args({"self"});
+	addExtern< b2Vec2 (*)(const b2RevoluteJoint &) , _phys2d_virtual_72_GetAnchorB >(*this,lib,"GetAnchorB",SideEffects::worstDefault,"_phys2d_virtual_72_GetAnchorB")
+		->args({"self"});
+	using _method_391 = das::das_call_member< const b2Vec2 & (b2RevoluteJoint::*)() const,&b2RevoluteJoint::GetLocalAnchorA >;
+	addExtern<DAS_CALL_METHOD(_method_391), SimNode_ExtFuncCallRef>(*this,lib,"GetLocalAnchorA",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2RevoluteJoint::*)() const , &b2RevoluteJoint::GetLocalAnchorA >::invoke")
+		->args({"self"});
+	using _method_392 = das::das_call_member< const b2Vec2 & (b2RevoluteJoint::*)() const,&b2RevoluteJoint::GetLocalAnchorB >;
+	addExtern<DAS_CALL_METHOD(_method_392), SimNode_ExtFuncCallRef>(*this,lib,"GetLocalAnchorB",SideEffects::worstDefault,"das_call_member< const b2Vec2 & (b2RevoluteJoint::*)() const , &b2RevoluteJoint::GetLocalAnchorB >::invoke")
+		->args({"self"});
+	using _method_393 = das::das_call_member< float (b2RevoluteJoint::*)() const,&b2RevoluteJoint::GetReferenceAngle >;
+	addExtern<DAS_CALL_METHOD(_method_393)>(*this,lib,"GetReferenceAngle",SideEffects::worstDefault,"das_call_member< float (b2RevoluteJoint::*)() const , &b2RevoluteJoint::GetReferenceAngle >::invoke")
 		->args({"self"});
 }
 }
