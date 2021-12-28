@@ -48,9 +48,9 @@ void Module_phys2d::initFunctions_1() {
 	using _method_5 = das::das_call_member< b2Vec2 (b2Mat22::*)(const b2Vec2 &) const,&b2Mat22::Solve >;
 	addExtern<DAS_CALL_METHOD(_method_5)>(*this,lib,"Solve",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2Mat22::*)(const b2Vec2 &) const , &b2Mat22::Solve >::invoke")
 		->args({"self","b"});
-	addCtorAndUsing<b2Mat33>(*this,lib,"b2Mat33","b2Mat33");
-	addCtorAndUsing<b2Mat33,const b2Vec3 &,const b2Vec3 &,const b2Vec3 &>(*this,lib,"b2Mat33","b2Mat33")
-		->args({"c1","c2","c3"});
+	addCtorAndUsing<b2Rot>(*this,lib,"b2Rot","b2Rot");
+	addCtorAndUsing<b2Rot,float>(*this,lib,"b2Rot","b2Rot")
+		->args({"angle"});
 }
 }
 

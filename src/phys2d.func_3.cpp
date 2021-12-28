@@ -12,20 +12,6 @@
 namespace das {
 #include "phys2d.func.aot.decl.inc"
 void Module_phys2d::initFunctions_3() {
-	addExtern< float (*)(const b2Vec2 &,const b2Vec2 &) , b2Cross >(*this,lib,"b2Cross",SideEffects::worstDefault,"b2Cross")
-		->args({"a","b"});
-	addExtern< b2Vec2 (*)(const b2Vec2 &,float) , b2Cross >(*this,lib,"b2Cross",SideEffects::worstDefault,"b2Cross")
-		->args({"a","s"});
-	addExtern< b2Vec2 (*)(float,const b2Vec2 &) , b2Cross >(*this,lib,"b2Cross",SideEffects::worstDefault,"b2Cross")
-		->args({"s","a"});
-	addExtern< b2Vec2 (*)(const b2Mat22 &,const b2Vec2 &) , b2Mul >(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
-		->args({"A","v"});
-	addExtern< b2Vec2 (*)(const b2Mat22 &,const b2Vec2 &) , b2MulT >(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
-		->args({"A","v"});
-	addExtern< float (*)(const b2Vec2 &,const b2Vec2 &) , b2Distance >(*this,lib,"b2Distance",SideEffects::worstDefault,"b2Distance")
-		->args({"a","b"});
-	addExtern< float (*)(const b2Vec2 &,const b2Vec2 &) , b2DistanceSquared >(*this,lib,"b2DistanceSquared",SideEffects::worstDefault,"b2DistanceSquared")
-		->args({"a","b"});
 	addExtern< float (*)(const b2Vec3 &,const b2Vec3 &) , b2Dot >(*this,lib,"b2Dot",SideEffects::worstDefault,"b2Dot")
 		->args({"a","b"});
 	addExtern< b2Vec3 (*)(const b2Vec3 &,const b2Vec3 &) , b2Cross >(*this,lib,"b2Cross",SideEffects::worstDefault,"b2Cross")
@@ -52,6 +38,20 @@ void Module_phys2d::initFunctions_3() {
 		->args({"T","v"});
 	addExtern< b2Transform (*)(const b2Transform &,const b2Transform &) , b2Mul ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Mul",SideEffects::worstDefault,"b2Mul")
 		->args({"A","B"});
+	addExtern< b2Transform (*)(const b2Transform &,const b2Transform &) , b2MulT ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2MulT",SideEffects::worstDefault,"b2MulT")
+		->args({"A","B"});
+	addExtern< b2Vec2 (*)(const b2Vec2 &) , b2Abs >(*this,lib,"b2Abs",SideEffects::worstDefault,"b2Abs")
+		->args({"a"});
+	addExtern< b2Mat22 (*)(const b2Mat22 &) , b2Abs ,SimNode_ExtFuncCallAndCopyOrMove>(*this,lib,"b2Abs",SideEffects::worstDefault,"b2Abs")
+		->args({"A"});
+	addExtern< b2Vec2 (*)(const b2Vec2 &,const b2Vec2 &) , b2Min >(*this,lib,"b2Min",SideEffects::worstDefault,"b2Min")
+		->args({"a","b"});
+	addExtern< b2Vec2 (*)(const b2Vec2 &,const b2Vec2 &) , b2Max >(*this,lib,"b2Max",SideEffects::worstDefault,"b2Max")
+		->args({"a","b"});
+	addExtern< b2Vec2 (*)(const b2Vec2 &,const b2Vec2 &,const b2Vec2 &) , b2Clamp >(*this,lib,"b2Clamp",SideEffects::worstDefault,"b2Clamp")
+		->args({"a","low","high"});
+	addExtern< unsigned int (*)(unsigned int) , b2NextPowerOfTwo >(*this,lib,"b2NextPowerOfTwo",SideEffects::worstDefault,"b2NextPowerOfTwo")
+		->args({"x"});
 }
 }
 

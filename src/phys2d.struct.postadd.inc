@@ -6,7 +6,6 @@ initRecAnnotation(ann_b2FixtureUserData,lib);
 initRecAnnotation(ann_b2JointUserData,lib);
 initRecAnnotation(ann_b2Version,lib);
 initRecAnnotation(ann_b2Mat22,lib);
-initRecAnnotation(ann_b2Mat33,lib);
 initRecAnnotation(ann_b2Rot,lib);
 initRecAnnotation(ann_b2Transform,lib);
 initRecAnnotation(ann_b2Sweep,lib);

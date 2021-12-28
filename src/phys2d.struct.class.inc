@@ -46,18 +46,6 @@ struct b2Mat22_GeneratedAnnotation : ManagedStructureAnnotation<b2Mat22> {
 	}
 };
 
-struct b2Mat33_GeneratedAnnotation : ManagedStructureAnnotation<b2Mat33> {
-	virtual bool isLocal() const override { return true; }
-	virtual bool canBePlacedInContainer() const override { return true; }
-	b2Mat33_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Mat33", ml, "b2Mat33") {
-	}
-	void init () {
-		addField<DAS_BIND_MANAGED_FIELD(ex)>("ex","ex");
-		addField<DAS_BIND_MANAGED_FIELD(ey)>("ey","ey");
-		addField<DAS_BIND_MANAGED_FIELD(ez)>("ez","ez");
-	}
-};
-
 struct b2Rot_GeneratedAnnotation : ManagedStructureAnnotation<b2Rot> {
 	b2Rot_GeneratedAnnotation(ModuleLibrary & ml) : ManagedStructureAnnotation ("b2Rot", ml, "b2Rot") {
 	}

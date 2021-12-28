@@ -12,29 +12,8 @@
 namespace das {
 #include "phys2d.func.aot.decl.inc"
 void Module_phys2d::initFunctions_5() {
-	using _method_29 = das::das_call_member< bool (b2AABB::*)() const,&b2AABB::IsValid >;
-	addExtern<DAS_CALL_METHOD(_method_29)>(*this,lib,"IsValid",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)() const , &b2AABB::IsValid >::invoke")
-		->args({"self"});
-	using _method_30 = das::das_call_member< b2Vec2 (b2AABB::*)() const,&b2AABB::GetCenter >;
-	addExtern<DAS_CALL_METHOD(_method_30)>(*this,lib,"GetCenter",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2AABB::*)() const , &b2AABB::GetCenter >::invoke")
-		->args({"self"});
-	using _method_31 = das::das_call_member< b2Vec2 (b2AABB::*)() const,&b2AABB::GetExtents >;
-	addExtern<DAS_CALL_METHOD(_method_31)>(*this,lib,"GetExtents",SideEffects::worstDefault,"das_call_member< b2Vec2 (b2AABB::*)() const , &b2AABB::GetExtents >::invoke")
-		->args({"self"});
-	using _method_32 = das::das_call_member< float (b2AABB::*)() const,&b2AABB::GetPerimeter >;
-	addExtern<DAS_CALL_METHOD(_method_32)>(*this,lib,"GetPerimeter",SideEffects::worstDefault,"das_call_member< float (b2AABB::*)() const , &b2AABB::GetPerimeter >::invoke")
-		->args({"self"});
-	using _method_33 = das::das_call_member< void (b2AABB::*)(const b2AABB &),&b2AABB::Combine >;
-	addExtern<DAS_CALL_METHOD(_method_33)>(*this,lib,"Combine",SideEffects::worstDefault,"das_call_member< void (b2AABB::*)(const b2AABB &) , &b2AABB::Combine >::invoke")
-		->args({"self","aabb"});
-	using _method_34 = das::das_call_member< void (b2AABB::*)(const b2AABB &,const b2AABB &),&b2AABB::Combine >;
-	addExtern<DAS_CALL_METHOD(_method_34)>(*this,lib,"Combine",SideEffects::worstDefault,"das_call_member< void (b2AABB::*)(const b2AABB &,const b2AABB &) , &b2AABB::Combine >::invoke")
-		->args({"self","aabb1","aabb2"});
-	using _method_35 = das::das_call_member< bool (b2AABB::*)(const b2AABB &) const,&b2AABB::Contains >;
-	addExtern<DAS_CALL_METHOD(_method_35)>(*this,lib,"Contains",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)(const b2AABB &) const , &b2AABB::Contains >::invoke")
-		->args({"self","aabb"});
-	using _method_36 = das::das_call_member< bool (b2AABB::*)(b2RayCastOutput *,const b2RayCastInput &) const,&b2AABB::RayCast >;
-	addExtern<DAS_CALL_METHOD(_method_36)>(*this,lib,"RayCast",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)(b2RayCastOutput *,const b2RayCastInput &) const , &b2AABB::RayCast >::invoke")
+	using _method_31 = das::das_call_member< bool (b2AABB::*)(b2RayCastOutput *,const b2RayCastInput &) const,&b2AABB::RayCast >;
+	addExtern<DAS_CALL_METHOD(_method_31)>(*this,lib,"RayCast",SideEffects::worstDefault,"das_call_member< bool (b2AABB::*)(b2RayCastOutput *,const b2RayCastInput &) const , &b2AABB::RayCast >::invoke")
 		->args({"self","output","input"});
 	addExtern< void (*)(b2Manifold *,const b2CircleShape *,const b2Transform &,const b2CircleShape *,const b2Transform &) , b2CollideCircles >(*this,lib,"b2CollideCircles",SideEffects::worstDefault,"b2CollideCircles")
 		->args({"manifold","circleA","xfA","circleB","xfB"});
@@ -52,16 +31,32 @@ void Module_phys2d::initFunctions_5() {
 		->args({"shapeA","indexA","shapeB","indexB","xfA","xfB"});
 	addExtern< bool (*)(const b2AABB &,const b2AABB &) , b2TestOverlap >(*this,lib,"b2TestOverlap",SideEffects::worstDefault,"b2TestOverlap")
 		->args({"a","b"});
-	using _method_37 = das::das_call_member< b2Shape::Type (b2Shape::*)() const,&b2Shape::GetType >;
-	addExtern<DAS_CALL_METHOD(_method_37)>(*this,lib,"GetType",SideEffects::worstDefault,"das_call_member< b2Shape::Type (b2Shape::*)() const , &b2Shape::GetType >::invoke")
+	using _method_32 = das::das_call_member< b2Shape::Type (b2Shape::*)() const,&b2Shape::GetType >;
+	addExtern<DAS_CALL_METHOD(_method_32)>(*this,lib,"GetType",SideEffects::worstDefault,"das_call_member< b2Shape::Type (b2Shape::*)() const , &b2Shape::GetType >::invoke")
 		->args({"self"});
 	addCtorAndUsing<b2ChainShape>(*this,lib,"b2ChainShape","b2ChainShape");
-	using _method_38 = das::das_call_member< void (b2ChainShape::*)(),&b2ChainShape::Clear >;
-	addExtern<DAS_CALL_METHOD(_method_38)>(*this,lib,"Clear",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)() , &b2ChainShape::Clear >::invoke")
+	using _method_33 = das::das_call_member< void (b2ChainShape::*)(),&b2ChainShape::Clear >;
+	addExtern<DAS_CALL_METHOD(_method_33)>(*this,lib,"Clear",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)() , &b2ChainShape::Clear >::invoke")
 		->args({"self"});
-	using _method_39 = das::das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int),&b2ChainShape::CreateLoop >;
-	addExtern<DAS_CALL_METHOD(_method_39)>(*this,lib,"CreateLoop",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int) , &b2ChainShape::CreateLoop >::invoke")
+	using _method_34 = das::das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int),&b2ChainShape::CreateLoop >;
+	addExtern<DAS_CALL_METHOD(_method_34)>(*this,lib,"CreateLoop",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int) , &b2ChainShape::CreateLoop >::invoke")
 		->args({"self","vertices","count"});
+	using _method_35 = das::das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int,const b2Vec2 &,const b2Vec2 &),&b2ChainShape::CreateChain >;
+	addExtern<DAS_CALL_METHOD(_method_35)>(*this,lib,"CreateChain",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(const b2Vec2 *,int,const b2Vec2 &,const b2Vec2 &) , &b2ChainShape::CreateChain >::invoke")
+		->args({"self","vertices","count","prevVertex","nextVertex"});
+	addExtern< b2Shape * (*)(const b2ChainShape &,b2BlockAllocator *) , _phys2d_virtual_0_Clone >(*this,lib,"Clone",SideEffects::worstDefault,"_phys2d_virtual_0_Clone")
+		->args({"self","allocator"});
+	addExtern< int (*)(const b2ChainShape &) , _phys2d_virtual_1_GetChildCount >(*this,lib,"GetChildCount",SideEffects::worstDefault,"_phys2d_virtual_1_GetChildCount")
+		->args({"self"});
+	using _method_38 = das::das_call_member< void (b2ChainShape::*)(b2EdgeShape *,int) const,&b2ChainShape::GetChildEdge >;
+	addExtern<DAS_CALL_METHOD(_method_38)>(*this,lib,"GetChildEdge",SideEffects::worstDefault,"das_call_member< void (b2ChainShape::*)(b2EdgeShape *,int) const , &b2ChainShape::GetChildEdge >::invoke")
+		->args({"self","edge","index"});
+	addExtern< bool (*)(const b2ChainShape &,const b2Transform &,const b2Vec2 &) , _phys2d_virtual_2_TestPoint >(*this,lib,"TestPoint",SideEffects::worstDefault,"_phys2d_virtual_2_TestPoint")
+		->args({"self","transform","p"});
+	addExtern< bool (*)(const b2ChainShape &,b2RayCastOutput *,const b2RayCastInput &,const b2Transform &,int) , _phys2d_virtual_3_RayCast >(*this,lib,"RayCast",SideEffects::worstDefault,"_phys2d_virtual_3_RayCast")
+		->args({"self","output","input","transform","childIndex"});
+	addExtern< void (*)(const b2ChainShape &,b2AABB *,const b2Transform &,int) , _phys2d_virtual_4_ComputeAABB >(*this,lib,"ComputeAABB",SideEffects::worstDefault,"_phys2d_virtual_4_ComputeAABB")
+		->args({"self","aabb","transform","childIndex"});
 }
 }
 

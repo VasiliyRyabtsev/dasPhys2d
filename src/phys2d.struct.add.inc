@@ -11,8 +11,6 @@ auto ann_b2Version = make_smart<b2Version_GeneratedAnnotation>(lib);
 addAnnotation(ann_b2Version);
 auto ann_b2Mat22 = make_smart<b2Mat22_GeneratedAnnotation>(lib);
 addAnnotation(ann_b2Mat22);
-auto ann_b2Mat33 = make_smart<b2Mat33_GeneratedAnnotation>(lib);
-addAnnotation(ann_b2Mat33);
 auto ann_b2Rot = make_smart<b2Rot_GeneratedAnnotation>(lib);
 addAnnotation(ann_b2Rot);
 auto ann_b2Transform = make_smart<b2Transform_GeneratedAnnotation>(lib);

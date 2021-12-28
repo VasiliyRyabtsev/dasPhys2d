@@ -70,7 +70,6 @@ IF ((NOT DAS_PHYS2D_INCLUDED) AND ((NOT ${DAS_PHYS2D_DISABLED}) OR (NOT DEFINED 
 		${DAS_PHYS2D_BIND_DIR}/src/phys2d.func_25.cpp
 		${DAS_PHYS2D_BIND_DIR}/src/phys2d.func_26.cpp
 		${DAS_PHYS2D_BIND_DIR}/src/phys2d.func_27.cpp
-		${DAS_PHYS2D_BIND_DIR}/src/phys2d.func_28.cpp
 	)
 
 

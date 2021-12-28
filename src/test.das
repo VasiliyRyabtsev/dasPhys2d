@@ -14,3 +14,7 @@ def main
     var mat <- [[b2Mat22]]
     mat |> Set(v, gravity)
     print("mat = {mat}\n")
+
+    var m33:b2Mat33
+    m33[0] = float3(123.)
+    print("m33 = {m33}\n")

@@ -22,9 +22,9 @@ class Phys2dGen : CppGenBind
 
         aot_alias <- {{
             "b2Vec2"  => true;
-            "b2Vec3"  => true
+            "b2Vec3"  => true;
             //"b2Mat22"  => true;
-            //"b2Mat33"  => true
+            "b2Mat33"  => true
         }};
 
         func_per_chunk = 20

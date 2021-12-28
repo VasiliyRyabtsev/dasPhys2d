@@ -20,7 +20,7 @@ void Module_phys2d::initAotAlias() {
 	addAlias(typeFactory<b2Vec2>::make(lib));
 	addAlias(typeFactory<b2Vec3>::make(lib));
 	// addAlias(typeFactory<b2Mat22>::make(lib));
-	// addAlias(typeFactory<b2Mat33>::make(lib));
+	addAlias(typeFactory<b2Mat33>::make(lib));
 }
 
 }
